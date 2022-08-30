@@ -6,9 +6,12 @@ Rails.application.routes.draw do
     resources :vaccines
     resources :appointments
     resources :medications
-    resources :baths
-    resources :foods
+    resources :baths, only: [:index, :new, :create]
+    resources :foods, only: [:index, :new, :create]
   end
+
+  resources :baths, only: [:show]
+  resources :foods, only: [:show]
 
   # get 'food/index'
   # get 'bath/new'
