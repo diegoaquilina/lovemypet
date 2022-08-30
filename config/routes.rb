@@ -6,12 +6,13 @@ Rails.application.routes.draw do
 
   resources :pets do
     resources :vaccines
-    resources :appointments
+    resources :appointments, only: [:index, :new, :create]
     resources :medications
     resources :baths, only: [:index, :new, :create]
     resources :foods, only: [:index, :new, :create]
   end
 
+  resources :appointments, only: [:show]
   resources :baths, only: [:show]
   resources :foods, only: [:show]
 

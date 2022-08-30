@@ -1,2 +1,16 @@
-<h1>Appointments#new</h1>
-<p>Find me in app/views/appointments/new.html.erb</p>
+<div class= "container">
+  <h1>Agende sua próxima consulta</h1>
+
+  <% if @pets.empty? %>
+    "É necessario cadastrar um pet para efetuar a reserva."
+  <% else %>
+    <%= simple_form_for [@appointment], as: :appointment, url: appointments_path(@appointment.id), method: :post do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.input :Diaria, disabled: true, input_html: {value: @appointment.price} %>
+      <%##= f.input :status %>
+      <%= f.input :pet, collection: @pets.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
+      <%= f.submit "Reservar", class:"btn btn-primary" %>
+    <% end %>
+  <% end %>
+</div>
