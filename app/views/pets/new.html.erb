@@ -1,2 +1,20 @@
 <h1>Pets#new</h1>
 <p>Find me in app/views/pets/new.html.erb</p>
+
+
+<div class="container">
+<h1>Insira um novo dog</h1>
+<%= simple_form_for @pet, as: :pet, url: pets_path(@pet), method: :post do |f| %>
+<%= f.input :name %>
+<%= f.input :breed, collection: Pet::RACA.map { |e| e.capitalize}, include_blank: false, placeholder: "SRD" %>
+<%= f.input :size, collection: Pet::PORTE.map { |e| e.capitalize}, include_blank: false%>
+<%= f.input :age %>
+<%= f.input :weight %>
+<%= f.input :sex %>
+<%= f.input :neutered %>
+<%= f.input :microchipped %>
+<%= f.input :feeding_schedule %>
+<%= f.input :energy_level, collection: Pet::ENERGIA.map { |e| e.capitalize}, include_blank: false %>
+<%= f.submit "Adcionar Dog", class:"btn btn-primary" %>
+<% end %>
+</div>

@@ -2,16 +2,20 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
+  # VERIFICAR ROTAS:
+
   resources :pets do
     resources :vaccines
     resources :appointments, only: [:index, :new, :create]
     resources :medications
-    resources :baths
-    resources :foods
+    resources :baths, only: [:index, :new, :create]
+    resources :foods, only: [:index, :new, :create]
   end
 
   resources :appointments, only: [:show]
-  
+  resources :baths, only: [:show]
+  resources :foods, only: [:show]
+
   # get 'food/index'
   # get 'bath/new'
   # get 'bath/index'

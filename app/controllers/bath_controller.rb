@@ -1,16 +1,50 @@
 class BathController < ApplicationController
-  def new
-  end
+  before_action :load_bath, only: [:show, :edit, :update, :destroy]
+  before_action :load_pet, only: [:new, :create, :edit, :update]
 
   def index
+    @baths = Bath.all
   end
 
-  def show
+  def new
+    @bath = Bath.new 
   end
 
   def create
+    @bath = Bath.new(bath_params)
+    if @bath.save
+      redirect_to pet_path(@pet)
+    else
+      render :new, status: :unprocessable_entity
+    end 
   end
 
-  def edit
+  def show; end
+
+  def edit; end
+
+  def update
+    @bath.update(bath_params)
+    redirect_to pet_path(@pet)
   end
+
+  def destroy
+    @bath.destroy
+    redirect_to pet_path(@pet)
+  end
+
+  private
+
+  def load_pet
+    @pet = Pet.find(params[:id])
+  end
+
+  def load_bath
+    @bath = Bath.find(params[:id])
+  end
+
+  def bath_params
+    params.require(:food).permit(:category, :address, :date)
+  end
+
 end
