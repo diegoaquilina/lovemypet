@@ -4,12 +4,14 @@ Rails.application.routes.draw do
 
   resources :pets do
     resources :vaccines
-    resources :appointments
+    resources :appointments, only: [:index, :new, :create]
     resources :medications
     resources :baths
     resources :foods
   end
 
+  resources :appointments, only: [:show]
+  
   # get 'food/index'
   # get 'bath/new'
   # get 'bath/index'
