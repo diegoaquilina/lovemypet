@@ -12,7 +12,7 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @pet.user = current_user
     if @pet.save
-      redirect_to pet_path
+      redirect_to pets_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -40,6 +40,6 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:name, :breed, :size, :age, :weight, :sex, :neutered, :microchipped, :feeding_schedule, :energy_level, :url_photo)
+    params.require(:pet).permit(:name, :breed, :size, :age, :weight, :sex, :neutered, :microchipped, :feeding_schedule, :energy_level)
   end
 end
