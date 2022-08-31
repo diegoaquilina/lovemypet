@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+    before_action :load_pet, only: [ :show, :edit, :update, :destroy]
 
   def index
     @pets = Pet.all
@@ -19,7 +20,6 @@ class PetsController < ApplicationController
   end
 
   def show
-    @pet = Pet.find(params[:id])
     # @vaccines = Vaccines.where(pet: @pet)
     # @appointments = Appointment.where(pet: @pet)
     # @medications = Medications.where(pet: @pet)
@@ -27,17 +27,23 @@ class PetsController < ApplicationController
     # @foods = Foods.where(pet: @pet)
   end
 
-  def edit
-    @pet = Pet.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @pet = Pet.find(params[:id])
     @pet.update(pet_params)
     redirect_to pet_path(current_user)
   end
 
+  def destroy
+    @pet.destroy
+    redirect_to user_path(current_user)
+  end
+
   private
+
+  def load_pet
+    @pet = Pet.find(params[:id])
+  end
 
   def pet_params
     params.require(:pet).permit(:name, :breed, :size, :age, :weight, :sex, :neutered, :microchipped, :feeding_schedule, :energy_level)
