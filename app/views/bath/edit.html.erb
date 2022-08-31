@@ -1,4 +1,9 @@
-<h1>Bath#edit</h1>
-<p>Find me in app/views/bath/edit.html.erb</p>
-
-
+<div class="container">
+    <h1>Editar Agendamento</h1>
+        <%= simple_form_for @bath, as: :bath, url: bath_path(@bath), method: :post do |f| %>
+        <%= f.input :category, collection: Bath::SERVICE.map { |e| e.capitalize}, include_blank: false %>
+        <%= f.input :address %>
+        <%= f.input :date %>
+        <%= f.submit "Agendar", class:"btn btn-primary" %>
+    <% end %>
+</div>

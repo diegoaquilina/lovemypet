@@ -1,2 +1,37 @@
-<h1>Food#index</h1>
-<p>Find me in app/views/food/index.html.erb</p>
+
+<div class="container">
+  <h1>Ração do seu(s) pet(s)</h1>
+
+  <% if @foods.empty? %>
+    "Voce nao possui nenhuma ração registrada."
+  <% else %>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Pet</th>
+                <th>Categoria</th>
+                <th>Marca</th>
+                <th>Qtd do pacote</th>
+                <th>Qtd diária</th>
+                <th>Data de inicio</th>
+                <th colspan="3"></th>
+            </tr>
+            </thead>
+
+            <tbody>
+                <% @foods.each do |food| %>
+                  <tr>
+                    <td><%= food.pet.name %></td>
+                    <td><%= food.category %></td>
+                    <td><%= food.brand %></td>
+                    <td><%= food.bag_qty_kg %></td>
+                    <td><%= food.daily_qty_kg %></td>
+                    <td><%= food.start_date %></td>            
+                  </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+  <% end %>
+</div>
