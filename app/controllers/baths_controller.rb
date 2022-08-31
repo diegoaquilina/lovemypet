@@ -13,7 +13,7 @@ class BathsController < ApplicationController
   def create
     @bath = Bath.new(bath_params)
     if @bath.save
-      redirect_to pets_path
+      redirect_to baths_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,12 +25,12 @@ class BathsController < ApplicationController
 
   def update
     @bath.update(bath_params)
-    redirect_to pets_path
+    redirect_to baths_path
   end
 
   def destroy
     @bath.destroy
-    redirect_to pets_path
+    redirect_to baths_path
   end
 
   private
