@@ -61,7 +61,7 @@
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><i class="fa-solid fa-paw"></i> Raça: <%= pet.breed %></li>
-          <li class="list-group-item"><i class="fa-solid fa-weight-scale"></i> Peso: <%= pet.size %> kg</li>
+          <li class="list-group-item"><i class="fa-solid fa-weight-scale"></i> Peso: <%= pet.weight %> kg</li>
 
         </ul>
         <div class="card-body">
@@ -73,6 +73,18 @@
   </div>
   <div>
     <%= link_to "Adicionar bicho", new_pet_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+  </div>
+  <div>
+    <%= link_to "Alimentação", new_pet_path, class: "btn btn-outline-warning ml-5 mt-5" %>
+  </div>
+  <div>
+    <%= link_to "Saúde", new_pet_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+  </div>
+  <div>
+    <%= link_to "Banho & Tosa", new_pet_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+  </div>
+  <div>
+    <%= link_to "Consultas Veterinário", new_pet_path, class: "btn btn-outline-warning ml-4 mt-4" %>
   </div>
 </div>
 

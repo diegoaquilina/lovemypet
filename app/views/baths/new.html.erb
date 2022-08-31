@@ -1,10 +1,10 @@
 
 <div class="container">
     <h1>Agendamento</h1>
-        <%= simple_form_for @bath, as: :bath, url: bath_path(@bath), method: :post do |f| %>
+        <%= simple_form_for @bath, as: :bath, url: baths_path(@bath), method: :post do |f| %>
         <%= f.input :category, label: "Serviço", collection: Bath::SERVICE.map { |e| e.capitalize}, include_blank: false %>
-        <%= f.input :address, label: "Endereço", %>
-        <%= f.input :date, label: "Data", %>
+        <%= f.input :address, label: "Endereço" %>
+        <%= f.input :date, label: "Data" %>
         <%= f.submit "Agendar", class:"btn btn-primary" %>
     <% end %>
 </div>

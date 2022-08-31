@@ -7,7 +7,7 @@ class BathsController < ApplicationController
   end
 
   def new
-    @bath = Bath.new 
+    @bath = Bath.new
   end
 
   def create
@@ -16,7 +16,7 @@ class BathsController < ApplicationController
       redirect_to pets_path
     else
       render :new, status: :unprocessable_entity
-    end 
+    end
   end
 
   def show; end
@@ -46,5 +46,5 @@ class BathsController < ApplicationController
   def bath_params
     params.require(:food).permit(:category, :address, :date, :petshop)
   end
-  
+
 end
