@@ -1,0 +1,79 @@
+<div class="container shadow-sm p-3 mb-5 bg-white rounded mt-4" >
+    <div class="cover mb-4 d-flex align-items-center justify-content-center">
+      <div class="text-center">
+        <h1>Meu perfil</h1>
+        <div>
+        <%# if current_user.photo.attached?%>
+            <%#= cl_image_tag current_user.photo.key, width: 150, class: "avatar dropdown-toggle", style:"margin-left: auto; margin-right: auto;"%>
+          <%# else %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", style:"width: 150px; margin-left: auto; margin-right: auto;"%>
+            <%# end %>
+        </div>
+        <h3 class="typed-js" data-controller="typed-js"></h3>
+      </div>
+    </div>
+
+    <%# PERFIL USUÁRIO %>
+    <form class="row">
+      <%if @user.first_name?  %>
+        <div class="col-md-6">
+          <label class="form-label">Nome</label>
+          <input type="text" class="form-control" value="<%=@user.first_name%>">
+        </div>
+      <%else  %>
+        <div class="col-md-6">
+          <label class="form-label">Nome</label>
+          <input type="text" class="form-control" placeholder="Nome">
+        </div>
+      <%end %>
+      <div class="col-md-6">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" value="<%=@user.email%>">
+      </div>
+      <div class="col-md-12">
+        <label class="form-label">Endereço</label>
+         <input type="text" class="form-control" value="<%=@user.address%>">
+      </div>
+       <div class="mt-2">
+          <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-outline-warning ml-4", data: {turbo: false} %>
+       </div>
+    </form>
+</div>
+    <%# ADICIONAR BICHO  %>
+
+<div class="container shadow-sm p-3 mb-5 bg-white rounded">
+  <div class="cover mb-4 d-flex align-items-center justify-content-center">
+    <div class="text-center">
+      <h1>Meus bichos</h1>
+      <h3 class="typed-js" data-controller="typed-js"></h3>
+    </div>
+  </div>
+  <div class="row justify-content-around">
+    <%@pets.each do |pet|%>
+      <div class="card ml-3 mt-2" style="width: 18rem;">
+        <%# if pet.photo.attached?%>
+        <%#= cl_image_tag pet.photo.key, width: 925, class: "pet-img"%>
+        <%# else %>
+        <img src="https://images.pexels.com/photos/39317/chihuahua-dog-puppy-cute-39317.jpeg?auto=compress&cs=tinysrgb&w=600" style="border-radius: 5%; margin-top: 1rem;" class="card-img-top" alt="...">
+        <%# end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= pet.name %></h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><i class="fa-solid fa-paw"></i> Raça: <%= pet.breed %></li>
+          <li class="list-group-item"><i class="fa-solid fa-weight-scale"></i> Peso: <%= pet.size %> kg</li>
+
+        </ul>
+        <div class="card-body">
+          <a href="<%= edit_pet_path(pet) %>" class="btn btn-outline-secondary">Editar</a>
+         <%= link_to "Deletar Pet", pet_path(pet), class: "btn btn-outline-danger", data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to "Adicionar bicho", new_pet_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+  </div>
+</div>
+
+</div>
