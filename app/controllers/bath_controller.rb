@@ -46,5 +46,4 @@ class BathController < ApplicationController
   def bath_params
     params.require(:food).permit(:category, :address, :date, :petshop)
   end
-
 end
