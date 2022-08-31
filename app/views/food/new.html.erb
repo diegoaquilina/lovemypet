@@ -1,2 +1,12 @@
-<h1>Food#new</h1>
-<p>Find me in app/views/food/new.html.erb</p>
+
+<div class="container">
+    <h1>Alimentação</h1>
+    <%= simple_form_for @food, as: :food, url: food_path(@food), method: :post do |f| %>
+        <%= f.input :category, collection: Food::FOOD.map { |e| e.capitalize}, include_blank: false %>
+        <%= f.input :brand, collection: Food::BRAND, include_blank: false %>
+        <%= f.input :bag_qty_kg %>
+        <%= f.input :daily_qty_kg %>
+        <%= f.input :start_date %>
+        <%= f.submit "Cadastrar", class:"btn btn-primary" %>
+    <% end %>
+</div>

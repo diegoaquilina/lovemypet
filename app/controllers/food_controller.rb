@@ -13,7 +13,7 @@ class FoodController < ApplicationController
   def create
     @food = Food.new(food_params)
     if @food.save
-      redirect_to pet_path(@pet)
+      redirect_to pets_path
     else
       render :new, status: :unprocessable_entity
     end 
@@ -25,12 +25,12 @@ class FoodController < ApplicationController
 
   def update
     @food.update(food_params)
-    redirect_to pet_path(@pet)
+    redirect_to pets_path
   end
 
   def destroy
     @food.destroy
-    redirect_to pet_path(@pet)
+    redirect_to pets_path
   end
 
   private

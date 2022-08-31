@@ -13,7 +13,7 @@ class BathController < ApplicationController
   def create
     @bath = Bath.new(bath_params)
     if @bath.save
-      redirect_to pet_path(@pet)
+      redirect_to pets_path
     else
       render :new, status: :unprocessable_entity
     end 
@@ -25,12 +25,12 @@ class BathController < ApplicationController
 
   def update
     @bath.update(bath_params)
-    redirect_to pet_path(@pet)
+    redirect_to pets_path
   end
 
   def destroy
     @bath.destroy
-    redirect_to pet_path(@pet)
+    redirect_to pets_path
   end
 
   private
@@ -44,7 +44,7 @@ class BathController < ApplicationController
   end
 
   def bath_params
-    params.require(:food).permit(:category, :address, :date)
+    params.require(:food).permit(:category, :address, :date, :petshop)
   end
 
 end
