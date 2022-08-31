@@ -1,2 +1,34 @@
-<h1>Appointments#index</h1>
-<p>Find me in app/views/appointments/index.html.erb</p>
+<div class="container">
+  <h1>Consultas agendadas</h1>
+
+  <% if @appointments.empty? %>
+    "Voce não possui nenhuma consulta agendada."
+  <% else %>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Pet</th>
+                <th>Motivo da consulta</th>
+                <th>Data da consulta</th>
+                <th>Endereço</th>
+                <th>Telefone</th>
+                <th colspan="3"></th>
+            </tr>
+            </thead>
+
+            <tbody>
+                <% @appointments.each do |appointment| %>
+                  <tr>
+                    <td><%= appointment.pet.name %></td>
+                    <td><%= appointment.title %></td>
+                    <td><%= appointment.date %></td>
+                    <td><%= appointment.address %></td>
+                    <td><%= appointment.phone %></td>
+                  </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+  <% end %>
+</div>
