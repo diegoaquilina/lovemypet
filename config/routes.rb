@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :baths
     resources :foods
   end
+  # resources :health, only: [:index, :show]
+
 
   # get 'food/index'
   # get 'bath/new'
