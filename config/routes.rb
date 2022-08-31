@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   resources :baths, only: [:show]
   resources :foods, only: [:show]
 
+  get '/profile', to: 'pages#profile', as: 'profile'
+  get '/profile/:id', to: 'pages#profile', as: 'profile_show'
+
   # get 'food/index'
   # get 'bath/new'
   # get 'bath/index'
