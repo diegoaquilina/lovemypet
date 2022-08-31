@@ -1,20 +1,31 @@
-<h1>Pets#new</h1>
-<p>Find me in app/views/pets/new.html.erb</p>
-
+<div class="container">
+<h1>Adicionar Pet</h1>
+<%= simple_form_for @pet, as: :pet, url: pets_path(@pet), method: :post do |f| %>
+<%= f.input :name, label: "Nome", include_blank: false %>
+<%= f.input :sex, collection: Pet::SEXO.map { |e| e.capitalize}, include_blank: false, label: "Gênero"%>
+<i class="fa-solid fa-mars btn btn-primary" > Macho</i>
+<i class="fa-solid fa-venus btn btn-primary"> Femea</i>
+<%# VERIFICAR COMO VAI FICAR O DIA E ANO (RANGE DE 10 ANOS) %>
+<%= f.input :age, label: "Nascimento*" %>
+<p>*Se não souber, insira uma data aproximada</p>
+<%= f.input :breed, collection: Pet::RACA.map, include_blank: false, placeholder: "SRD", label: "Raça" %>
+<%= f.input :size, collection: Pet::PORTE.map { |e| e.capitalize}, include_blank: false, label: "Porte"%>
+<%= f.input :weight, label: "Peso" %>
+<%= f.input :neutered, label: "Castrado" %>
+<%= f.input :microchipped, label: "Microchipado" %>
+<%= f.input :energy_level, collection: Pet::ENERGIA.map { |e| e.capitalize}, include_blank: false, label: "Nível de Energia" %>
+<%= f.input :feeding_schedule, label: "Quantas vezes o animal se alimenta ao dia?" %>
+<%= f.submit "Adcionar Pet", class:"btn btn-primary" %>
+<% end %>
+</div>
 
 <div class="container">
-<h1>Insira um novo dog</h1>
-<%= simple_form_for @pet, as: :pet, url: pets_path(@pet), method: :post do |f| %>
-<%= f.input :name %>
-<%= f.input :breed, collection: Pet::RACA.map { |e| e.capitalize}, include_blank: false, placeholder: "SRD" %>
-<%= f.input :size, collection: Pet::PORTE.map { |e| e.capitalize}, include_blank: false%>
-<%= f.input :age %>
-<%= f.input :weight %>
-<%= f.input :sex %>
-<%= f.input :neutered %>
-<%= f.input :microchipped %>
-<%= f.input :feeding_schedule %>
-<%= f.input :energy_level, collection: Pet::ENERGIA.map { |e| e.capitalize}, include_blank: false %>
-<%= f.submit "Adcionar Dog", class:"btn btn-primary" %>
-<% end %>
+<h1>Informações do meu pet</h1>
+<%= link_to "Alimentação", "#", class: "btn btn-primary" %>
+<%= link_to "Saúde", "#", class: "btn btn-primary" %>
+<%= link_to "Bem Estar", "#", class: "btn btn-primary" %>
+</div>
+
+<div class="container">
+<%= link_to "Meu Portal", "#" , class: "btn btn-primary" %>
 </div>

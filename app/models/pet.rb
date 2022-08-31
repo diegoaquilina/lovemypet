@@ -8,7 +8,9 @@ class Pet < ApplicationRecord
 
   ENERGIA = ["Baixa", "Moderada", "Alta"]
   PORTE = ["Pequeno", "Médio", "Grande"]
-  RACA = ["Akita",
+  SEXO = ["Macho", "Fêmea"]
+  RACA = ["SRD",
+    "Akita",
     "Basset Hound",
     "Beagle",
     "Bichon Frisé",
@@ -55,7 +57,6 @@ class Pet < ApplicationRecord
     "Shar-Pei",
     "Shiba",
     "Shih Tzu",
-    "SRD",
     "Staffordshire Bull Terrier",
     "Weimaraner",
     "Welsh Corgi Pembroke",
