@@ -1,4 +1,4 @@
-class BathController < ApplicationController
+class BathsController < ApplicationController
   before_action :load_bath, only: [:show, :edit, :update, :destroy]
   before_action :load_pet, only: [:new, :create, :edit, :update]
 
@@ -7,7 +7,7 @@ class BathController < ApplicationController
   end
 
   def new
-    @bath = Bath.new 
+    @bath = Bath.new
   end
 
   def create
@@ -16,7 +16,7 @@ class BathController < ApplicationController
       redirect_to pets_path
     else
       render :new, status: :unprocessable_entity
-    end 
+    end
   end
 
   def show; end
@@ -36,7 +36,7 @@ class BathController < ApplicationController
   private
 
   def load_pet
-    @pet = Pet.find(params[:id])
+    @pet = Pet.where(user: current_user)
   end
 
   def load_bath
