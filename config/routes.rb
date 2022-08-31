@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :baths, only: [:index, :new, :create]
     resources :foods, only: [:index, :new, :create]
   end
+  # resources :health, only: [:index, :show]
+
 
   resources :appointments, only: [:show]
   resources :baths, only: [:show]
