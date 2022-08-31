@@ -3,8 +3,8 @@
   <%= simple_form_for @pet do |f| %>
   <%= f.input :name, label: "Nome", include_blank: false %>
   <%= f.input :sex, collection: Pet::SEXO.map { |e| e.capitalize}, include_blank: false, label: "Gênero"%>
-  <i class="fa-solid fa-mars btn btn-primary" > Macho</i>
-  <i class="fa-solid fa-venus btn btn-primary"> Femea</i>
+  <%# <i class="fa-solid fa-mars btn btn-primary" > Macho</i>
+  <i class="fa-solid fa-venus btn btn-primary"> Femea</i> %>
   <%# VERIFICAR COMO VAI FICAR O DIA E ANO (RANGE DE 10 ANOS) %>
   <%= f.input :age, label: "Nascimento*" %>
   <p>*Se não souber, insira uma data aproximada</p>
