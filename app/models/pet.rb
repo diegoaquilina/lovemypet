@@ -6,6 +6,8 @@ class Pet < ApplicationRecord
   has_many :foods
   has_many :baths
 
+  has_one_attached :photo
+
   ENERGIA = ["Baixa", "Moderada", "Alta"]
   PORTE = ["Pequeno", "Médio", "Grande"]
   SEXO = ["Macho", "Fêmea"]
