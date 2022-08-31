@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => 'registrations'}
   root to: "pages#home"
 
   # VERIFICAR ROTAS:
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'pages#profile', as: 'profile'
   get '/profile/:id', to: 'pages#profile', as: 'profile_show'
+
 
   # get 'food/index'
   # get 'bath/new'
