@@ -65,7 +65,7 @@
 
         </ul>
         <div class="card-body">
-          <a href="<%= edit_pet_path(pet) %>" class="btn btn-outline-secondary">Editar</a>
+          <%= link_to "Editar", edit_pet_path(pet), class: "btn btn-outline-secondary" %>
          <%= link_to "Deletar Pet", pet_path(pet), class: "btn btn-outline-danger", data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %>
         </div>
       </div>

@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-    before_action :load_pet, only: [ :show, :edit, :update, :destroy]
+  before_action :load_pet, only: [:show, :edit, :update, :destroy]
 
   def index
     @pets = Pet.all
@@ -13,7 +13,7 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @pet.user = current_user
     if @pet.save
-      redirect_to pets_path
+      redirect_to profile_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,16 +27,17 @@ class PetsController < ApplicationController
     # @foods = Foods.where(pet: @pet)
   end
 
-  def edit; end
+  def edit;
+  end
 
   def update
     @pet.update(pet_params)
-    redirect_to pet_path(current_user)
+    redirect_to profile_path
   end
 
   def destroy
     @pet.destroy
-    redirect_to user_path(current_user)
+    redirect_to profile_path
   end
 
   private
@@ -46,6 +47,6 @@ class PetsController < ApplicationController
   end
 
   def pet_params
-    params.require(:pet).permit(:name, :breed, :size, :age, :weight, :sex, :neutered, :microchipped, :feeding_schedule, :energy_level)
+    params.require(:pet).permit(:name, :breed, :size, :age, :weight, :sex, :neutered, :microchipped, :feeding_schedule, :energy_level, :photo)
   end
 end
