@@ -46,4 +46,5 @@ class AppointmentsController < ApplicationController
   def appointment_params
     params.require(:appointment).permit(:title, :date, :address, :phone, :latitude, :longitude)
   end
+  
 end
