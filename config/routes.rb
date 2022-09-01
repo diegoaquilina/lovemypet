@@ -13,11 +13,11 @@ Rails.application.routes.draw do
   end
   # resources :health, only: [:index, :show]
 
-  resources :appointments, only: [:new, :create, :index, :edit]
-  resources :baths, only: [:new, :create, :index, :edit]
-  resources :foods, only: [:new, :create, :index, :edit]
-  resources :vaccines, only: [:new, :create, :index, :edit]
-  resources :medications, only: [:new, :create, :index, :edit]
+  resources :appointments, only: [:new, :create, :index, :edit, :update, :destroy]
+  resources :baths, only: [:new, :create, :index, :edit, :update, :destroy]
+  resources :foods, only: [:new, :create, :index, :edit, :update, :destroy]
+  resources :vaccines, only: [:new, :create, :index, :edit, :update, :destroy]
+  resources :medications, only: [:new, :create, :index, :edit, :update, :destroy]
 
 
   get '/profile', to: 'pages#profile', as: 'profile'

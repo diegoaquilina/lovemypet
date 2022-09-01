@@ -1,7 +1,7 @@
 
 <div class="container">
     <h1>Cadastrar vacina</h1>
-    <%= simple_form_for @vaccine, as: :vaccine, url: new_vaccine_path(@vaccine), method: :post do |f| %>
+    <%= simple_form_for @vaccine do |f| %>
         <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
         <%= f.input :type, label: "Vacina" %>
         <%= f.input :app_date, label: "Data de aplicaçao" %>

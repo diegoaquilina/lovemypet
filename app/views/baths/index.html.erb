@@ -25,6 +25,7 @@
                     <td><%= bath.address %></td>
                     <td><%= bath.date %></td>
                     <td><%= link_to 'Editar', edit_bath_path(bath) %></td>
+                    <td><%= link_to 'Deletar', bath_path(bath), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %></td>
                     </tr>
                 <% end %>
             </tbody>

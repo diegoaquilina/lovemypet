@@ -1,10 +1,11 @@
 <div class= "container">
   <h1>Editar consulta</h1>
-    <%= simple_form_for @appointment, as: :appointment, url: appointment_path(@appointment), method: :post do |f| %>
+    <%= simple_form_for @appointment do |f| %>
       <%= f.input :date, label: "Data da consulta" %>
       <%= f.input :address, label: "Endereço" %>
       <%= f.input :phone, label: "Telefone" %>
       <%= f.input :title, label: "Motivo da consulta" %>
+      <%= f.input :pet, as: :hidden, input_html: {value: @appointment.pet.id} %>
       <%= f.submit "Adicionar consulta", class:"btn btn-primary" %>
   <% end %>
 </div>
