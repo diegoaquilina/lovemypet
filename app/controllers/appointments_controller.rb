@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
   before_action :load_pet, only: [:new, :create, :edit, :update]
 
   def index
-    @appointments = Appointment.all.where(user: current_user)
+    @appointments = Appointment.all.where(pet: current_user.pets)
   end
 
   def new
@@ -11,9 +11,11 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    @appointment = Appointment.new(appointment_params)
+    _params = appointment_params
+    _params[:pet] = Pet.find(appointment_params[:pet])
+    @appointment = Appointment.new(_params)
     if @appointment.save
-      redirect_to appointments_path(@appointment)
+      redirect_to appointments_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -44,7 +46,7 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:title, :date, :address, :phone)
+    params.require(:appointment).permit(:title, :date, :address, :phone, :pet)
   end
   
 end

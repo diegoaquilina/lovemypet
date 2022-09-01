@@ -3,7 +3,7 @@ class MedicationsController < ApplicationController
   before_action :load_pet, only: [:new, :create, :edit, :update]
 
   def index
-    @medications = Medication.all.where(user: current_user)
+    @medications = Medication.all.where(pet: current_user.pets)
   end
   
   def new
@@ -11,7 +11,9 @@ class MedicationsController < ApplicationController
   end
 
   def create
-    @medication = Medication.new(medication_params)
+    _params = medication_params
+    _params[:pet] = Pet.find(medication_params[:pet])
+    @medication = Medication.new(_params)
     if @medication.save
       redirect_to medications_path
     else
@@ -44,6 +46,6 @@ class MedicationsController < ApplicationController
   end
 
   def medication_params
-      params.require(:medication).permit(:name, :dose, :dose_unit, :instructions, :reminder, :frequency, :days_qty)
+      params.require(:medication).permit(:name, :dose, :dose_unit, :instructions, :reminder, :frequency, :days_qty, :pet)
   end
 end

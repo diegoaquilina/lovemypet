@@ -3,7 +3,7 @@ class VaccinesController < ApplicationController
   before_action :load_pet, only: [:new, :create, :edit, :update]
 
   def index
-    @vaccines = Vaccine.all.where(user: current_user)
+    @vaccines = Vaccine.all.where(pet: current_user.pets)
   end
 
   def new
@@ -11,9 +11,11 @@ class VaccinesController < ApplicationController
   end
 
   def create
-    @vaccine = Vaccine.new(vaccine_params)
+    _params = vaccine_params
+    _params[:pet] = Pet.find(vaccine_params[:pet])
+    @vaccine = Vaccine.new(_params)
     if @vaccine.save
-      redirect_to pet_path
+      redirect_to vaccines_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -44,6 +46,6 @@ class VaccinesController < ApplicationController
   end
 
   def vaccine_params
-      params.require(:vaccine).permit(:type, :app_date, :expiry_date)
+      params.require(:vaccine).permit(:type, :app_date, :expiry_date, :pet)
   end
 end
