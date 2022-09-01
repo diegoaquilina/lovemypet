@@ -26,7 +26,9 @@ class BathsController < ApplicationController
   def edit; end
 
   def update
-    @bath.update(bath_params)
+    _params = bath_params
+    _params[:pet] = Pet.find(bath_params[:pet])
+    @bath.update(_params)
     redirect_to baths_path
   end
 
@@ -48,5 +50,4 @@ class BathsController < ApplicationController
   def bath_params
     params.require(:bath).permit(:category, :address, :date, :pet)
   end
-
 end

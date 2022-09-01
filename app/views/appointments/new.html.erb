@@ -1,7 +1,7 @@
 
 <div class= "container">
   <h1>Agendar consulta</h1>
-    <%= simple_form_for @appointment, as: :appointment, url: new_appointment_path(@appointment), method: :post do |f| %>
+    <%= simple_form_for @appointment, as: :appointment, url: appointments_path(@appointment), method: :post do |f| %>
       <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
       <%= f.input :date, label: "Data da consulta" %>
       <%= f.input :address, label: "Endereço" %>

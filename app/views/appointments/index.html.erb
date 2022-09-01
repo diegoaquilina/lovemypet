@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Consultas agendadas</h1>
 
-  <% if @appointments.nil? %>
+  <% if @appointments.empty? %>
     "Seu pet não possui nenhuma consulta agendada."
   <% else %>
     <div class="table-responsive">
@@ -18,16 +18,17 @@
             </thead>
 
             <tbody>
-                <%# @appointments.each do |appointment| %>
+                <% @appointments.each do |appointment| %>
                   <tr>
-                    <td><%#= pet.name %></td>
-                    <td><%#= appointment.title %></td>
-                    <td><%#= appointment.date %></td>
-                    <td><%#= appointment.address %></td>
-                    <td><%#= appointment.phone %></td>
-                    <td><%#= link_to 'Editar', edit_appointment_path(appointment) %></td> 
+                    <td><%= appointment.pet.name %></td>
+                    <td><%= appointment.title %></td>
+                    <td><%= appointment.date %></td>
+                    <td><%= appointment.address %></td>
+                    <td><%= appointment.phone %></td>
+                    <td><%= link_to 'Editar', edit_appointment_path(appointment) %></td>
+                    <td><%= link_to 'Deletar', appointment_path(appointment), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %></td>
                   </tr>
-                <%# end %>
+                <% end %>
             </tbody>
         </table>
     </div>

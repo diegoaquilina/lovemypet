@@ -26,7 +26,9 @@ class AppointmentsController < ApplicationController
   def edit; end
 
   def update
-    @appointment.update(bath_params)
+    _params = appointment_params
+    _params[:pet] = Pet.find(appointment_params[:pet])
+    @appointment.update(_params)
     redirect_to appointments_path
   end
 
@@ -48,5 +50,5 @@ class AppointmentsController < ApplicationController
   def appointment_params
     params.require(:appointment).permit(:title, :date, :address, :phone, :pet)
   end
-  
+
 end

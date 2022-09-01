@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Vacina(s) do(s) seu(s) pet(s)</h1>
 
-    <% if @vaccines.nil? %>
+    <% if @vaccines.empty? %>
         "Seu pet nao possui nenhum medicamento."
     <% else %>
       <div class="table-responsive">
@@ -17,15 +17,15 @@
             </thead>
 
             <tbody>
-                <%# @vaccines.each do |medication| %>
+                <% @vaccines.each do |medication| %>
                     <tr>
-                    <td><%#= pet.name %></td>
-                    <td><%#= vaccine.type %></td>
-                    <td><%#= vaccine.app_date %></td>
-                    <td><%#= vaccine.expiry_date %></td>
-                    <td><%#= link_to 'Editar', edit_vaccine_path(vaccine) %></td>  
+                    <td><%= vacciine.pet.name %></td>
+                    <td><%= vaccine.type %></td>
+                    <td><%= vaccine.app_date %></td>
+                    <td><%= vaccine.expiry_date %></td>
+                    <td><%= link_to 'Editar', edit_vaccine_path(vaccine) %></td>
                     </tr>
-                <%# end %>
+                <% end %>
             </tbody>
         </table>
       </div>

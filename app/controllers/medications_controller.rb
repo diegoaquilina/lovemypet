@@ -5,7 +5,7 @@ class MedicationsController < ApplicationController
   def index
     @medications = Medication.all.where(pet: current_user.pets)
   end
-  
+
   def new
     @medication = Medication.new
   end
@@ -26,7 +26,9 @@ class MedicationsController < ApplicationController
   def edit; end
 
   def update
-    @medication.update(bath_params)
+    _params = medication_params
+    _params[:pet] = Pet.find(medication_params[:pet])
+    @medication.update(_params)
     redirect_to medications_path
   end
 
@@ -42,7 +44,7 @@ class MedicationsController < ApplicationController
   end
 
   def load_medication
-    @medication = Bath.find(params[:id])
+    @medication = Medication.find(params[:id])
   end
 
   def medication_params

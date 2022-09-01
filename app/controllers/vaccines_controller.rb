@@ -26,7 +26,9 @@ class VaccinesController < ApplicationController
   def edit; end
 
   def update
-    @vaccine.update(vaccine_params)
+    _params = vaccine_params
+    _params[:pet] = Pet.find(vaccine_params[:pet])
+    @vaccine.update(_params)
     redirect_to vaccines_path
   end
 
@@ -46,6 +48,6 @@ class VaccinesController < ApplicationController
   end
 
   def vaccine_params
-      params.require(:vaccine).permit(:type, :app_date, :expiry_date, :pet)
+    params.require(:vaccine).permit(:type, :app_date, :expiry_date, :pet)
   end
 end

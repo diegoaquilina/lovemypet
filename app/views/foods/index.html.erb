@@ -2,7 +2,7 @@
 <div class="container">
   <h1>Alimentaçao do(s) seu(s) pet(s)</h1>
 
-  <% if @foods.nil? %>
+  <% if @foods.empty? %>
     "Voce nao possui nenhuma ração registrada."
   <% else %>
     <div class="table-responsive">
@@ -20,17 +20,18 @@
             </thead>
 
             <tbody>
-                <%# @foods.each do |food| %>
+                <% @foods.each do |food| %>
                   <tr>
-                    <td><%#= pet.name %></td>
-                    <td><%#= food.category %></td>
-                    <td><%#= food.brand %></td>
-                    <td><%#= food.bag_qty_kg %></td>
-                    <td><%#= food.daily_qty_kg %></td>
-                    <td><%#= food.start_date %></td>
-                    <td><%#= link_to 'Editar', edit_food_path(food) %></td>             
+                    <td><%= food.pet.name %></td>
+                    <td><%= food.category %></td>
+                    <td><%= food.brand %></td>
+                    <td><%= food.bag_qty_kg %></td>
+                    <td><%= food.daily_qty_kg %></td>
+                    <td><%= food.start_date %></td>
+                    <td><%= link_to 'Editar', edit_food_path(food) %></td>
+                    <td><%= link_to 'Deletar', food_path(food), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %></td>
                   </tr>
-                <%# end %>
+                <% end %>
             </tbody>
         </table>
     </div>

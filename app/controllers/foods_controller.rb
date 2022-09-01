@@ -7,7 +7,7 @@ class FoodsController < ApplicationController
   end
 
   def new
-    @food = Food.new 
+    @food = Food.new
   end
 
   def create
@@ -18,7 +18,7 @@ class FoodsController < ApplicationController
       redirect_to foods_path
     else
       render :new, status: :unprocessable_entity
-    end 
+    end
   end
 
   def show; end
@@ -26,7 +26,9 @@ class FoodsController < ApplicationController
   def edit; end
 
   def update
-    @food.update(food_params)
+    _params = food_params
+    _params[:pet] = Pet.find(food_params[:pet])
+    @food.update(_params)
     redirect_to foods_path
   end
 

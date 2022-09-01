@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Medicamento(s) do(s) seu(s) pet(s)</h1>
 
-    <% if @medications.nil? %>
+    <% if @medications.empty? %>
         "Seu pet nao possui nenhum medicamento."
     <% else %>
       <div class="table-responsive">
@@ -20,26 +20,21 @@
             </thead>
 
             <tbody>
-                <%# @medications.each do |medication| %>
+                <% @medications.each do |medication| %>
                     <tr>
-                    <td><%#= pet.name %></td>
-                    <td><%#= medication.name %></td>
-                    <td><%#= medication.dose %></td>
-                    <td><%#= medication.dose_unit %></td>
-                    <td><%#= medication.instructions %></td>
-                    <td><%#= medication.frequency %></td>
-                    <td><%#= medication.days_qty %></td>
-                    <td><%#= link_to 'Editar', edit_medication_path(medication) %></td>       
+                    <td><%= medication.pet.name %></td>
+                    <td><%= medication.name %></td>
+                    <td><%= medication.dose %></td>
+                    <td><%= medication.dose_unit %></td>
+                    <td><%= medication.instructions %></td>
+                    <td><%= medication.frequency %></td>
+                    <td><%= medication.days_qty %></td>
+                    <td><%= link_to 'Editar', edit_medication_path(medication) %></td>
+                    <td><%= link_to 'Deletar', medication_path(medication), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %></td>
                     </tr>
-                <%# end %>
+                <% end %>
             </tbody>
         </table>
       </div>
     <% end %>
 </div>
-
-
-
-
-
-
