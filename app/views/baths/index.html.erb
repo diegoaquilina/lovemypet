@@ -2,7 +2,7 @@
 <div class="container">
     <h1>Cuidados agendados do(s) seu(s) pet(s)</h1>
 
-    <% if @baths.empty? %>
+    <% if @baths.nil? %>
         "Voce nao possui nenhum agendamento."
     <% else %>
       <div class="table-responsive">
@@ -19,15 +19,16 @@
             </thead>
 
             <tbody>
-                <% @baths.each do |bath| %>
+                <%# @baths.each do |bath| %>
                     <tr>
-                    <td><%= bath.pet.name %></td>
-                    <td><%= bath.category %></td>
-                    <td><%= bath.petshop %></td>
-                    <td><%= bath.address %></td>
-                    <td><%= bath.date %></td>     
+                    <td><%#= pet.name %></td>
+                    <td><%#= bath.category %></td>
+                    <td><%#= bath.petshop %></td>
+                    <td><%#= bath.address %></td>
+                    <td><%#= bath.date %></td>  
+                    <td><%#= link_to 'Editar', edit_bath_path(bath) %></td>    
                     </tr>
-                <% end %>
+                <%# end %>
             </tbody>
         </table>
       </div>

@@ -1,8 +1,8 @@
 
 <div class="container">
-  <h1>Ração do seu(s) pet(s)</h1>
+  <h1>Alimentaçao do(s) seu(s) pet(s)</h1>
 
-  <% if @foods.empty? %>
+  <% if @foods.nil? %>
     "Voce nao possui nenhuma ração registrada."
   <% else %>
     <div class="table-responsive">
@@ -20,16 +20,17 @@
             </thead>
 
             <tbody>
-                <% @foods.each do |food| %>
+                <%# @foods.each do |food| %>
                   <tr>
-                    <td><%= food.pet.name %></td>
-                    <td><%= food.category %></td>
-                    <td><%= food.brand %></td>
-                    <td><%= food.bag_qty_kg %></td>
-                    <td><%= food.daily_qty_kg %></td>
-                    <td><%= food.start_date %></td>            
+                    <td><%#= pet.name %></td>
+                    <td><%#= food.category %></td>
+                    <td><%#= food.brand %></td>
+                    <td><%#= food.bag_qty_kg %></td>
+                    <td><%#= food.daily_qty_kg %></td>
+                    <td><%#= food.start_date %></td>
+                    <td><%#= link_to 'Editar', edit_food_path(food) %></td>             
                   </tr>
-                <% end %>
+                <%# end %>
             </tbody>
         </table>
     </div>

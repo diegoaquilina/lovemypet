@@ -3,7 +3,7 @@ class VaccinesController < ApplicationController
   before_action :load_pet, only: [:new, :create, :edit, :update]
 
   def index
-    @vaccines = Vaccine.all
+    @vaccines = Vaccine.all.where(user: current_user)
   end
 
   def new

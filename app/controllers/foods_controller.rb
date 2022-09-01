@@ -3,7 +3,7 @@ class FoodsController < ApplicationController
   before_action :load_pet, only: [:new, :create, :edit, :update]
 
   def index
-    @foods = Food.all
+    @foods = Food.all.where(user: current_user)
   end
 
   def new
