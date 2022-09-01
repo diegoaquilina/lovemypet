@@ -21,8 +21,8 @@
                     <tr>
                     <td><%= vaccine.pet.name %></td>
                     <td><%= vaccine.vaccine_type %></td>
-                    <td><%= vaccine.app_date %></td>
-                    <td><%= vaccine.expiry_date %></td>
+                    <td><%= vaccine.app_date.strftime("%d/%m/%Y") %></td>
+                    <td><%= vaccine.expiry_date.strftime("%d/%m/%Y") %></td>
                     <td><%= link_to 'Editar', edit_vaccine_path(vaccine) %></td>
                     <td><%= link_to 'Deletar', vaccine_path(vaccine), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %></td>
                     </tr>

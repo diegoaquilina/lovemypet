@@ -6,11 +6,12 @@
   <%# <i class="fa-solid fa-mars btn btn-primary" > Macho</i>
   <i class="fa-solid fa-venus btn btn-primary"> Femea</i> %>
   <%# VERIFICAR COMO VAI FICAR O DIA E ANO (RANGE DE 10 ANOS) %>
-  <%= f.input :age, label: "Nascimento*" %>
+  <%= f.input :age, order:[:day, :month, :year], start_year: Date.today.year - 25,
+  end_year: Date.today.year, label: "Nascimento*" %>
   <p>*Se não souber, insira uma data aproximada</p>
   <%= f.input :breed, collection: Pet::RACA.map, include_blank: false, placeholder: "SRD", label: "Raça" %>
   <%= f.input :size, collection: Pet::PORTE.map { |e| e.capitalize}, include_blank: false, label: "Porte"%>
-  <%= f.input :weight, label: "Peso" %>
+  <%= f.input :weight, input_html:{type:"number",min:0}, label: "Peso" %>
   <%= f.input :neutered, label: "Castrado" %>
   <%= f.input :microchipped, label: "Microchipado" %>
   <%= f.input :energy_level, collection: Pet::ENERGIA.map { |e| e.capitalize}, include_blank: false, label: "Nível de Energia" %>
