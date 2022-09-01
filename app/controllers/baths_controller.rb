@@ -3,7 +3,7 @@ class BathsController < ApplicationController
   before_action :load_pet, only: [:new, :create, :edit, :update]
 
   def index
-    @baths = Bath.all.where(user: current_user)
+    @baths = Bath.all.where(pet: current_user.pets)
   end
 
   def new
@@ -11,7 +11,9 @@ class BathsController < ApplicationController
   end
 
   def create
-    @bath = Bath.new(bath_params)
+    _params = bath_params
+    _params[:pet] = Pet.find(bath_params[:pet])
+    @bath = Bath.new(_params)
     if @bath.save
       redirect_to baths_path
     else
@@ -44,7 +46,7 @@ class BathsController < ApplicationController
   end
 
   def bath_params
-    params.require(:food).permit(:category, :address, :date, :petshop)
+    params.require(:bath).permit(:category, :address, :date, :pet)
   end
 
 end
