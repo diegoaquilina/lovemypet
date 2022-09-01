@@ -1,6 +1,6 @@
 <div class= "container">
   <h1>Agendar consulta</h1>
-    <%= simple_form_for @appointment, as: :appointment, url: appointment_path(@appointment), method: :post do |f| %>
+    <%= simple_form_for @appointment, as: :appointment, url: new_appointment_path(@appointment), method: :post do |f| %>
       <%= f.input :date, label: "Data da consulta" %>
       <%= f.input :address, label: "Endereço" %>
       <%= f.input :phone, label: "Telefone" %>

@@ -1,9 +1,9 @@
 <div class="container">
     <h1>Cadastrar vacina</h1>
-    <%= simple_form_for @vaccines, as: :vaccine, url: vaccines_path(@vaccine), method: :post do |f| %>
+    <%= simple_form_for @vaccine, as: :vaccine, url: new_vaccine_path(@vaccine), method: :post do |f| %>
         <%= f.input :type, label: "Vacina" %>
         <%= f.input :app_date, label: "Data de aplicaçao" %>
-        <%= f.input :expire_date, label: "Data de vencimento" %>
+        <%= f.input :expiry_date, label: "Data de vencimento" %>
         <%= f.submit "Registrar vacina", class:"btn btn-primary" %>
     <% end %>
 </div>
