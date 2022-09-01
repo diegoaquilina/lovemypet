@@ -5,7 +5,8 @@
         <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
         <%= f.input :category, label: "Serviço", collection: Bath::SERVICE.map { |e| e.capitalize}, include_blank: false %>
         <%= f.input :address, label: "Endereço" %>
-        <%= f.input :date, order:[:day, :month, :year], label: "Data" %>
+        <%= f.input :date, order:[:day, :month, :year],start_year: Date.today.year,
+        end_year: Date.today.year + 1, label: "Data" %>
         <%= f.submit "Agendar", class:"btn btn-primary" %>
     <% end %>
 </div>
