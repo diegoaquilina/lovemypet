@@ -3,7 +3,7 @@ class FoodsController < ApplicationController
   before_action :load_pet, only: [:new, :create, :edit, :update]
 
   def index
-    @foods = Food.all.where(user: current_user)
+    @foods = Food.all.where(pet: current_user.pets)
   end
 
   def new
@@ -11,7 +11,9 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @food = Food.new(food_params)
+    _params = food_params
+    _params[:pet] = Pet.find(food_params[:pet])
+    @food = Food.new(_params)
     if @food.save
       redirect_to foods_path
     else
@@ -44,6 +46,6 @@ class FoodsController < ApplicationController
   end
 
   def food_params
-    params.require(:food).permit(:category, :brand, :bag_qty_kg, :daily_qty_kg, :start_date)
+    params.require(:food).permit(:category, :brand, :bag_qty_kg, :daily_qty_kg, :start_date, :pet)
   end
 end
