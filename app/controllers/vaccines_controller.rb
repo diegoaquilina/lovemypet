@@ -33,7 +33,7 @@ class VaccinesController < ApplicationController
   end
 
   def destroy
-    @bath.destroy
+    @vaccine.destroy
     redirect_to vaccines_path
   end
 
@@ -48,6 +48,6 @@ class VaccinesController < ApplicationController
   end
 
   def vaccine_params
-    params.require(:vaccine).permit(:type, :app_date, :expiry_date, :pet)
+    params.require(:vaccine).permit(:vaccine_type, :app_date, :expiry_date, :pet)
   end
 end

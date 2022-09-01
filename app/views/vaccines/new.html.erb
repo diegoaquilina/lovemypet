@@ -3,7 +3,7 @@
     <h1>Cadastrar vacina</h1>
     <%= simple_form_for @vaccine do |f| %>
         <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
-        <%= f.input :type, label: "Vacina" %>
+        <%= f.input :vaccine_type, label: "Vacina" %>
         <%= f.input :app_date, label: "Data de aplicaçao" %>
         <%= f.input :expiry_date, label: "Data de vencimento" %>
         <%= f.submit "Registrar vacina", class:"btn btn-primary" %>
