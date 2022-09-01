@@ -2,7 +2,7 @@ class PetsController < ApplicationController
   before_action :load_pet, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pets = Pet.all
+    @pets = Pet.all.where(user: current_user)
   end
 
   def new
@@ -43,7 +43,7 @@ class PetsController < ApplicationController
   private
 
   def load_pet
-    @pet = Pet.find(params[:id])
+    @pet = Pet.where(user: current_user)
   end
 
   def pet_params

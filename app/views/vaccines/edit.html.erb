@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>Editar vacina</h1>
+    <%= simple_form_for @vaccines, as: :vaccine, url: vaccines_path(@vaccine), method: :post do |f| %>
+        <%= f.input :type, label: "Vacina" %>
+        <%= f.input :app_date, label: "Data de aplicaçao" %>
+        <%= f.input :expire_date, label: "Data de vencimento" %>
+        <%= f.submit "Editar", class:"btn btn-primary" %>
+    <% end %>
+</div>

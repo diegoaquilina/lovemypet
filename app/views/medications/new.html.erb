@@ -1,2 +1,12 @@
-<h1>Medications#new</h1>
-<p>Find me in app/views/medications/new.html.erb</p>
+<div class="container">
+    <h1>Medicamento</h1>
+        <%= simple_form_for @medications, as: :medication, url: medications_path(@medication), method: :post do |f| %>
+        <%= f.input :name, label: "Nome" %>
+        <%= f.input :dose, label: "Dosagem" %>
+        <%= f.input :dose_unit, label: "Unidade da dosagem" %>
+        <%= f.input :instructions, label: "Instruçoes de uso" %>
+        <%= f.input :frequency, label: "Frequencia" %>
+        <%= f.input :days_qty, label: "Periodo a ser tomado" %>
+        <%= f.submit "Cadastrar", class:"btn btn-primary" %>
+    <% end %>
+</div>

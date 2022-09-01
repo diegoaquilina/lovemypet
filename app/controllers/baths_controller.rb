@@ -3,7 +3,7 @@ class BathsController < ApplicationController
   before_action :load_pet, only: [:new, :create, :edit, :update]
 
   def index
-    @baths = Bath.all
+    @baths = Bath.all.where(user: current_user)
   end
 
   def new

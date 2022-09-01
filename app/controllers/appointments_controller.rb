@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
   before_action :load_pet, only: [:new, :create, :edit, :update]
 
   def index
-    @appointments = Appointment.all
+    @appointments = Appointment.all.where(user: current_user)
   end
 
   def new
@@ -44,7 +44,7 @@ class AppointmentsController < ApplicationController
   end
 
   def appointment_params
-    params.require(:appointment).permit(:title, :date, :address, :phone, :latitude, :longitude)
+    params.require(:appointment).permit(:title, :date, :address, :phone)
   end
   
 end
