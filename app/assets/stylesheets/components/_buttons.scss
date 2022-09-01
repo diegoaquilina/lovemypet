@@ -10,3 +10,19 @@
   background: #4D04C4;
   color: white;
 }
+
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  margin: 20px 0px 0px 0px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#167FFB, #0F60C4);
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(#147EFF, #0F67DA);
+  color: white;
+}
