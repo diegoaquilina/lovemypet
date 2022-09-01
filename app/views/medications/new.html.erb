@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Medicamento</h1>
-        <%= simple_form_for @medications, as: :medication, url: medications_path(@medication), method: :post do |f| %>
+        <%= simple_form_for @medication, as: :medication, url: new_medication_path(@medication), method: :post do |f| %>
         <%= f.input :name, label: "Nome" %>
         <%= f.input :dose, label: "Dosagem" %>
         <%= f.input :dose_unit, label: "Unidade da dosagem" %>
