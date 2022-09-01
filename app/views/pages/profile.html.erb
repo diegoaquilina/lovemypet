@@ -1,7 +1,7 @@
 <div class="container shadow-sm p-3 mb-5 bg-white rounded mt-4" >
     <div class="cover mb-4 d-flex align-items-center justify-content-center">
       <div class="text-center">
-        <h1>Meu perfil</h1>
+        <h1>Meu Perfil</h1>
         <div>
         <% if current_user.avatar.attached?%>
             <%= cl_image_tag current_user.avatar.key, width: 150, class: "avatar dropdown-toggle", style:"margin-left: auto; margin-right: auto;"%>
@@ -13,7 +13,8 @@
       </div>
     </div>
 
-    <%# PERFIL USUÁRIO %>
+<%# PERFIL USUÁRIO %>
+
     <form class="row">
       <%if @user.first_name?  %>
         <div class="col-md-6">
@@ -39,12 +40,13 @@
        </div>
     </form>
 </div>
-    <%# ADICIONAR BICHO  %>
+
+<%# ADICIONAR BICHO %>
 
 <div class="container shadow-sm p-3 mb-5 bg-white rounded">
   <div class="cover mb-4 d-flex align-items-center justify-content-center">
     <div class="text-center">
-      <h1>Meus bichos</h1>
+      <h1>Meus Pets</h1>
       <h3 class="typed-js" data-controller="typed-js"></h3>
     </div>
   </div>
@@ -73,18 +75,28 @@
   <div>
     <%= link_to "Adicionar bicho", new_pet_path, class: "btn btn-primary ml-4 mt-4" %>
   </div>
-  <div>
-    <%= link_to "Alimentação", foods_path, class: "btn btn-outline-warning ml-5 mt-5" %>
-  </div>
-  <div>
-    <%= link_to "Saúde", "#", class: "btn btn-outline-warning ml-4 mt-4" %>
-  </div>
-  <div>
-    <%= link_to "Banho & Tosa", baths_path, class: "btn btn-outline-warning ml-4 mt-4" %>
-  </div>
-  <div>
-    <%= link_to "Consultas Veterinário", appointments_path, class: "btn btn-outline-warning ml-4 mt-4" %>
-  </div>
 </div>
 
+<%# Menu %>
+
+<div class="container shadow-sm p-3 mb-4 bg-white rounded">
+  <div class="cover mb-2 d-flex align-items-center justify-content-center">
+    <div class="text-center">
+      <div>
+        <%= link_to "Alimentação", foods_path, class: "btn btn-outline-warning ml-5 mt-5" %>
+      </div>
+      <div>
+        <%= link_to "Banho & Tosa", baths_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+      </div>
+      <div>
+        <%= link_to "Consultas Veterinário", appointments_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+      </div>
+      <div>
+        <%= link_to "Vacinas", vaccines_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+      </div>
+      <div>
+        <%= link_to "Medicamentos", medications_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+      </div>
+    </div>
+  </div>
 </div>

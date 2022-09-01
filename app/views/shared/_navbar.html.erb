@@ -25,13 +25,13 @@
           <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Meu Perfil", profile_path, class: "dropdown-item" %>
-              <%= link_to "Cadastrar Pet", new_pet_path, class: "dropdown-item" %>
-              <%= link_to "Meus pets", pets_path, class: "dropdown-item" %>
-              <%= link_to "Cadastrar alimentação", new_food_path, class: "dropdown-item" %>
-              <%= link_to "Cadastrar Banho e Tosa", new_bath_path, class: "dropdown-item" %>
-              <%= link_to "Cadastrar consulta veterinária", new_appointment_path, class: "dropdown-item" %>
-              <%= link_to "Cadastrar Medicamento", new_medication_path, class: "dropdown-item" %>
-              <%= link_to "Cadastrar Vacina", new_vaccine_path, class: "dropdown-item" %>
+              <%= link_to "Meus Pets", pets_path, class: "dropdown-item" %>
+              <%= link_to "🐕 Cadastrar Pet", new_pet_path, class: "dropdown-item" %>
+              <%= link_to "🍗 Cadastrar Alimentação", new_food_path, class: "dropdown-item" %>
+              <%= link_to "🛁 Cadastrar Banho & Tosa", new_bath_path, class: "dropdown-item" %>
+              <%= link_to "🩺 Cadastrar Nova Consulta", new_appointment_path, class: "dropdown-item" %>
+              <%= link_to "💊 Cadastrar Medicamento", new_medication_path, class: "dropdown-item" %>
+              <%= link_to "💉 Cadastrar Vacina", new_vaccine_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
@@ -44,5 +44,3 @@
     </div>
   </div>
 </div>
-
-
