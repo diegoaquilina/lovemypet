@@ -2,8 +2,10 @@
     <h1>Editar vacina</h1>
     <%= simple_form_for @vaccine do |f| %>
         <%= f.input :vaccine_type, label: "Vacina" %>
-        <%= f.input :app_date, label: "Data de aplicaçao" %>
-        <%= f.input :expiry_date, label: "Data de vencimento" %>
+        <%= f.input :app_date, order:[:day, :month, :year], start_year: Date.today.year,
+        end_year: Date.today.year + 1, label: "Data de aplicaçao" %>
+        <%= f.input :expiry_date, order:[:day, :month, :year], start_year: Date.today.year,
+        end_year: Date.today.year + 5, label: "Data de vencimento" %>
         <%= f.input :pet, as: :hidden, input_html: {value: @vaccine.pet.id} %>
         <%= f.submit "Editar", class:"btn btn-primary" %>
     <% end %>
