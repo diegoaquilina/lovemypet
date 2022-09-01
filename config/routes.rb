@@ -5,18 +5,20 @@ Rails.application.routes.draw do
   # VERIFICAR ROTAS:
 
   resources :pets do
-    resources :vaccines
-    resources :appointments, only: [:index, :new, :create]
-    resources :medications
-    resources :baths, only: [:index, :new, :create]
-    resources :foods, only: [:index, :new, :create]
+    resources :vaccines, only: [:show]
+    resources :appointments, only: [:show]
+    resources :medications, only: [:show]
+    resources :baths, only: [:show]
+    resources :foods, only: [:show]
   end
   # resources :health, only: [:index, :show]
 
+  resources :appointments, only: [:new, :create, :index, :edit, :update, :destroy]
+  resources :baths, only: [:new, :create, :index, :edit, :update, :destroy]
+  resources :foods, only: [:new, :create, :index, :edit, :update, :destroy]
+  resources :vaccines, only: [:new, :create, :index, :edit, :update, :destroy]
+  resources :medications, only: [:new, :create, :index, :edit, :update, :destroy]
 
-  resources :appointments, only: [:show]
-  resources :baths, only: [:show]
-  resources :foods, only: [:show]
 
   get '/profile', to: 'pages#profile', as: 'profile'
   # get '/profile/:id', to: 'pages#profile', as: 'profile_show'

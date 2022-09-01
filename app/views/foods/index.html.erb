@@ -1,6 +1,6 @@
 
 <div class="container">
-  <h1>Ração do seu(s) pet(s)</h1>
+  <h1>Alimentaçao do(s) seu(s) pet(s)</h1>
 
   <% if @foods.empty? %>
     "Voce nao possui nenhuma ração registrada."
@@ -27,7 +27,9 @@
                     <td><%= food.brand %></td>
                     <td><%= food.bag_qty_kg %></td>
                     <td><%= food.daily_qty_kg %></td>
-                    <td><%= food.start_date %></td>            
+                    <td><%= food.start_date %></td>
+                    <td><%= link_to 'Editar', edit_food_path(food) %></td>
+                    <td><%= link_to 'Deletar', food_path(food), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %></td>
                   </tr>
                 <% end %>
             </tbody>

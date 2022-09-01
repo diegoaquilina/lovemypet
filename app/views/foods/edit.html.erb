@@ -1,12 +1,13 @@
 
 <div class="container">
-    <h1>Alimentação</h1>
-    <%= simple_form_for @food, as: :food, url: food_path(@food), method: :post do |f| %>
+    <h1>Editar Alimentação</h1>
+    <%= simple_form_for @food do |f| %>
         <%= f.input :category, label: "Tipo de ração", collection: Food::FOOD.map { |e| e.capitalize}, include_blank: false %>
         <%= f.input :brand, label: "Marca", collection: Food::BRAND, include_blank: false %>
         <%= f.input :bag_qty_kg, label: "Quantidade do pacote" %>
         <%= f.input :daily_qty_kg, label: "Quantidade diária" %>
         <%= f.input :start_date, label: "Início de uso desta ração" %>
-        <%= f.submit "Cadastrar", class:"btn btn-primary" %>
+        <%= f.input :pet, as: :hidden, input_html: {value: @food.pet.id} %>
+        <%= f.submit "Concluir ediçao", class:"btn btn-primary" %>
     <% end %>
 </div>

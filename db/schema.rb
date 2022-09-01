@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_31_184206) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_01_185217) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -146,7 +146,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_31_184206) do
   end
 
   create_table "vaccines", force: :cascade do |t|
-    t.string "type"
+    t.string "vaccine_type"
     t.date "app_date"
     t.date "expiry_date"
     t.bigint "pet_id", null: false

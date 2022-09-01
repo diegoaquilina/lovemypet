@@ -1,19 +1,20 @@
 <div class="container shadow-sm p-3 mb-5 bg-white rounded mt-4" >
     <div class="cover mb-4 d-flex align-items-center justify-content-center">
       <div class="text-center">
-        <h1>Meu perfil</h1>
+        <h1>Meu Perfil</h1>
         <div>
-        <%# if current_user.photo.attached?%>
-            <%#= cl_image_tag current_user.photo.key, width: 150, class: "avatar dropdown-toggle", style:"margin-left: auto; margin-right: auto;"%>
-          <%# else %>
+        <% if current_user.avatar.attached?%>
+            <%= cl_image_tag current_user.avatar.key, width: 150, class: "avatar dropdown-toggle", style:"margin-left: auto; margin-right: auto;"%>
+          <% else %>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", style:"width: 150px; margin-left: auto; margin-right: auto;"%>
-            <%# end %>
+            <% end %>
         </div>
         <h3 class="typed-js" data-controller="typed-js"></h3>
       </div>
     </div>
 
-    <%# PERFIL USUÁRIO %>
+<%# PERFIL USUÁRIO %>
+
     <form class="row">
       <%if @user.first_name?  %>
         <div class="col-md-6">
@@ -35,45 +36,67 @@
          <input type="text" class="form-control" value="<%=@user.address%>">
       </div>
        <div class="mt-2">
-          <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-outline-warning ml-4", data: {turbo: false} %>
+          <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-primary ml-4", data: {turbo: false} %>
        </div>
     </form>
 </div>
-    <%# ADICIONAR BICHO  %>
+
+<%# ADICIONAR BICHO %>
 
 <div class="container shadow-sm p-3 mb-5 bg-white rounded">
   <div class="cover mb-4 d-flex align-items-center justify-content-center">
     <div class="text-center">
-      <h1>Meus bichos</h1>
+      <h1>Meus Pets</h1>
       <h3 class="typed-js" data-controller="typed-js"></h3>
     </div>
   </div>
   <div class="row justify-content-around">
     <%@pets.each do |pet|%>
       <div class="card ml-3 mt-2" style="width: 18rem;">
-        <%# if pet.photo.attached?%>
-        <%#= cl_image_tag pet.photo.key, width: 925, class: "pet-img"%>
-        <%# else %>
+        <% if pet.photo.attached?%>
+        <%= cl_image_tag pet.photo.key, width: 945, class: "pet-img card-img-top" %>
+        <% else %>
         <img src="https://images.pexels.com/photos/39317/chihuahua-dog-puppy-cute-39317.jpeg?auto=compress&cs=tinysrgb&w=600" style="border-radius: 5%; margin-top: 1rem;" class="card-img-top" alt="...">
-        <%# end %>
+        <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= pet.name %></h5>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><i class="fa-solid fa-paw"></i> Raça: <%= pet.breed %></li>
-          <li class="list-group-item"><i class="fa-solid fa-weight-scale"></i> Peso: <%= pet.size %> kg</li>
-
+          <li class="list-group-item"><i class="fa-solid fa-weight-scale"></i> Porte: <%= pet.size %></li>
         </ul>
         <div class="card-body">
-          <%= link_to "Editar", edit_pet_path(pet), class: "btn btn-outline-secondary" %>
-         <%= link_to "Deletar Pet", pet_path(pet), class: "btn btn-outline-danger", data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %>
+          <%= link_to "Editar", edit_pet_path(pet), class: "btn btn-primary" %>
+         <%= link_to "Deletar Pet", pet_path(pet), class: "btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %>
         </div>
       </div>
     <% end %>
   </div>
   <div>
-    <%= link_to "Adicionar bicho", new_pet_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+    <%= link_to "Adicionar bicho", new_pet_path, class: "btn btn-primary ml-4 mt-4" %>
   </div>
 </div>
 
+<%# Menu %>
+
+<div class="container shadow-sm p-3 mb-4 bg-white rounded">
+  <div class="cover mb-2 d-flex align-items-center justify-content-center">
+    <div class="text-center">
+      <div>
+        <%= link_to "Alimentação", foods_path, class: "btn btn-outline-warning ml-5 mt-5" %>
+      </div>
+      <div>
+        <%= link_to "Banho & Tosa", baths_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+      </div>
+      <div>
+        <%= link_to "Consultas Veterinário", appointments_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+      </div>
+      <div>
+        <%= link_to "Vacinas", vaccines_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+      </div>
+      <div>
+        <%= link_to "Medicamentos", medications_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+      </div>
+    </div>
+  </div>
 </div>

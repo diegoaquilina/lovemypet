@@ -1,10 +1,10 @@
 class Pet < ApplicationRecord
   belongs_to :user
-  has_many :vaccines
-  has_many :medications
-  has_many :appointments
-  has_many :foods
-  has_many :baths
+  has_many :vaccines, dependent: :destroy
+  has_many :medications, dependent: :destroy
+  has_many :appointments, dependent: :destroy
+  has_many :foods, dependent: :destroy
+  has_many :baths, dependent: :destroy
 
   has_one_attached :photo
 
