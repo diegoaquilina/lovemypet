@@ -37,6 +37,12 @@ class FoodsController < ApplicationController
     redirect_to foods_path
   end
 
+  def end_date_food(start_date, bag_qty_kg, daily_qty_kg)
+    qty_g = daily_qty_kg / 1000
+    days_left = bag_qty_kg / qty_g
+    end_date = start_date + days_left
+  end
+
   private
 
   def load_pet
@@ -51,3 +57,5 @@ class FoodsController < ApplicationController
     params.require(:food).permit(:category, :brand, :bag_qty_kg, :daily_qty_kg, :start_date, :pet)
   end
 end
+
+
