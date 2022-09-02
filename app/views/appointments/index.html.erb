@@ -9,7 +9,7 @@
             <thead>
             <tr>
                 <th>Pet</th>
-                <th>Data da consulta</th>
+                <th style="text-align:center">Data da consulta</th>
                 <th>Motivo da consulta</th>
                 <th>Endereço</th>
                 <th>Telefone</th>
@@ -21,7 +21,7 @@
                 <% @appointments.each do |appointment| %>
                   <tr>
                     <td><%= appointment.pet.name %></td>
-                    <td><%= appointment.date.strftime("%d/%m/%Y") %></td>
+                    <td style="text-align:center"><%= appointment.date.strftime("%d/%m/%Y") %></td>
                     <td><%= appointment.title %></td>
                     <td><%= appointment.address %></td>
                     <td><%= appointment.phone %></td>
