@@ -43,6 +43,7 @@
           <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-primary ml-4", data: {turbo: false} %>
        </div>
     </form>
+</div>
 
 <%# ADICIONAR BICHO %>
 
@@ -77,27 +78,26 @@
     <%= link_to "Ver pets", pets_path, class: "btn btn-primary ml-4 mt-4" %>
   </div>
 </div>
-</div>
 
 <%# Menu %>
 
 <div class="container shadow-sm p-3 mb-4 bg-white rounded">
-  <div class="cover mb-2 d-flex align-items-center justify-content-center">
-    <div class="text-center">
+  <div class="cover mb-2">
+    <div class="d-flex flex-column">
       <div>
-        <%= link_to "Alimentação", foods_path, class: "btn btn-outline-warning ml-5 mt-5" %>
+        <p><%= link_to "Alimentação", foods_path, class: "card-category", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80)" %></p>
       </div>
       <div>
-        <%= link_to "Banho & Tosa", baths_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+        <p><%= link_to "Banho & Tosa", baths_path, class: "card-category", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1559304787-945aa4341065?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=395&q=80)" %></p>
       </div>
       <div>
-        <%= link_to "Consultas Veterinário", appointments_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+        <p><%= link_to "Consultas Veterinário", appointments_path, class: "card-category", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1584982751601-97dcc096659c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80)" %></p>
       </div>
       <div>
-        <%= link_to "Vacinas", vaccines_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+        <p><%= link_to "Vacinas", vaccines_path, class: "card-category", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1579781403337-de692320718a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=743&q=80)" %></p>
       </div>
       <div>
-        <%= link_to "Medicamentos", medications_path, class: "btn btn-outline-warning ml-4 mt-4" %>
+        <p><%= link_to "Medicamentos", medications_path, class: "card-category", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1622227922682-56c92e523e58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80)" %></p>
       </div>
     </div>
   </div>
