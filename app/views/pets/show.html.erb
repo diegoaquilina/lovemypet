@@ -1,43 +1,53 @@
 <div class="container">
-<h1>Meu Pet</h1>
+<div class="card-pet mt-5">
+  <img src="#" />
   <div class="row">
-    <div class="card-product">
-    <img src="#" />
-    <div class="card-product-infos">
+    <%= "Nome:"%>
+    <%= @pet.name%>
   </div>
   <div class="row">
-    <%=@pet.name %>
-    <%#=@pet.breed %>
-    <%#=@pet.weight %>
-    <%#=@pet.age %>
-    <%#=@pet.sex %>
+    <%= "Raça:"%>
+    <%=@pet.breed %>
+  </div>
+  <div class="row">
+    <%= "Idade:"%>
+    <%=@pet.age %>
+  </div>
+  <div class="row">
+    <%= "Peso:"%>
+    <%=@pet.weight %>
+    <%= "kg"%>
+  </div>
+  <div class="row">
+    <%= "Gênero:"%>
+    <%=@pet.sex %>
   </div>
 </div>
 <%# ----------------- ALIMENTAÇÃO -----------------%>
-<div class="container">
-  <h3>Alimentação</h3>
+<div class="container mt-5">
+  <h3><strong>Alimentação</strong></h3>
   <div class="row">
     <%= "Quantidade de ração recomendada (kg):" %>
   </div>
   <div class="row">
     <%= "Minha ração acaba em: " %>
   </div>
-    <%= link_to "Comprar Ração", "#", class: "btn btn-primary"%>
+    <%= button_to "Comprar Ração", "#", method: :get, class: "btn-learn-more"%>
 </div>
 <%# ----------------- HIGIENE -----------------%>
-<div class="container">
-  <h3>Higiene</h3>
+<div class="container mt-5">
+  <h3><strong>Higiene</strong></h3>
   <div class="row">
     <%= "Meu último banho foi em: " %>
   </div>
   <div class="row">
     <%= "Minha última tosa foi em: " %>
   </div>
-    <%= link_to "Agendar no PetShop", "#", class: "btn btn-primary"%>
+    <%= button_to "Agendar no PetShop", "#", method: :get, class: "btn-learn-more"%>
 </div>
 <%# ----------------- SAÚDE -----------------%>
-<div class="container">
-  <h3>Saúde</h3>
+<div class="container mt-5">
+  <h3><strong>Saúde</strong></h3>
   <div class="row">
     <%= "Minha próxima V8/V10 vai ser: " %>
   </div>
@@ -58,7 +68,4 @@
   </div>
   <div class="row">
   </div>
-</div>
-<div class="container">
-<%= link_to "Meu Portal", "#" , class: "btn btn-primary" %>
 </div>
