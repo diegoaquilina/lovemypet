@@ -1,53 +1,76 @@
-<div class="container center">
-  <div class="card-pet mt-5">
-    <% if @pet.photo.attached? %>
-      <%= cl_image_tag @pet.photo.key, width: 400, class: "pet-img-show"%>
-    <% end %>
-    <div class="row">
-      <p> <strong>Nome:</strong>
-        <%= @pet.name%></p>
-      <p> <strong>Raça:</strong>
-      <%=@pet.breed %> </p>
-      <p> <strong>Idade:</strong>
-      <%=@pet.age %> </p>
-      <p> <strong>Peso:</strong>
-      <%=@pet.weight %>
-      <%= "kg"%> </p>
-      <p> <strong> Gênero:</strong>
-      <%=@pet.sex %></p>
+<div class="background-pets" url(https://www.pexels.com/pt-br/foto/nuvens-rosa-1831234/)>
+  <div class="container-pets">
+    <div class="nome">
+      <h1><strong><%= @pet.name %></strong></h1>
     </div>
-  </div>
-</div>
-<%# ----------------- ALIMENTAÇÃO -----------------%>
-<hr>
-<div class="container center mt-5 mb-5">
-  <div class="row card-pet">
-    <h3><strong>Alimentação</strong></h3>
-    <p>Quantidade de ração recomendada (kg):</p>
-    <p>Minha ração acaba em: " </p>
-    <%= button_to "Comprar Ração", "#", method: :get, class: "btn-learn-more mt-3"%>
-  </div>
-</div>
-<%# ----------------- HIGIENE -----------------%>
-<hr>
-<div class="container center mt-5 mb-5">
-  <h3><strong>Higiene</strong></h3>
-  <div class="row card-pet">
-    <p>Meu último banho foi em:</p>
-    <p>Minha última tosa foi em:</p>
-  </div>
-    <%= button_to "Agendar no PetShop", "#", method: :get, class: "btn-learn-more mt-3"%>
-</div>
-<%# ----------------- SAÚDE -----------------%>
-<hr>
-<div class="container center mt-5 mb-5">
-  <h3><strong>Saúde</strong></h3>
-  <div class="row">
-    <p>Minha próxima V8/V10 vai ser: </p>
-    <p>Minha próxima Antirrábica vai ser: </p>
-    <p>xxxxxxxxx: </p>
-    <p>Meu remédio atual </p>
-    <p>Tenho que tomar de: </p>
-    <p>até o dia: </p>
+    <div class="container center">
+      <div class="card-pet mt-5">
+        <% if @pet.photo.attached? %>
+          <%= cl_image_tag @pet.photo.key, width: 400, class: "pet-img-show"%>
+        <% end %>
+        <div class="row text-start ps-5">
+          <p> <strong>Raça:</strong>
+          <%=@pet.breed %> </p>
+          <p> <strong>Idade:</strong>
+          <%=@pet.age %> </p>
+          <p> <strong>Peso:</strong>
+          <%=@pet.weight %>
+          <%= "kg"%> </p>
+          <p> <strong> Gênero:</strong>
+          <%=@pet.sex %></p>
+        </div>
+      </div>
+    </div>
+    <%# ----------------- ALIMENTAÇÃO -----------------%>
+    <hr>
+    <div class="container center mt-5 mb-5">
+      <div class="row card-pet">
+        <h3><strong>Alimentação</strong></h3>
+        <div class="card-pet">
+          <div class="col-6 text-start mt-3">
+            <p>Quantidade de ração recomendada (kg):</p>
+            <p>Minha ração acaba em: " </p>
+          </div>
+          <div class="col-6">
+            <%= button_to "Comprar Ração", "#", method: :get, class: "btn-learn-more"%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%# ----------------- HIGIENE -----------------%>
+    <hr>
+    <div class="container center mt-5 mb-5">
+      <div class="row card-pet">
+        <h3><strong>Higiene</strong></h3>
+        <div class="card-pet">
+          <div class="col-6 text-start mt-3">
+            <p>Meu último banho foi em:</p>
+            <p>Minha última tosa foi em:</p>
+          </div>
+          <div class="col-6">
+            <%= button_to "Agendar no PetShop", "#", method: :get, class: "btn-learn-more mt-3"%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%# ----------------- SAÚDE -----------------%>
+    <hr>
+    <div class="container center mt-5 mb-5">
+      <div class="row card-pet">
+        <h3><strong>Saúde</strong></h3>
+        <div class="row">
+          <div class="col-6 text-start mt-3">
+            <p>Minha próxima V8/V10 vai ser: </p>
+            <p>Minha próxima Antirrábica vai ser: </p>
+            <p>xxxxxxxxx: </p>
+            <p>Meu remédio atual </p>
+            <p>Tenho que tomar de: ___ até o dia: ___ </p>
+          </div>
+          <div class="col-6">
+            <%= button_to "Agendar Consulta", "#", method: :get, class: "btn-learn-more mt-5"%>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
