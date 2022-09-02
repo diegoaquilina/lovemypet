@@ -11,8 +11,8 @@
             <tr>
                 <th>Pet</th>
                 <th>Serviço</th>
-                <th>Endereço</th>
-                <th>Data</th>
+                <th>Petshop</th>
+                <th style="text-align:center">Data</th>
                 <th colspan="3"></th>
             </tr>
             </thead>
@@ -23,7 +23,7 @@
                     <td><%= bath.pet.name %></td>
                     <td><%= bath.category %></td>
                     <td><%= bath.address %></td>
-                    <td><%= bath.date.strftime("%d/%m/%Y") %></td>
+                    <td style="text-align:center"><%= bath.date.strftime("%d/%m/%Y") %></td>
                     <td><%= link_to 'Editar', edit_bath_path(bath) %></td>
                     <td><%= link_to 'Deletar', bath_path(bath), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %></td>
                     </tr>

@@ -44,4 +44,22 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+.background-pets{
+  background-color: #b18597;
+  background: url("https://www.pexels.com/pt-br/foto/nuvens-rosa-1831234/");
+  background-size: cover;
+  padding: 50px 50px;
+}
+
+.container-pets{
+  background-color: #ffe3e2f4;
+  margin: 0 100px;
+  padding: 30px;
+}
+
+.nome{
+  text-align: right;
+  margin: 0 30px;
+  color: #b18597;
 }
