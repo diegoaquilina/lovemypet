@@ -6,14 +6,16 @@
   <div class="row justify-content-around">
     <% @pets.each do |pet| %>
       <div class="card-pets ml-3 mt-2" style="width: 18rem;">
-        <% if pet.photo.attached? %>
-          <%= cl_image_tag pet.photo.key, width: 945, class: "pet-img card-img-top"%>
-        <% else %>
-          <img src="https://images.pexels.com/photos/39317/chihuahua-dog-puppy-cute-39317.jpeg?auto=compress&cs=tinysrgb&w=600" style="border-radius: 5%; margin-top: 1rem;" class="pet-img card-img-top" alt="...">
+        <%= link_to pet_path(pet), class:"text-decoration-none" do %>
+          <% if pet.photo.attached? %>
+            <%= cl_image_tag pet.photo.key, width: 945, class: "pet-img card-img-top"%>
+          <% else %>
+            <img src="https://images.pexels.com/photos/39317/chihuahua-dog-puppy-cute-39317.jpeg?auto=compress&cs=tinysrgb&w=600" style="border-radius: 5%; margin-top: 1rem;" class="pet-img card-img-top" alt="...">
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= pet.name %></h5>
+          </div>
         <% end %>
-        <div class="card-body">
-          <h5 class="card-title"><%= pet.name %></h5>
-        </div>
         <div class="card-body">
           <%= button_to "Editar", edit_pet_path(pet), method: :get, class: "btn-learn-more mt-2 mb-2" %>
           <%= button_to "Deletar", pet_path(pet), method: :delete, form:{ data: {turbo_confirm: "Você tem certeza?"}}, class: "btn-learn-more mt-2 mb-2" %>
