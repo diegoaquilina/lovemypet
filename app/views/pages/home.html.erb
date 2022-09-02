@@ -1,33 +1,92 @@
-<div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-infos">
-    <h2>Join us and learn about the latest UX patterns.</h2>
-    <p>Blalalallbalvalsflasdlaldaldslasldasldlasdlada <strong>relevant info</strong> only.</p>
+<div class="card-product shadow-sm">
+  <img src="<%= asset_path("pexels-helena-lopes.jpg")%>" class="pic" />
+  <div class="card-product-infos-up">
+    <h2>Join us and 𝙇𝙤𝙧𝙚𝙢 𝙞𝙥𝙨𝙪𝙢 𝙙𝙤𝙡𝙤𝙧 𝙨𝙞𝙩 𝙖𝙢𝙚𝙩.</h2>
+    <p>𝙇𝙤𝙧𝙚𝙢 𝙞𝙥𝙨𝙪𝙢 𝙙𝙤𝙡𝙤𝙧 𝙨𝙞𝙩 𝙖𝙢𝙚𝙩 <strong>relevant info</strong> only.</p>
     <div>
-      <%= link_to "Start now", "#", class: "btn btn-gradient" %>
+      <%= link_to "Cadastre-se!", "#", class: "btn btn-gradient" %>
     </div>
   </div>
 
 </div>
-<div class="cards mt-5">
+<div class="cards mt-5 mb-4 shadow-sm">
   <div class="card-category">
     <div class="destaque-left mt-5">
       <h2><strong>Alimentação</strong> </h2>
-      <p class="p-text">Blalalallbalvalsflasdlaldaldslasldasldlasdlada <strong>relevant info</strong> only.</p>
+      <p class="p-text">𝙇𝙤𝙧𝙚𝙢 𝙞𝙥𝙨𝙪𝙢 𝙙𝙤𝙡𝙤𝙧 𝙨𝙞𝙩 𝙖𝙢𝙚𝙩  𝙇𝙤𝙧𝙚𝙢 𝙞𝙥𝙨𝙪𝙢 <strong>relevant info</strong> only.</p>
 
       <h2><strong>Saúde</strong> </h2>
-      <p class="p-text">Blalalallbalvalsflasdlaldaldslasldasldlasdlada <strong>relevant info</strong> only.</p>
+      <p class="p-text">𝙇𝙤𝙧𝙚𝙢 𝙞𝙥𝙨𝙪𝙢 𝙙𝙤𝙡𝙤𝙧 𝙨𝙞𝙩 𝙖𝙢𝙚𝙩 𝙥𝙨𝙪𝙢 𝙙𝙤𝙡𝙤𝙧 𝙨𝙞𝙩 𝙖𝙢𝙚𝙩 <strong>relevant info</strong> only.</p>
     </div>
   </div>
   <div class="card-img-category">
-     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" id="img-landing" />
+     <img src="<%= asset_path("pexels-julissa-helmuth.jpg")%>" class="pic" id="img-landing" />
   </div>
   <div class="card-category">
     <div class="destaque-right mt-5">
       <h2><strong>Bem Estar</strong> </h2>
-      <p class="p-text">Blalalallbalvalsflasdlaldaldslasldasldlasdlada <strong>relevant info</strong> only.</p>
+      <p class="p-text">𝙇𝙤𝙧𝙚𝙢 𝙞𝙥𝙨𝙪𝙢 𝙙𝙤𝙡𝙤𝙧 𝙨𝙞𝙩 𝙖𝙢𝙚𝙩 𝙖𝙢𝙚𝙩 <strong>relevant info</strong> only.</p>
       <h2><strong>Card Title</strong> </h2>
-      <p class="p-text">Blalalallbalvalsflasdlaldaldslasldasldlasdlada <strong>relevant info</strong> only.</p>
+      <p class="p-text">𝙇𝙤𝙧𝙚𝙢 𝙞𝙥𝙨𝙪𝙢 𝙙𝙤𝙡𝙤𝙧 𝙨𝙞𝙩 𝙖𝙢𝙚𝙩  𝙙𝙤𝙡𝙤𝙧 𝙨𝙞𝙩 𝙖𝙢𝙚𝙩 <strong>relevant info</strong> only.</p>
+    </div>
+  </div>
+</div>
+<div class="card-product shadow-sm">
+  <div class="card-product-infos-down">
+    <h2>𝙇𝙤𝙧𝙚𝙢 𝙞𝙥𝙨𝙪𝙢 𝙙𝙤𝙡𝙤𝙧 𝙨𝙞𝙩 𝙖𝙢𝙚𝙩  𝙇𝙤𝙧𝙚𝙢 𝙞𝙨𝙩 𝙖𝙢𝙚𝙩.</h2>
+    <p>𝙇𝙤𝙧𝙚𝙢 𝙞𝙥𝙨𝙪𝙢 𝙙𝙤𝙡𝙤𝙧 𝙨𝙞𝙩 𝙖𝙢𝙚𝙩  𝙇𝙤𝙧𝙚𝙢𝙨𝙞𝙩 𝙖𝙢𝙚𝙩 <strong>relevant info</strong> only.</p>
+    <div>
+      <%= link_to "Start now", "#", class: "btn btn-gradient" %>
+    </div>
+  </div>
+  <img src="<%= asset_path("pexels-humphrey-muleba.jpg")%>" class="pic"/>
+</div>
+
+<div class="about mt-2">
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="<%= asset_path("pexels-mevlüt-bilir-13095552.jpg")%>">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+      <h3>Claudinei</h3>
+      <div>
+        𝙇𝙤𝙧𝙚𝙢 𝙞𝙥𝙨𝙪𝙢 𝙢 𝙞𝙥𝙨𝙪𝙢  𝙖𝙢𝙚𝙩 𝙇𝙤𝙧𝙚𝙢 𝙞𝙥𝙨𝙪𝙢 𝙙𝙤𝙡𝙤𝙧 𝙨𝙞𝙩 𝙖𝙢𝙚𝙩.
+    </div>
+  </div>
+</div>
+<div class="about mt-2">
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="<%= asset_path("pexels-ivan-babydov-7788913.jpg")%>">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+      <h3>Cleitin</h3>
+      <div>
+        𝙇𝙤𝙧𝙚𝙢 𝙞𝙥𝙨𝙪𝙢 𝙙𝙤𝙡𝙤𝙧 𝙨𝙞𝙩 𝙖𝙢𝙚𝙢 𝙙𝙤𝙡𝙤𝙧 𝙨𝙞𝙩 𝙢 𝙙𝙤𝙡𝙤𝙧 𝙨𝙞𝙩 𝙖𝙢𝙚𝙩.
+    </div>
+  </div>
+</div>
+<div class="about mt-2">
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="<%= asset_path("pexels-dominika-roseclay-1139793.jpg")%>">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+      <h3>Ana</h3>
+      <div>
+        𝙇𝙤𝙧𝙚𝙢 𝙞𝙥𝙨𝙞𝙩 𝙖𝙢𝙚𝙩. It looks good.
     </div>
   </div>
 </div>
