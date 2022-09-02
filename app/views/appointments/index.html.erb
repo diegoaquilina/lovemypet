@@ -10,7 +10,7 @@
             <tr>
                 <th>Pet</th>
                 <th>Data da consulta</th>
-                <th>Clinica veterinária</th>
+                <th>Motivo da consulta</th>
                 <th>Endereço</th>
                 <th>Telefone</th>
                 <th colspan="3"></th>
@@ -21,8 +21,8 @@
                 <% @appointments.each do |appointment| %>
                   <tr>
                     <td><%= appointment.pet.name %></td>
+                    <td><%= appointment.date.strftime("%d/%m/%Y") %></td>
                     <td><%= appointment.title %></td>
-                    <td><%= appointment.date %></td>
                     <td><%= appointment.address %></td>
                     <td><%= appointment.phone %></td>
                     <td><%= link_to 'Editar', edit_appointment_path(appointment) %></td>
