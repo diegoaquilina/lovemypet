@@ -66,14 +66,13 @@
           <li class="list-group-item"><i class="fa-solid fa-weight-scale"></i> Porte: <%= pet.size %></li>
         </ul>
         <div class="card-body">
-          <%= link_to "Editar", edit_pet_path(pet), class: "btn btn-primary" %>
-         <%= link_to "Deletar Pet", pet_path(pet), class: "btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %>
         </div>
       </div>
     <% end %>
   </div>
   <div>
-    <%= link_to "Adicionar bicho", new_pet_path, class: "btn btn-primary ml-4 mt-4" %>
+    <%= link_to "Adicionar Pets", new_pet_path, class: "btn btn-primary ml-4 mt-4" %>
+    <%= link_to "Ver pets", pets_path, class: "btn btn-primary ml-4 mt-4" %>
   </div>
 </div>
 

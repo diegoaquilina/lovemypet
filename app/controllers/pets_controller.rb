@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
   before_action :load_pet, only: [:show]
-  before_action :find_pet, only: [:edit, :update, :destroy]
+  before_action :find_pet, only: [:edit, :update, :destroy, :show]
 
   def index
     @pets = Pet.all.where(user: current_user)
