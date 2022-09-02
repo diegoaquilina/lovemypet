@@ -11,7 +11,7 @@
   <p>*Se não souber, insira uma data aproximada</p>
   <%= f.input :breed, collection: Pet::RACA.map, include_blank: false, placeholder: "SRD", label: "Raça" %>
   <%= f.input :size, collection: Pet::PORTE.map { |e| e.capitalize}, include_blank: false, label: "Porte"%>
-  <%= f.input :weight, input_html:{type:"number",min:0}, label: "Peso" %>
+  <%= f.input :weight, input_html:{min:0}, label: "Peso" %>
   <%= f.input :neutered, label: "Castrado" %>
   <%= f.input :microchipped, label: "Microchipado" %>
   <%= f.input :energy_level, collection: Pet::ENERGIA.map { |e| e.capitalize}, include_blank: false, label: "Nível de Energia" %>

@@ -2,11 +2,11 @@
     <h1>Editar medicamento</h1>
         <%= simple_form_for @medication do |f| %>
         <%= f.input :name, label: "Nome" %>
-        <%= f.input :dose, label: "Dosagem" %>
-        <%= f.input :dose_unit, label: "Unidade da dosagem" %>
+        <%= f.input :dose, input_html:{min:0}, label: "Dosagem" %>
+        <%= f.input :dose_unit, label: "Unidade da dosagem (Ex: gotas, miligramas, mililitros..)" %>
         <%= f.input :instructions, label: "Instruçoes de uso" %>
-        <%= f.input :frequency, label: "Frequencia" %>
-        <%= f.input :days_qty, label: "Periodo a ser tomado" %>
+        <%= f.input :frequency, input_html:{min:0}, label: "Frequencia de uso" %>
+        <%= f.input :days_qty, input_html:{min:0}, label: "Periodo a ser tomado" %>
         <%= f.input :pet, as: :hidden, input_html: {value: @medication.pet.id} %>
         <%= f.submit "Editar", class:"btn btn-primary" %>
     <% end %>

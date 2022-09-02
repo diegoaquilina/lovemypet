@@ -4,8 +4,8 @@
     <%= simple_form_for @food do |f| %>
         <%= f.input :category, label: "Tipo de ração", collection: Food::FOOD.map { |e| e.capitalize}, include_blank: false %>
         <%= f.input :brand, label: "Marca", collection: Food::BRAND, include_blank: false %>
-        <%= f.input :bag_qty_kg, label: "Quantidade do pacote (kg)" %>
-        <%= f.input :daily_qty_kg, label: "Quantidade diária (g)" %>
+        <%= f.input :bag_qty_kg, input_html:{min:0}, label: "Quantidade do pacote (kg)" %>
+        <%= f.input :daily_qty_kg, input_html:{min:0}, label: "Quantidade diária (g)" %>
         <%= f.input :start_date, as: :date, start_year: Date.today.year - 1,
         end_year: Date.today.year + 1, order: [:day, :month, :year], label: "Início de uso desta ração" %>
         <%= f.input :pet, as: :hidden, input_html: {value: @food.pet.id} %>
