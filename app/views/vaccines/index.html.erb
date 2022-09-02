@@ -9,20 +9,21 @@
             <thead>
             <tr>
                 <th>Pet</th>
-                <th>Vacina</th>
-                <th>Data de aplicaçao</th>
-                <th>Data de vencimento</th>
+                <th style="text-align:center">Vacina</th>
+                <th style="text-align:center">Data de aplicaçao</th>
+                <th style="text-align:center">Data de vencimento</th>
                 <th colspan="3"></th>
             </tr>
             </thead>
 
             <tbody>
                 <% @vaccines.each do |vaccine| %>
+                    <% calc_exp = end_date_vaccine(vaccine.app_date) %>                    
                     <tr>
                     <td><%= vaccine.pet.name %></td>
-                    <td><%= vaccine.vaccine_type %></td>
-                    <td><%= vaccine.app_date.strftime("%d/%m/%Y") %></td>
-                    <td><%= vaccine.expiry_date.strftime("%d/%m/%Y") %></td>
+                    <td style="text-align:center"><%= vaccine.vaccine_type %></td>
+                    <td style="text-align:center"><%= vaccine.app_date.strftime("%d/%m/%Y") %></td>
+                    <td style="text-align:center"><%= calc_exp.strftime("%d/%m/%Y") %></td>
                     <td><%= link_to 'Editar', edit_vaccine_path(vaccine) %></td>
                     <td><%= link_to 'Deletar', vaccine_path(vaccine), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %></td>
                     </tr>

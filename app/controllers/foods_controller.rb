@@ -4,6 +4,7 @@ class FoodsController < ApplicationController
 
   def index
     @foods = Food.all.where(pet: current_user.pets)
+
   end
 
   def new
@@ -42,6 +43,8 @@ class FoodsController < ApplicationController
     days_left = bag_qty_kg / qty_g
     end_date = start_date + days_left
   end
+
+  helper_method :end_date_food
 
   private
 
