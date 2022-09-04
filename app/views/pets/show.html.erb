@@ -19,6 +19,8 @@
           <p> <strong> Gênero:</strong>
           <%=@pet.sex %></p>
         </div>
+        <%= button_to "Editar", "#", method: :get, class: "btn-learn-more mt-2 mb-2"%>
+        <%= button_to "Deletar", "#", method: :get, class: "btn-learn-more mt-2 mb-2"%>
       </div>
     </div>
     <%# ----------------- EDIT & DELETE -----------------%>
@@ -33,11 +35,12 @@
         <h3><strong>Alimentação</strong></h3>
         <div class="card-pet">
           <div class="col-6 text-start mt-3">
-            <p>Quantidade de ração recomendada (kg):</p>
-            <p>Minha ração acaba em: " </p>
+            <p>Quantidade de ração diária (kg):</p>
+            <p>Ração administrada:</p>
+            <p>Minha ração acaba em: </p>
           </div>
           <div class="col-6">
-            <%= button_to "Comprar Ração", "#", method: :get, class: "btn-learn-more"%>
+            <%= button_to "Editar", "#", method: :get, class: "btn-learn-more"%>
           </div>
         </div>
       </div>
