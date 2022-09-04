@@ -5,7 +5,7 @@
         <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
         <%= f.input :vaccine_type, label: "Vacina", collection: Vaccine::VACCINE.map, include_blank: false %>
         <%= f.input :app_date, order:[:day, :month, :year], start_year: Date.today.year,
-        end_year: Date.today.year + 1, label: "Data de aplicaçao" %>
+        end_year: Date.today.year + 1, label: "Data de aplicação" %>
         <%#= f.input :expiry_date, order:[:day, :month, :year], start_year: Date.today.year,
         end_year: Date.today.year + 5, label: "Data de vencimento" %>
         <%= f.submit "Registrar vacina", class:"btn btn-primary" %>
