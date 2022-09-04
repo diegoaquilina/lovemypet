@@ -22,23 +22,23 @@
           <tbody>
             <% @foods.each do |food| %>
               <% calc = end_date_food(food.start_date, food.bag_qty_kg, food.daily_qty_kg) %>
-              <tr>
-                <td><%= food.pet.name %></td>
-                <td><%= food.category %></td>
-                <td><%= food.brand %></td>
-                <td style="text-align:center"><%= food.bag_qty_kg %></td>
-                <td style="text-align:center"><%= food.daily_qty_kg %></td>
-                <td style="text-align:center"><%= food.start_date.strftime("%d/%m/%Y") %></td>
-                <td style="text-align:center"><%= calc.strftime("%d/%m/%Y") %></td>
-                <td><%= link_to edit_food_path(food) do %>
-                  <i class="fa-solid fa-pen-to-square"></i>
-                 <% end %>
-                 </td>
-                 <td><%= link_to food_path(food), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} do %>
+                <tr>
+                  <td><%= food.pet.name %></td>
+                  <td><%= food.category %></td>
+                  <td><%= food.brand %></td>
+                  <td style="text-align:center"><%= food.bag_qty_kg %></td>
+                  <td style="text-align:center"><%= food.daily_qty_kg %></td>
+                  <td style="text-align:center"><%= food.start_date.strftime("%d/%m/%Y") %></td>
+                  <td style="text-align:center"><%= calc.strftime("%d/%m/%Y") %></td>
+                  <td><%= link_to edit_food_path(food) do %>
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  <% end %>
+                  </td>
+                  <td><%= link_to food_path(food), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} do %>
                     <i class="fa-solid fa-trash-can"></i>
                   <% end %>
                   </td>
-              </tr>
+                </tr>
             <% end %>
           </tbody>
         </table>

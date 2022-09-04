@@ -21,7 +21,7 @@
 
             <tbody>
                 <% @medications.each do |medication| %>
-                    <tr>
+                  <tr>
                     <td><%= medication.pet.name %></td>
                     <td><%= medication.name %></td>
                     <td style="text-align:center"><%= medication.dose %></td>
@@ -29,9 +29,15 @@
                     <td><%= medication.instructions %></td>
                     <td style="text-align:center"v><%= medication.frequency %>/hrs</td>
                     <td style="text-align:center"><%= medication.days_qty %></td>
-                    <td><%= link_to 'Editar', edit_medication_path(medication) %></td>
-                    <td><%= link_to 'Deletar', medication_path(medication), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %></td>
-                    </tr>
+                    <td><%= link_to edit_medication_path(medication) do %>
+                        <i class="fa-solid fa-pen-to-square"></i>
+                      <% end %>
+                    </td>
+                    <td><%= link_to medication_path(medication), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} do %>
+                        <i class="fa-solid fa-trash-can"></i>
+                      <% end %>
+                    </td>
+                  </tr>
                 <% end %>
             </tbody>
         </table>

@@ -19,14 +19,20 @@
 
             <tbody>
                 <% @baths.each do |bath| %>
-                    <tr>
+                  <tr>
                     <td><%= bath.pet.name %></td>
                     <td><%= bath.category %></td>
                     <td><%= bath.address %></td>
                     <td style="text-align:center"><%= bath.date.strftime("%d/%m/%Y") %></td>
-                    <td><%= link_to 'Editar', edit_bath_path(bath) %></td>
-                    <td><%= link_to 'Deletar', bath_path(bath), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %></td>
-                    </tr>
+                    <td><%= link_to edit_bath_path(bath) do %>
+                        <i class="fa-solid fa-pen-to-square"></i>
+                      <% end %>
+                    </td>
+                    <td><%= link_to bath_path(bath), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} do %>
+                        <i class="fa-solid fa-trash-can"></i>
+                      <% end %>
+                    </td>
+                  </tr>
                 <% end %>
             </tbody>
         </table>
