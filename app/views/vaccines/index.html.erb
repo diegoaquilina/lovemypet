@@ -10,7 +10,7 @@
             <tr>
                 <th>Pet</th>
                 <th style="text-align:center">Vacina</th>
-                <th style="text-align:center">Data de aplicaçao</th>
+                <th style="text-align:center">Data de aplicação</th>
                 <th style="text-align:center">Data de vencimento</th>
                 <th colspan="3"></th>
             </tr>
@@ -18,7 +18,7 @@
 
             <tbody>
                 <% @vaccines.each do |vaccine| %>
-                    <% calc_exp = end_date_vaccine(vaccine.app_date) %>                    
+                    <% calc_exp = end_date_vaccine(vaccine.app_date) %>
                     <tr>
                     <td><%= vaccine.pet.name %></td>
                     <td style="text-align:center"><%= vaccine.vaccine_type %></td>
