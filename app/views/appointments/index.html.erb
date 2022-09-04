@@ -25,8 +25,14 @@
                     <td><%= appointment.title %></td>
                     <td><%= appointment.address %></td>
                     <td><%= appointment.phone %></td>
-                    <td><%= link_to 'Editar', edit_appointment_path(appointment) %></td>
-                    <td><%= link_to 'Deletar', appointment_path(appointment), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %></td>
+                    <td><%= link_to edit_appointment_path(appointment) do %>
+                        <i class="fa-solid fa-pen-to-square"></i>
+                      <% end %>
+                    </td>
+                    <td><%= link_to appointment_path(appointment), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} do %>
+                        <i class="fa-solid fa-trash-can"></i>
+                      <% end %>
+                    </td>
                   </tr>
                 <% end %>
             </tbody>
@@ -34,4 +40,3 @@
     </div>
   <% end %>
 </div>
-
