@@ -20,12 +20,18 @@
                 <% @vaccines.each do |vaccine| %>
                     <% calc_exp = end_date_vaccine(vaccine.app_date) %>
                     <tr>
-                    <td><%= vaccine.pet.name %></td>
-                    <td style="text-align:center"><%= vaccine.vaccine_type %></td>
-                    <td style="text-align:center"><%= vaccine.app_date.strftime("%d/%m/%Y") %></td>
-                    <td style="text-align:center"><%= calc_exp.strftime("%d/%m/%Y") %></td>
-                    <td><%= link_to 'Editar', edit_vaccine_path(vaccine) %></td>
-                    <td><%= link_to 'Deletar', vaccine_path(vaccine), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %></td>
+                      <td><%= vaccine.pet.name %></td>
+                      <td style="text-align:center"><%= vaccine.vaccine_type %></td>
+                      <td style="text-align:center"><%= vaccine.app_date.strftime("%d/%m/%Y") %></td>
+                      <td style="text-align:center"><%= calc_exp.strftime("%d/%m/%Y") %></td>
+                      <td><%= link_to edit_vaccine_path(vaccine) do %>
+                          <i class="fa-solid fa-pen-to-square"></i>
+                        <% end %>
+                      </td>
+                      <td><%= link_to vaccine_path(vaccine), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} do %>
+                          <i class="fa-solid fa-trash-can"></i>
+                        <% end %>
+                      </td>
                     </tr>
                 <% end %>
             </tbody>

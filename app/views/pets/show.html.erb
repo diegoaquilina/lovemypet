@@ -3,11 +3,13 @@
     <div class="nome">
       <h1><strong><%= @pet.name %></strong></h1>
     </div>
-    <div class="container center">
+    <div class="">
       <div class="card-pet mt-5">
-        <% if @pet.photo.attached? %>
-          <%= cl_image_tag @pet.photo.key, width: 400, class: "pet-img-show"%>
-        <% end %>
+          <% if @pet.photo.attached? %>
+            <div class="petphoto" style= "background-image: url(<%= cl_image_path @pet.photo.key, :gravity=>"face", :height=>500, :width=>500, :crop=>"fill" %>)">
+              <%#= cl_image_tag @pet.photo.key%>
+            </div>
+          <% end %>
         <div class="row text-start ps-5">
           <p> <strong>Raça:</strong>
           <%=@pet.breed %> </p>
@@ -21,11 +23,6 @@
         </div>
       </div>
     </div>
-    <%# ----------------- EDIT & DELETE -----------------%>
-    <!--div class="card-body"-->
-      <%#= button_to "Editar", edit_pet_path(pet), method: :get, class: "btn-learn-more mt-2 mb-2" %>
-      <%#= button_to "Deletar", pet_path(pet), method: :delete, form:{ data: {turbo_confirm: "Você tem certeza?"}}, class: "btn-learn-more mt-2 mb-2" %>
-    <!--/div-->
     <%# ----------------- ALIMENTAÇÃO -----------------%>
     <hr>
     <div class="container center mt-5 mb-5">
@@ -33,11 +30,12 @@
         <h3><strong>Alimentação</strong></h3>
         <div class="card-pet">
           <div class="col-6 text-start mt-3">
-            <p>Quantidade de ração recomendada (kg):</p>
-            <p>Minha ração acaba em: " </p>
+            <p>Quantidade de ração diária (kg):</p>
+            <p>Ração administrada:</p>
+            <p>Minha ração acaba em: </p>
           </div>
           <div class="col-6">
-            <%= button_to "Comprar Ração", "#", method: :get, class: "btn-learn-more"%>
+            <%= button_to "Editar", "#", method: :get, class: "btn-learn-more"%>
           </div>
         </div>
       </div>
@@ -77,5 +75,7 @@
         </div>
       </div>
     </div>
+    <%# ----------------- EDIT & DELETE -----------------%>
+        <%= button_to "Deletar", "#", method: :delete, form:{ data: {turbo_confirm: "Você tem certeza?"}}, class: "btn-learn-more mt-2 mb-2" %>
   </div>
 </div>
