@@ -1,11 +1,8 @@
 <div class="container">
-  <div class="text-center">
-    <!--h1>Meus Pets</h1--->
     <!--h3 class="typed-js" data-controller="typed-js">q?</h3-->
-  </div>
   <div class="conteinerIndexPets">
-    <div class="box">
-        <% @pets.each do |pet| %>
+    <% @pets.each do |pet| %>
+      <div class="box">
           <%= link_to pet_path(pet), class:"text-decoration-none" do %>
             <div class="imgBx">
               <% if pet.photo.attached? %>
@@ -15,13 +12,11 @@
               <% end %>
             </div>
           <% end %>
-        <% end %>
-      <div class="content">
-        <% @pets.each do |pet| %>
+        <div class="content">
           <h2><%= pet.name %><br><span><%= pet.breed %></span></h2>
-        <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
 
