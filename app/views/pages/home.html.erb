@@ -1,14 +1,14 @@
 <div class="card-product shadow-sm">
   <img src="<%= asset_path("pexels-helena-lopes.jpg")%>" class="pic" />
   <div class="card-product-infos-up">
-    <h2>Pets são filhos de 4 patas.</h2>
+    <h2>Pets são nossos filhos de 4 patas.</h2>
     <p>LoveMyPet é o assistente virtual da saúde e rotina do seu pet.</p>
     <div>
       <%= link_to "Cadastre-se!", "#", class: "btn btn-gradient" %>
     </div>
   </div>
-
 </div>
+
 <div class="cards mt-5 mb-4 shadow-sm">
   <div class="py-4">
     <div class="destaque-left mt-5">
@@ -20,7 +20,7 @@
     </div>
   </div>
   <div class="card-img-category">
-     <img src="<%= asset_path("pexels-julissa-helmuth.jpg")%>" class="pic" id="img-landing" />
+     <img src="<%= asset_path("https://t4.ftcdn.net/jpg/01/08/02/11/360_F_108021113_jIrhkMKBQ6JWmPKt8T3r8QTqeoOik9fK.jpg")%>" class="pic" id="img-landing" />
   </div>
   <div class="py-4">
     <div class="destaque-right mt-5">
@@ -42,56 +42,129 @@
   <img src="<%= asset_path("pexels-humphrey-muleba.jpg")%>" class="pic"/>
 </div>
 
-<div class="d-flex justify-content-center align-items-center mt-5 mb-5">
-<div class="about mt-2">
-  <div class="a-box">
-    <div class="img-container">
-      <div class="img-inner">
-        <div class="inner-skew">
-          <img src="<%= asset_path("pexels-mevlüt-bilir-13095552.jpg")%>">
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <div class="d-flex justify-content-center align-items-center mt-5 mb-5">
+        <div class="about mt-2">
+          <div class="a-box">
+            <div class="img-container">
+              <div class="img-inner">
+                <div class="inner-skew">
+                  <img src="<%= asset_path("https://images.unsplash.com/photo-1562505209-85d7688af8a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")%>">
+                </div>
+              </div>
+            </div>
+            <div class="text-container">
+              <h3>Vivian</h3>
+              <div>
+              “Meu dog já está idoso e tem uma agenda cheia com acupuntura e checkups no vet. Com LoveMyPet eu nunca mais perdi uma data!”
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about mt-2">
+          <div class="a-box">
+            <div class="img-container">
+              <div class="img-inner">
+                <div class="inner-skew">
+                  <img src="<%= asset_path("https://images.unsplash.com/photo-1601758003453-6c950f17727d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")%>">
+                </div>
+              </div>
+            </div>
+            <div class="text-container">
+              <h3>Cleitin</h3>
+              <div>
+              “Sempre que agendava o banho do Tobias acabava esquecendo da data, hoje em dia fico tranquilo com o serviço de lembrete”
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about mt-2">
+          <div class="a-box">
+            <div class="img-container">
+              <div class="img-inner">
+                <div class="inner-skew">
+                  <img src="<%= asset_path("https://images.unsplash.com/photo-1553322378-eb94e5966b0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")%>">
+                </div>
+              </div>
+            </div>
+            <div class="text-container">
+              <h3>Ana</h3>
+              <div>
+              “A Pipoca toma um medicamento que só vende em outro estado. Antes do LoveMyPet eu vivia perdendo o prazo do pedido.”
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="text-container">
-      <h3>Claudinei</h3>
-      <div>
-      “Meu dog já está idoso e tem uma agenda cheia com acupuntura e checkups no vet. Com LoveMyPet eu nunca mais perdi uma data!”
-      </div>
-    </div>
-  </div>
-</div>
-<div class="about mt-2">
-  <div class="a-box">
-    <div class="img-container">
-      <div class="img-inner">
-        <div class="inner-skew">
-          <img src="<%= asset_path("pexels-ivan-babydov-7788913.jpg")%>">
+     <div class="carousel-item">
+      <div class="d-flex justify-content-center align-items-center mt-5 mb-5">
+        <div class="about mt-2">
+          <div class="a-box">
+            <div class="img-container">
+              <div class="img-inner">
+                <div class="inner-skew">
+                  <img src="<%= asset_path("https://images.unsplash.com/photo-1557495235-340eb888a9fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=813&q=80")%>">
+                </div>
+              </div>
+            </div>
+            <div class="text-container">
+              <h3>Sheila</h3>
+              <div>
+              “Acho incrivel poder ter a carteira de vacinação do Lulu de forma digital, só uso ela quando vou colar o adesivo agora”
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about mt-2">
+          <div class="a-box">
+            <div class="img-container">
+              <div class="img-inner">
+                <div class="inner-skew">
+                  <img src="<%= asset_path("https://images.unsplash.com/photo-1587143185764-e7d1c3051308?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")%>">
+                </div>
+              </div>
+            </div>
+            <div class="text-container">
+              <h3>Gabriela</h3>
+              <div>
+              “Tenho 2 dogs em casa, sempre foi uma confusão controlar quando estava acabando a ração, agora consigo me organizar”
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about mt-2">
+          <div class="a-box">
+            <div class="img-container">
+              <div class="img-inner">
+                <div class="inner-skew">
+                  <img src="<%= asset_path("https://images.unsplash.com/photo-1602205413206-abfd9bfe77fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")%>">
+                </div>
+              </div>
+            </div>
+            <div class="text-container">
+              <h3>Robson</h3>
+              <div>
+              “Não sei como vivia sem o LoveMyPet, nunca mais esqueci do remédio do Fred e suas consultas no veterinario”
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="text-container">
-      <h3>Cleitin</h3>
-      <div>
-      “O pet shop perto da minha casa vive cheio e preciso agendar com muita antecedência. PetMyLove me ajudar a manter o Rex sempre com o banho em dia!”
-      </div>
-    </div>
   </div>
-</div>
-<div class="about mt-2">
-  <div class="a-box">
-    <div class="img-container">
-      <div class="img-inner">
-        <div class="inner-skew">
-          <img src="<%= asset_path("pexels-dominika-roseclay-1139793.jpg")%>">
-        </div>
-      </div>
-    </div>
-    <div class="text-container">
-      <h3>Ana</h3>
-      <div>
-      “A Pipoca toma um medicamento manipulado que só vende em outro estado. Antes do LoveMyPet eu vivia perdendo o prazo do pedido.”
-      </div>
-    </div>
-  </div>
-</div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
