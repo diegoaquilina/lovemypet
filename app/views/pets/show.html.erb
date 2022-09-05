@@ -3,6 +3,7 @@
     <div class="nome">
       <h1><strong><%= @pet.name %></strong></h1>
     </div>
+    <%# ----------------- PET -----------------%>
     <div class="">
       <div class="card-pet mt-5">
           <% if @pet.photo.attached? %>
@@ -24,57 +25,79 @@
       </div>
     </div>
     <%# ----------------- ALIMENTAÇÃO -----------------%>
-    <hr>
     <div class="container center mt-5 mb-5">
       <div class="row card-pet">
         <h3><strong>Alimentação</strong></h3>
-        <div class="card-pet">
           <div class="col-6 text-start mt-3">
-            <p>Quantidade de ração diária (kg):</p>
-            <p>Ração administrada:</p>
-            <p>Minha ração acaba em: </p>
+            <p>Por dia, eu como </p>
+            <p>Eu gosto da ração:</p>
+            <p>Vou ficar sem ração no dia  </p>
           </div>
           <div class="col-6">
-            <%= button_to "Editar", "#", method: :get, class: "btn-learn-more"%>
+            <%= button_to "+", new_food_path, method: :get, class: "btn-learn-more"%>
           </div>
-        </div>
       </div>
     </div>
     <%# ----------------- HIGIENE -----------------%>
-    <hr>
     <div class="container center mt-5 mb-5">
       <div class="row card-pet">
-        <h3><strong>Higiene</strong></h3>
+        <h3><strong>Banho e Tosa</strong></h3>
         <div class="card-pet">
           <div class="col-6 text-start mt-3">
-            <p>Meu último banho foi em:</p>
-            <p>Minha última tosa foi em:</p>
+            <p>Meu último banho/tosa foi em:</p>
+            <p>Próximo agendamento para:</p>
           </div>
           <div class="col-6">
-            <%= button_to "Agendar no PetShop", "#", method: :get, class: "btn-learn-more mt-3"%>
+            <%= button_to "+", new_bath_path, method: :get, class: "btn-learn-more mt-3"%>
           </div>
         </div>
       </div>
     </div>
-    <%# ----------------- SAÚDE -----------------%>
-    <hr>
+    <%# ----------------- CONSULTAS VETERINÁRIO -----------------%>
     <div class="container center mt-5 mb-5">
       <div class="row card-pet">
-        <h3><strong>Saúde</strong></h3>
+        <h3><strong>Consultas Veterinário</strong></h3>
         <div class="row">
           <div class="col-6 text-start mt-3">
-            <p>Minha próxima V8/V10 vai ser: </p>
-            <p>Minha próxima Antirrábica vai ser: </p>
-            <p>xxxxxxxxx: </p>
-            <p>Meu remédio atual </p>
-            <p>Tenho que tomar de: ___ até o dia: ___ </p>
+            <p>Você vai mentir pra mim falando que vamos passear, mas vamos no veterinário no dia: </p>
           </div>
           <div class="col-6">
-            <%= button_to "Agendar Consulta", "#", method: :get, class: "btn-learn-more mt-5"%>
+            <%= button_to "+", new_appointment_path, method: :get, class: "btn-learn-more mt-5"%>
           </div>
         </div>
       </div>
     </div>
+    <%# ----------------- VACINAS -----------------%>
+    <div class="container center mt-5 mb-5">
+      <div class="row card-pet">
+        <h3><strong>Vacinas</strong></h3>
+        <div class="row">
+          <div class="col-6 text-start mt-3">
+            <p>Ai ai ai!</p>
+            <p>Tenho que tomar a vacina "#" no dia:</p>
+          </div>
+          <div class="col-6">
+            <%= button_to "+", new_vaccine_path, method: :get, class: "btn-learn-more mt-5"%>
+          </div>
+        </div>
+      </div>
+    </div>
+        <%# ----------------- MEDICAMENTOS -----------------%>
+    <div class="container center mt-5 mb-5">
+      <div class="row card-pet">
+        <h3><strong>Medicamentos</strong></h3>
+        <div class="row">
+          <div class="col-6 text-start mt-3">
+            <p>Meu proximo medicamento vai ser às ___ hrs</p>
+          </div>
+          <div class="col-6">
+            <%= button_to "+", new_medication_path, method: :get, class: "btn-learn-more mt-5"%>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <%# ----------------- EDIT & DELETE -----------------%>
         <%= button_to "Deletar", "#", method: :delete, form:{ data: {turbo_confirm: "Você tem certeza?"}}, class: "btn-learn-more mt-2 mb-2" %>
   </div>
