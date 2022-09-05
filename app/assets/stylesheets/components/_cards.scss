@@ -1,7 +1,6 @@
 .card-pets{
   border-radius: 5%;
   margin-top: 1rem;
-  text-decoration: none;
 }
 
 .pet-img{
@@ -52,12 +51,23 @@
   background: url("#");
   background-size: cover;
   padding: 50px 50px;
-  border-radius: 5%;
+
 }
 
 .container-pets{
   background-color: #ffe3e2f4;
   margin: 0 100px;
   padding: 30px;
-  border-radius: 10%;
+  //border-radius: 10%;
+}
+
+.petphoto{
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  background-size: cover;
+}
+
+.buttonADD{
+  margin: 50px;
 }
