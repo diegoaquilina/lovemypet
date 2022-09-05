@@ -1,6 +1,15 @@
 .navbar-lewagon {
+  position: sticky;
+  top: 0;
+  width: 100%;
   justify-content: space-between;
-  background: white;
+  //background: white;
+  background-color: transparent;
+  transition: 0.5s background-color ease;
+}
+
+.navbar-lewagon-white {
+  background-color: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,7 +17,27 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 55px;
+  height: 55px; /* Or whatever */
+  margin: auto;
+}
+
+#text-size{
+  font-size: 75%
+}
+
+.navbar-parent{
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo{
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-nav{
+  margin-left: 1rem;
 }
 
 // .dropdown:hover .dropdown-menu {display: block;}
