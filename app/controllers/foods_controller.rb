@@ -4,7 +4,6 @@ class FoodsController < ApplicationController
 
   def index
     @foods = Food.all.where(pet: current_user.pets)
-
   end
 
   def new
@@ -38,13 +37,13 @@ class FoodsController < ApplicationController
     redirect_to foods_path
   end
 
-  def end_date_food(start_date, bag_qty_kg, daily_qty_kg)
-    qty_g = daily_qty_kg / 1000
-    days_left = bag_qty_kg / qty_g
-    end_date = start_date + days_left
-  end
+  # def end_date_food(start_date, bag_qty_kg, daily_qty_kg)
+  #   qty_g = daily_qty_kg / 1000
+  #   days_left = bag_qty_kg / qty_g
+  #   end_date = start_date + days_left
+  # end
 
-  helper_method :end_date_food
+  # helper_method :end_date_food
 
   private
 

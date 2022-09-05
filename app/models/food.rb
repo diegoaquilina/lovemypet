@@ -52,4 +52,13 @@ class Food < ApplicationRecord
     "Tibii",
     "Vet Life"
   ]
+
+  validates :bag_qty_kg, :daily_qty_kg, presence: true
+
+  def self.end_date_food(start_date, bag_qty_kg, daily_qty_kg)
+    qty_g = daily_qty_kg / 1000
+    days_left = bag_qty_kg / qty_g
+    end_date = start_date + days_left
+  end
+
 end

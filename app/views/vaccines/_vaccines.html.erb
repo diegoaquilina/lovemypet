@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="container-food mt-5">
+    <% if @vaccines.empty? %>
+      "Voce nao possui nenhuma ração cadastrada."
+    <% else %>
+      <% @vaccines.each do |vaccine| %>
+        <% calc_exp = Vaccine.end_date_vaccine(vaccine.app_date) %>
+        <p>
+        Próxima vacina de <%= vaccine.pet.name %> 
+        será dia <%= calc_exp.strftime("%d/%m/%Y") %>
+        <%= link_to edit_vaccine_path(vaccine) do %>
+          <i class="fa-solid fa-pen-to-square"></i>
+        <% end %>
+        <%= link_to vaccine_path(vaccine), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} do %>
+          <i class="fa-solid fa-trash-can"></i>
+        <% end %>
+        </p>        
+      <% end %>
+    <% end %>
+  </div>
+</div>

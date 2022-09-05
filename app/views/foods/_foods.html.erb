@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="container-food mt-5">
+    <% if @foods.empty? %>
+      "Seus pets não possuem nenhuma ração cadastrada."
+    <% else %>
+      <% @foods.each do |food| %>
+        <% calc = Food.end_date_food(food.start_date, food.bag_qty_kg, food.daily_qty_kg) %>
+        <p>
+        Próxima compra de <%= food.pet.name %> 
+        será dia <%= calc.strftime("%d/%m/%Y") %>
+        <%= link_to edit_food_path(food) do %>
+          <i class="fa-solid fa-pen-to-square"></i>
+        <% end %>
+        <%= link_to food_path(food), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} do %>
+          <i class="fa-solid fa-trash-can"></i>
+        <% end %>
+        </p>        
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -21,7 +21,7 @@
 
           <tbody>
             <% @foods.each do |food| %>
-              <% calc = end_date_food(food.start_date, food.bag_qty_kg, food.daily_qty_kg) %>
+              <% calc = Food.end_date_food(food.start_date, food.bag_qty_kg, food.daily_qty_kg) %>
               <tr>
                 <td><%= food.pet.name %></td>
                 <td><%= food.category %></td>
@@ -37,7 +37,7 @@
                  <td><%= link_to food_path(food), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} do %>
                     <i class="fa-solid fa-trash-can"></i>
                   <% end %>
-                  </td>
+                 </td>
               </tr>
             <% end %>
           </tbody>

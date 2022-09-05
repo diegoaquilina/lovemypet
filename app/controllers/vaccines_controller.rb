@@ -37,11 +37,11 @@ class VaccinesController < ApplicationController
     redirect_to vaccines_path
   end
 
-  def end_date_vaccine(app_date)
-    end_date = app_date + 365
-  end
+  # def end_date_vaccine(app_date)
+  #   end_date = app_date + 365
+  # end
 
-  helper_method :end_date_vaccine
+  # helper_method :end_date_vaccine
 
   private
 
