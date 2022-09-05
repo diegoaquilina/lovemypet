@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <div class="container-food mt-5">
+    <% if @baths.empty? %>
+      "Seus pets não possuem nenhum banho agendado."
+    <% else %>
+      <% @baths.each do |bath| %>        
+        <p>
+        Próximo banho de <%= bath.pet.name %> 
+        será dia <%= bath.date.strftime("%d/%m/%Y") %>
+        <%= link_to edit_bath_path(bath) do %>
+          <i class="fa-solid fa-pen-to-square"></i>
+        <% end %>
+        <%= link_to bath_path(bath), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} do %>
+          <i class="fa-solid fa-trash-can"></i>
+        <% end %>
+        </p>        
+      <% end %>
+    <% end %>
+  </div>
+</div>

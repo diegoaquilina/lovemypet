@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_01_222109) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_05_190217) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -71,7 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_222109) do
     t.string "category"
     t.string "brand"
     t.float "bag_qty_kg"
-    t.float "daily_qty_kg"
+    t.integer "daily_qty_kg"
     t.date "start_date"
     t.bigint "pet_id", null: false
     t.datetime "created_at", null: false
@@ -86,10 +86,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_222109) do
     t.string "instructions"
     t.date "reminder"
     t.integer "frequency"
-    t.integer "days_qty"
     t.bigint "pet_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "end_date"
+    t.date "start_date"
     t.index ["pet_id"], name: "index_medications_on_pet_id"
   end
 

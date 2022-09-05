@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <div class="container-food mt-5">
+    <% if @appointments.empty? %>
+      "Seus pets não possuem nenhuma consulta agendada."
+    <% else %>
+      <% @appointments.each do |appointment| %>
+        <p>
+        Próxima consulta de <%= appointment.pet.name %> 
+        será dia <%= appointment.date %>
+        <%= link_to edit_appointment_path(appointment) do %>
+          <i class="fa-solid fa-pen-to-square"></i>
+        <% end %>
+        <%= link_to appointment_path(appointment), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} do %>
+          <i class="fa-solid fa-trash-can"></i>
+        <% end %>
+        </p>        
+      <% end %>
+    <% end %>
+  </div>
+</div>

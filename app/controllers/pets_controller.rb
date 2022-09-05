@@ -4,6 +4,11 @@ class PetsController < ApplicationController
 
   def index
     @pets = Pet.all.where(user: current_user)
+    @foods = Food.all.where(pet: current_user.pets)
+    @appointments = Appointment.all.where(pet: current_user.pets)
+    @baths = Bath.all.where(pet: current_user.pets)
+    @vaccines = Vaccine.all.where(pet: current_user.pets)
+    @medications = Medication.all.where(pet: current_user.pets)
   end
 
   def new
