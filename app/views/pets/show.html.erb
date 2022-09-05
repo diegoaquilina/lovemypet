@@ -6,7 +6,7 @@
     <div class="container center">
       <div class="card-pet mt-5">
         <% if @pet.photo.attached? %>
-          <%= cl_image_tag @pet.photo.key, width: 400, class: "pet-img-show"%>
+          <%= cl_image_tag @pet.photo.key, width: 400, class: "imgBx"%>
         <% end %>
         <div class="row text-start ps-5">
           <p> <strong>Raça:</strong>

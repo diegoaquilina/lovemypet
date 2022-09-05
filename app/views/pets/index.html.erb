@@ -1,12 +1,11 @@
-<div class="container center mt-5 mb-5">
-  <div class="row card-pet col-4">
-    <div class="col-4">
-      <%= render "pets_index" %>
+<div class="container mt-3 mb-5">
+  <h3>Meus Pets</h3>
+    <div class="d-flex justify-content-between">
+      <div class="mr-3">
+        <%= render "pets_index" %>
+      </div>
+      <div class="w-75 px-4 mt-4 ml-2">
+        <%= render "services" %>
+      </div>
     </div>
-  </div>
-  <div class="row card-pet col-8">
-    <div class="col-8">
-      <%= render "services" %>
-    </div>
-  </div>
 </div>
