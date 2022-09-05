@@ -28,7 +28,7 @@
                     <td><%= medication.dose_unit %></td>
                     <td><%= medication.instructions %></td>
                     <td style="text-align:center"v><%= medication.frequency %>/hrs</td>
-                    <td style="text-align:center"><%= medication.days_qty %></td>
+                    <td style="text-align:center"><%= medication.start_date %></td>
                     <td><%= link_to 'Editar', edit_medication_path(medication) %></td>
                     <td><%= link_to 'Deletar', medication_path(medication), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %></td>
                     </tr>

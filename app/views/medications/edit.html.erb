@@ -6,7 +6,7 @@
         <%= f.input :dose_unit, label: "Unidade da dosagem (Ex: gotas, miligramas, mililitros..)" %>
         <%= f.input :instructions, label: "Instruções de uso" %>
         <%= f.input :frequency, input_html:{min:0}, label: "Frequência de uso (intervalo de horas)" %>
-        <%= f.input :days_qty, input_html:{min:0}, label: "Tomar até qual data?" %>
+        <%= f.input :start_date, input_html:{min:0}, label: "Tomar até qual data?" %>
         <%= f.input :pet, as: :hidden, input_html: {value: @medication.pet.id} %>
         <%= f.submit "Editar", class:"btn btn-primary" %>
     <% end %>

@@ -55,9 +55,9 @@ class Food < ApplicationRecord
 
   validates :bag_qty_kg, :daily_qty_kg, presence: true
 
-  def self.end_date_food(start_date, bag_qty_kg, daily_qty_kg)
-    qty_g = daily_qty_kg / 1000
-    days_left = bag_qty_kg / qty_g
+  def self.end_date_food(start_date, bag_qty_kg, daily_qty_g)
+    qty_kg = daily_qty_g.to_f / 1000
+    days_left = bag_qty_kg / qty_kg
     end_date = start_date + days_left
   end
 
