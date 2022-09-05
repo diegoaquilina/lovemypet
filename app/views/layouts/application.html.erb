@@ -9,6 +9,19 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <style>
+      body {
+      min-height: 100vh !important;
+      margin: 0;
+      position: relative !important;
+      }
+
+      body::after {
+      content: '' !important;
+      display: block;
+      height: 100px !important; /* Set same as footer's height */
+      }
+    </style>
   </head>
 
   <body>
