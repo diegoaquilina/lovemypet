@@ -1,9 +1,32 @@
-<div class="navbar navbar-expand-md navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-md navbar-light navbar-lewagon"  data-controller="navbar"
+  data-action="scroll@window->navbar#updateNavbar">
   <div class="container-fluid">
-    <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "https://scontent.xx.fbcdn.net/v/t1.15752-9/301348185_1113530252914147_87617727873181975_n.png?stp=dst-png_p206x206&_nc_cat=110&ccb=1-7&_nc_sid=aee45a&_nc_ohc=sWbrSWjbRnsAX-6YJJD&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVJ_VwxET1NyFgg3rxDpLHcHgMnWdW8mdFGrDiDIKXK-UQ&oe=63349F13" %>
-    <% end %>
+    <div class="d-flex">
+      <div class="navbar-logo">
+        <%= link_to "/", class: "navbar-brand" do %>
+          <%= image_tag "logo.png" %>
+        <% end %>
 
+      </div>
+      <div class="d-flex align-items-center btn-nav">
+        <div>
+          <%= link_to "Meus Pets", pets_path, class:"dropdown-item" %>
+        </div>
+        <div class="dropdown-nav">
+          <button class="dropbtn">Minha Agenda
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <%#= link_to "🐕 Cadastrar Pet", new_pet_path, class: "dropdown-item" %>
+              <%= link_to "🍗 Cadastrar Alimentação", new_food_path, class: "dropdown-item" %>
+              <%= link_to "🛁 Cadastrar Banho & Tosa", new_bath_path, class: "dropdown-item" %>
+              <%= link_to "🩺 Cadastrar Nova Consulta", new_appointment_path, class: "dropdown-item" %>
+              <%= link_to "💊 Cadastrar Medicamento", new_medication_path, class: "dropdown-item" %>
+              <%= link_to "💉 Cadastrar Vacina", new_vaccine_path, class: "dropdown-item" %>
+            </div>
+        </div>
+      </div>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -17,17 +40,12 @@
           <% if current_user.avatar.attached?%>
             <%= cl_image_tag current_user.avatar.key, width: 40, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "jone doe.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Meu Perfil", profile_path, class: "dropdown-item" %>
-              <%= link_to "Meus Pets", pets_path, class: "dropdown-item" %>
-              <%= link_to "🐕 Cadastrar Pet", new_pet_path, class: "dropdown-item" %>
-              <%= link_to "🍗 Cadastrar Alimentação", new_food_path, class: "dropdown-item" %>
-              <%= link_to "🛁 Cadastrar Banho & Tosa", new_bath_path, class: "dropdown-item" %>
-              <%= link_to "🩺 Cadastrar Nova Consulta", new_appointment_path, class: "dropdown-item" %>
-              <%= link_to "💊 Cadastrar Medicamento", new_medication_path, class: "dropdown-item" %>
-              <%= link_to "💉 Cadastrar Vacina", new_vaccine_path, class: "dropdown-item" %>
+
+
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>
