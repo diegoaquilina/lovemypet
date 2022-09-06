@@ -1,12 +1,11 @@
-
 <div class="container">
     <h1>Alimentação</h1>
     <%= simple_form_for @food, as: :food, url: foods_path(@food), method: :post do |f| %>
         <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
         <%= f.input :category, label: "Tipo de ração", collection: Food::FOOD.map { |e| e.capitalize}, include_blank: false %>
         <%= f.input :brand, label: "Marca", collection: Food::BRAND, include_blank: false %>
-        <%= f.input :bag_qty_kg, input_html:{min:0}, required: true, label: "Quantidade do pacote (kg)" %>
-        <%= f.input :daily_qty_kg, input_html:{min:0}, required: true, label: "Quantidade diária (g)" %>
+        <%= f.input :bag_qty_kg, input_html:{min:0}, required: true, label: "Quantidade do pacote (kg)", placeholder: "Informe a quantidade que comprou de ração" %>
+        <%= f.input :daily_qty_kg, input_html:{min:0}, required: true, label: "Quantidade diária (g)", placeholder: "Digite quantas gramas seu pet come por dia" %>
         <%= f.input :start_date, as: :date, start_year: Date.today.year - 1,
         end_year: Date.today.year + 1, order: [:day, :month, :year], label: "Início de uso desta ração" %>
         <%= f.submit "Cadastrar", class:"btn btn-primary" %>

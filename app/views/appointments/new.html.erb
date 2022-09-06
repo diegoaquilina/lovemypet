@@ -1,13 +1,14 @@
-
 <div class= "container">
-  <h1>Agendar consulta</h1>
+  <div class= "mb-3">
+  <h1>Agende sua consulta</h1>
     <%= simple_form_for @appointment, as: :appointment, url: appointments_path(@appointment), method: :post do |f| %>
       <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
       <%= f.input :date, order:[:day, :month, :year], start_year: Date.today.year,
       end_year: Date.today.year + 1, label: "Data da consulta" %>
-      <%= f.input :title, label: "Motivo da consulta" %>
-      <%= f.input :address, label: "Endereço" %>
-      <%= f.input :phone, label: "Telefone" %>
+      <%= f.input :title, label: "Tipo de consulta:", placeholder: "Descreva o motivo da consulta" %>
+      <%= f.input :address, label: "Localização", placeholder: "Endereço" %>
+      <%= f.input :phone, label: "Telefone", placeholder: "(XX) XXXXX-XXXX " %>
       <%= f.submit "Concluir agendamento", class:"btn btn-primary" %>
   <% end %>
+  </div>
 </div>
