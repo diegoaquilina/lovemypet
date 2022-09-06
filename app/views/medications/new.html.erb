@@ -2,11 +2,11 @@
     <h1>Medicamento</h1>
     <%= simple_form_for @medication, as: :medication, url: medications_path(@medication), method: :post do |f| %>
         <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
-        <%= f.input :name, label: "Nome" %>
+        <%= f.input :name, label: "Nome", placeholder: "Digite o nome do medicamento" %>
         <%#= f.input :dose, input_html:{min:0}, label: "Dosagem" %>
         <%#= f.input :dose_unit, label: "Unidade da dosagem (Ex: gotas, miligramas, mililitros..)" %>
-        <%= f.input :instructions, label: "Instruções de uso" %>
-        <%= f.input :frequency, input_html:{min:0}, label: "Frequência de uso (intervalo de horas)" %>
+        <%= f.input :instructions, label: "Instruções de uso", placeholder: "Exemplo: Via oral, aplicar na região da perna, etc" %>
+        <%= f.input :frequency, input_html:{min:0}, label: "Frequência de uso (intervalo de horas)", placeholder: "Exemplo: Se o medicamento deve ser tomado a cada 8h, digite 8" %>
         <%= f.input :start_date, order:[:day, :month, :year], start_year: Date.today.year,
         end_year: Date.today.year + 2, label: "Início:" %>
         <p><%= f.check_box :notification %> Me lembre de aplicar medicamento </p>
