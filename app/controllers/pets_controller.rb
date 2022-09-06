@@ -25,12 +25,16 @@ class PetsController < ApplicationController
     end
   end
 
-  def show    
-    # @vaccines = Vaccines.where(pet: @pet)
-    # @appointments = Appointment.where(pet: @pet)
-    # @medications = Medications.where(pet: @pet)
-    # @baths = Baths.where(pet: @pet)
-    # @foods = Foods.where(pet: @pet)    
+  def show
+    @pet = Pet.find(params[:id])
+
+    @food = Food.where(pet: @pet).last
+    @bath = Bath.where(pet: @pet).last
+    @appointment = Appointment.where(pet: @pet).last
+    @vaccines = Vaccine.where(pet: @pet)
+    @medications = Medication.where(pet: @pet)
+
+
   end
 
   def edit;
