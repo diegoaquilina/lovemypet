@@ -21,6 +21,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #FFE3E2;
+  border-radius: 5px;
 }
 
 .center {
@@ -47,18 +49,18 @@
 }
 
 .background-pets{
-  background-color: #b18597;
   background: url("#");
   background-size: cover;
   padding: 50px 50px;
+  //background-color: #F9C4D2;
 
 }
 
 .container-pets{
-  background-color: #ffe3e2f4;
   margin: 0 100px;
   padding: 30px;
-  //border-radius: 10%;
+  //background-color: #B18597;
+  border-radius: 5%;
 }
 
 .petphoto{
@@ -70,4 +72,11 @@
 
 .buttonADD{
   margin: 50px;
+}
+
+.card_service{
+  text-decoration: none;
+  & a:hover{
+    color: #fff;
+  }
 }
