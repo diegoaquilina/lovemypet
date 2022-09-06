@@ -1,25 +1,59 @@
 <div class="container p-3 mb-4 rounded">
   <div class="cover mb-2">
     <div class="d-flex flex-column">
-      <div class="card_service">
-        <p><%= link_to "ALIMENTAÇÃO", foods_path, class: "card-category text-decoration-none", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80)" %></p>
-        <%= render "foods/foods" %>        
+
+      <div class="card-service">
+        <p><%= link_to "ALIMENTAÇÃO", "#", class: "card-category text-decoration-none", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80)" %></p>
+        <div class="card-parcial">
+          <%= render "foods/foods" %>
+            <div class="card-btn-service">
+              <%= button_to "🍗", foods_path, method: :get, class: "btn-gradient" %>
+              <%= button_to "+", new_food_path, method: :get, class: "btn-gradient2" %>
+            </div>
+        </div>
       </div>
-      <div class="card_service">
-        <p><%= link_to "BANHO E TOSA", baths_path, class: "card-category text-decoration-none", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1647496849037-3390ed7805a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80)" %></p>
-        <%= render "baths/baths" %>
+
+      <div class="card-service">
+        <p><%= link_to "BANHO E TOSA", "#", class: "card-category text-decoration-none", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1647496849037-3390ed7805a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80)" %></p>
+        <div class="card-parcial">
+          <%= render "baths/baths" %>
+            <div class="card-btn-service">
+              <%= button_to "🛁", baths_path, method: :get, class: "btn-gradient" %>
+              <%= button_to "+", new_bath_path, method: :get, class: "btn-gradient2" %>
+            </div>
+        </div>
       </div>
-      <div class="card_service">
-        <p><%= link_to "CONSULTAS VETERINÁRIO", appointments_path, class: "card-category text-decoration-none", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1584982751601-97dcc096659c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80)" %></p>
-        <%= render "appointments/appointments" %>
+
+      <div class="card-service">
+        <p><%= link_to "CONSULTAS VETERINÁRIO", "#", class: "card-category text-decoration-none", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1584982751601-97dcc096659c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80)" %></p>
+        <div class="card-parcial">
+          <%= render "appointments/appointments" %>
+            <div class="card-btn-service">
+              <%= button_to "🩺", appointments_path, method: :get, class: "btn-gradient" %>
+              <%= button_to "+", new_appointment_path, method: :get, class: "btn-gradient2" %>
+            </div>
+        </div>
       </div>
-      <div class="card_service">
-        <p><%= link_to "VACINAS", vaccines_path, class: "card-category text-decoration-none", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2018/04/29/11/03/syringe-3359627_960_720.jpg)" %></p>
-        <%= render "vaccines/vaccines" %>
+
+      <div class="card-service">
+        <p><%= link_to "VACINAS", "#", class: "card-category text-decoration-none", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2018/04/29/11/03/syringe-3359627_960_720.jpg)" %></p>
+        <div class="card-parcial">
+          <%= render "vaccines/vaccines" %>
+            <div class="card-btn-service">
+              <%= button_to "💉", vaccines_path, method: :get, class: "btn-gradient" %>
+              <%= button_to "+", new_vaccine_path, method: :get, class: "btn-gradient2" %>
+            </div>
+        </div>
       </div>
-      <div class="card_service">
-        <p><%= link_to "MEDICAMENTOS", medications_path, class: "card-category text-decoration-none", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2020/10/02/09/01/tablets-5620566__340.jpg)" %></p>
-        <%= render "medications/medications" %>
+
+      <div class="card-service">
+        <p><%= link_to "MEDICAMENTOS", "#", class: "card-category text-decoration-none", style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2020/10/02/09/01/tablets-5620566__340.jpg)" %></p>
+        <div class="card-parcial">
+          <%= render "medications/medications" %>
+            <div class="card-btn-service">
+              <%= button_to "💊", medications_path, method: :get, class: "btn-gradient" %>
+              <%= button_to "+", new_medication_path, method: :get, class: "btn-gradient2" %>
+            </div>
       </div>
     </div>
   </div>
