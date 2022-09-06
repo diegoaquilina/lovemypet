@@ -5,6 +5,7 @@
       <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
       <%= f.input :date, order:[:day, :month, :year], start_year: Date.today.year,
       end_year: Date.today.year + 1, label: "Data da consulta" %>
+      <p><%= f.check_box :notification %> Me lembre desta consulta</p>
       <%= f.input :title, label: "Tipo de consulta:", placeholder: "Descreva o motivo da consulta" %>
       <%= f.input :address, label: "Localização", placeholder: "Endereço" %>
       <%= f.input :phone, label: "Telefone", placeholder: "(XX) XXXXX-XXXX " %>

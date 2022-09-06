@@ -6,6 +6,7 @@
         <%= f.input :address, label: "Petshop", placeholder: "Informe o endereço ou o nome do Petshop" %>
         <%= f.input :date, order:[:day, :month, :year],start_year: Date.today.year,
         end_year: Date.today.year + 1, label: "Data" %>
+        <p><%= f.check_box :notification %> Me lembre deste compromisso </p>
         <%= f.submit "Agendar", class:"btn btn-primary" %>
     <% end %>
 </div>
