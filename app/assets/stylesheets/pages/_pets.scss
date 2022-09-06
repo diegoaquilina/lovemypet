@@ -98,3 +98,11 @@
   text-decoration: none;
   color: #b18597;
 }
+
+.EditDelete{
+  text-decoration: none;
+  color: #FCB0B3;
+  & a:hover{
+    color: #B18597;
+  }
+}
