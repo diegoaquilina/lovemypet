@@ -1,15 +1,41 @@
+<div class="d-flex justify-content-center align-items-center">
+  <h1>🍗Editar alimentação</h1>
+</div>
 
-<div class="container">
-    <h1>Editar Alimentação</h1>
+<div class="container bg-light rounded-5 p-2">
+  <div class="bg-light rounded-5 px-4 py-2">
     <%= simple_form_for @food do |f| %>
-        <%= f.input :category, label: "Tipo de ração", collection: Food::FOOD.map { |e| e.capitalize}, include_blank: false %>
-        <%= f.input :brand, label: "Marca", collection: Food::BRAND, include_blank: false %>
-        <%= f.input :bag_qty_kg, input_html:{min:0}, label: "Quantidade do pacote (kg)" %>
-        <%= f.input :daily_qty_kg, input_html:{min:0}, required: true, label: "Quantidade diária (g)" %>
-        <%= f.input :start_date, as: :date, required: true, start_year: Date.today.year - 1,
+    <div class="row">
+     <div class="col-md-4">
+      <%= f.input :category, label: "Tipo de ração", collection: Food::FOOD.map { |e| e.capitalize}, include_blank: false %>
+     </div>
+      <div class="col-md-8">
+       <%= f.input :brand, label: "Marca", collection: Food::BRAND, include_blank: false %>
+      </div>
+    </div>
+    <div class="row">
+     <div class="col-md-6">
+      <%= f.input :bag_qty_kg, input_html:{min:0}, label: "Quantidade do pacote (kg)" %>
+     </div>
+     <div class="col-md-6">
+      <%= f.input :daily_qty_kg, input_html:{min:0}, required: true, label: "Quantidade diária (g)" %>
+     </div>
+    </div>
+    <div class="col-12">
+     <%= f.input :start_date, as: :date, required: true, start_year: Date.today.year - 1,
         end_year: Date.today.year + 1, order: [:day, :month, :year], label: "Início de uso desta ração" %>
-        <p><%= f.check_box :notification %> Me lembre de comprar nova ração </p>
-        <%= f.input :pet, as: :hidden, input_html: {value: @food.pet.id} %>
-        <%= f.submit "Concluir ediçao", class:"btn btn-primary" %>
-    <% end %>
+    </div>
+    <div class="col-12">
+      <%= f.check_box :notification %> Ativar lembrete para comprar ração
+    </div>
+    <div class="col-12">
+    <%= f.input :pet, as: :hidden, input_html: {value: @food.pet.id} %>
+    </div>
+    <div class="col-12">
+     <div class="d-flex justify-content-center align-items-center">
+      <%= f.submit "Editar", class:"btn btn-gradient" %>
+     </div>
+    </div>
+  </div>
+  <% end %>
 </div>

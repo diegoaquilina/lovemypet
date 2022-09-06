@@ -1,17 +1,40 @@
-<div class="container">
-    <h1>Editar medicamento</h1>
-        <%= simple_form_for @medication do |f| %>
-        <%= f.input :name, label: "Nome" %>
-        <%#= f.input :dose, input_html:{min:0}, label: "Dosagem" %>
-        <%#= f.input :dose_unit, label: "Unidade da dosagem (Ex: gotas, miligramas, mililitros..)" %>
-        <%= f.input :instructions, label: "Instruções de uso" %>
-        <%= f.input :frequency, input_html:{min:0}, label: "Frequência de uso (intervalo de horas)" %>
-        <%= f.input :start_date, order:[:day, :month, :year], start_year: Date.today.year,
-        end_year: Date.today.year + 2, label: "Início:" %>
-        <p><%= f.check_box :notification %> Me lembre de aplicar medicamento </p>
-        <%= f.input :end_date, order:[:day, :month, :year], start_year: Date.today.year,
-        end_year: Date.today.year + 2, label: "Término:" %>
-        <%= f.input :pet, as: :hidden, input_html: {value: @medication.pet.id} %>
-        <%= f.submit "Editar", class:"btn btn-primary" %>
-    <% end %>
+<div class="d-flex justify-content-center align-items-center">
+  <h1>💊Editar medicamento</h1>
+</div>
+
+<div class="container bg-light rounded-5 p-2">
+  <div class="bg-light rounded-5 px-4 py-2">
+    <%= simple_form_for @medication do |f| %>
+    <div class="row">
+     <div class="col-md-3">
+      <%= f.input :name, label: "Nome" %>
+     </div>
+     <div class="col-md-5">
+      <%= f.input :instructions, label: "Instruções de uso" %>
+     </div>
+     <div class="col-md-4">
+      <%= f.input :frequency, input_html:{min:0}, label: "Frequência de uso" %>
+     </div>
+    </div>
+    <div class="col-12">
+     <%= f.input :start_date, order:[:day, :month, :year], start_year: Date.today.year,
+     end_year: Date.today.year + 2, label: "Início:" %>
+    </div>
+    <div class="col-7">
+     <%= f.input :end_date, order:[:day, :month, :year], start_year: Date.today.year,
+     end_year: Date.today.year + 2, label: "Término:" %>
+    </div>
+    <div class="col-12">
+      <%= f.input :pet, as: :hidden, input_html: {value: @medication.pet.id} %>
+    </div>
+    <div class="col-12">
+     <%= f.check_box :notification %> Ativar lembrete nos horários do medicamento
+    </div>
+    <div class="col-12">
+     <div class="d-flex justify-content-center align-items-center">
+      <%= f.submit "Editar", class:"btn btn-gradient" %>
+     </div>
+    </div>
+  </div>
+  <% end %>
 </div>

@@ -2,8 +2,8 @@
   <h1>🍗Alimentação</h1>
 </div>
 
-<div class="container bg-secondary rounded-5 p-2">
-  <div class="bg-secondary rounded-5 px-4 py-2">
+<div class="container bg-light rounded-5 p-2">
+  <div class="bg-light rounded-5 px-4 py-2">
     <%= simple_form_for @food, as: :food, url: foods_path(@food), method: :post do |f| %>
      <div class="col-12">
      <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
@@ -29,9 +29,11 @@
      end_year: Date.today.year + 1, order: [:day, :month, :year], label: "Início de uso desta ração" %>
     </div>
     <div class="col-12">
+      <%= f.check_box :notification %> Ativar lembrete para comprar ração
+    </div>
+    <div class="col-12">
      <div class="d-flex justify-content-center align-items-center">
       <%= f.submit "Cadastrar", class:"btn btn-gradient" %>
-      <p><%= f.check_box :notification %> Me lembre de comprar nova ração </p>
      </div>
     </div>
   </div>

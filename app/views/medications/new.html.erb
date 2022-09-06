@@ -2,21 +2,21 @@
   <h1>💊Medicamento</h1>
 </div>
 
-<div class="container bg-secondary rounded-5 p-2">
-  <div class="bg-secondary rounded-5 px-4 py-2">
+<div class="container bg-light rounded-5 p-2">
+  <div class="bg-light rounded-5 px-4 py-2">
     <%= simple_form_for @medication, as: :medication, url: medications_path(@medication), method: :post do |f| %>
      <div class="col-12">
      <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
      </div>
     <div class="row">
-     <div class="col-md-4">
+     <div class="col-md-3">
       <%= f.input :name, label: "Nome" %>
      </div>
      <div class="col-md-5">
-      <%= f.input :instructions, label: "Instruções de uso", placeholder: "Exemplo: Via oral, aplicar na região da perna, etc" %>
+      <%= f.input :instructions, label: "Instruções de uso", placeholder: "Exemplo: Via oral" %>
      </div>
-     <div class="col-md-3">
-      <%= f.input :frequency, input_html:{min:0}, label: "Frequência de uso", placeholder: "Exemplo: Se o medicamento deve ser tomado a cada 8h, digite 8" %>
+     <div class="col-md-4">
+      <%= f.input :frequency, input_html:{min:0}, label: "Frequência de uso", placeholder: "Exemplo: 8h/8h" %>
      </div>
     </div>
     <div class="row">
@@ -30,9 +30,11 @@
       </div>
     </div>
     <div class="col-12">
+     <%= f.check_box :notification %> Ativar lembrete nos horários do medicamento
+    </div>
+    <div class="col-12">
      <div class="d-flex justify-content-center align-items-center">
       <%= f.submit "Cadastrar", class:"btn btn-gradient" %>
-      <p><%= f.check_box :notification %> Me lembre de aplicar medicamento </p>
      </div>
     </div>
   </div>

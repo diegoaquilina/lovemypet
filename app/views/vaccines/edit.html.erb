@@ -1,14 +1,33 @@
-<div class="container">
-    <h1>Editar vacina</h1>
+<div class="d-flex justify-content-center align-items-center">
+  <h1>💉Editar vacina</h1>
+</div>
+
+<div class="container bg-light rounded-5 p-2">
+  <div class="bg-light rounded-5 px-4 py-2">
     <%= simple_form_for @vaccine do |f| %>
-        <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
-        <%= f.input :vaccine_type, label: "Vacina", collection: Vaccine::VACCINE.map, include_blank: false %>
-        <%= f.input :app_date, order:[:day, :month, :year], start_year: Date.today.year,
+     <div class="col-12">
+     <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
+     </div>
+    <div class="row">
+     <div class="col-md-4">
+      <%= f.input :vaccine_type, label: "Vacina", collection: Vaccine::VACCINE.map, include_blank: false %>
+     </div>
+      <div class="col-md-8">
+       <%= f.input :app_date, order:[:day, :month, :year], start_year: Date.today.year,
         end_year: Date.today.year + 1, label: "Data de aplicaçãoo" %>
-        <%= f.input :expiry_date, order:[:day, :month, :year], start_year: Date.today.year,
-        end_year: Date.today.year + 5, label: "Data de vencimento" %>
-        <p><%= f.check_box :notification %> Me lembre agendar nova vacina</p>
-        <%= f.input :pet, as: :hidden, input_html: {value: @vaccine.pet.id} %>
-        <%= f.submit "Editar", class:"btn btn-primary" %>
-    <% end %>
+      </div>
+    </div>
+    <div class="col-12">
+     <%= f.check_box :notification %> Ativar lembrete da próxima data da vacina
+    </div>
+    <div class="col-12">
+     <%= f.input :pet, as: :hidden, input_html: {value: @vaccine.pet.id} %>
+    </div>
+    <div class="col-12">
+     <div class="d-flex justify-content-center align-items-center">
+      <%= f.submit "Editar", class:"btn btn-gradient" %>
+     </div>
+    </div>
+  </div>
+  <% end %>
 </div>
