@@ -5,11 +5,11 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.notification.subject
   #
-  def notification
-    @user = params[:user]
+  def notification(email)
+    @notification = email.pet.user.email
     @url = 'https://lovemypetapp.herokuapp.com/'
 
-    mail(to: @user.email,
-         subject: "⏰ -- Esta chegando a hora de cuidar de seu pet 🐶🐱-- ⏰")
+    mail(to: @notification,
+         subject: "⏰ -- Relaxe! Iremos te avisar dos compromissos do seus pets 🐶🐱-- ⏰")
   end
 end

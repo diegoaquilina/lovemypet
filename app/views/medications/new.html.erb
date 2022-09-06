@@ -9,6 +9,7 @@
         <%= f.input :frequency, input_html:{min:0}, label: "Frequência de uso (intervalo de horas)" %>
         <%= f.input :start_date, order:[:day, :month, :year], start_year: Date.today.year,
         end_year: Date.today.year + 2, label: "Início:" %>
+        <p><%= f.check_box :notification %> Me lembre de aplicar medicamento </p>
         <%= f.input :end_date, order:[:day, :month, :year], start_year: Date.today.year,
         end_year: Date.today.year + 2, label: "Término:" %>
         <%= f.submit "Cadastrar", class:"btn btn-primary" %>
