@@ -1,8 +1,6 @@
 <div class="background-pets">
   <div class="container-pets">
-
-      <%= button_to "◁", pets_path, method: :get, class: "btn-gradient mt-2 mb-2" %>
-
+      <%= button_to "◁", pets_path, method: :get, class: "btn-gradient2 mt-2 mb-2" %>
     <%# ----------------- PET -----------------%>
     <div class="">
       <div class="nome">
@@ -93,7 +91,7 @@
     <%# ----------------- EDIT & DELETE -----------------%>
     <div class="container center mt-5 mb-5">
       <div class="row card-pet">
-        <%= button_to "Deletar", "#", method: :delete, form:{ data: {turbo_confirm: "Você tem certeza?"}}, class: "btn-learn-more mt-2 mb-2" %>
+        <%= button_to "Deletar", "#", method: :delete, form:{ data: {turbo_confirm: "Você tem certeza?"}}, class: "btn-gradient2 mt-2 mb-2" %>
       </div>
     </div>
   </div>
