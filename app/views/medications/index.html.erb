@@ -1,5 +1,5 @@
 <div class="container">
-    <h1>Medicamento(s) do(s) seu(s) pet(s)</h1>
+    <h1>Medicamentos</h1>
 
     <% if @medications.empty? %>
         "Seu pet nao possui nenhum medicamento."
@@ -10,11 +10,10 @@
             <tr>
                 <th>Pet</th>
                 <th>Medicamento</th>
-                <th>Dose</th>
-                <th>Unidade da dose</th>
                 <th>Instruções</th>
-                <th style="text-align:center">Frequencia/hora</th>
-                <th style="text-align:center">Periodo a serem tomado</th>
+                <th style="text-align:center">Frequencia</th>
+                <th style="text-align:center">Início da medicação</th>
+                <th style="text-align:center">Término da medicação</th>
                 <th colspan="3"></th>
             </tr>
             </thead>
@@ -24,13 +23,17 @@
                   <tr>
                     <td><%= medication.pet.name %></td>
                     <td><%= medication.name %></td>
-                    <td style="text-align:center"><%= medication.dose %></td>
-                    <td><%= medication.dose_unit %></td>
                     <td><%= medication.instructions %></td>
                     <td style="text-align:center"v><%= medication.frequency %>/hrs</td>
-                    <td style="text-align:center"><%= medication.start_date %></td>
-                    <td><%= link_to 'Editar', edit_medication_path(medication) %></td>
-                    <td><%= link_to 'Deletar', medication_path(medication), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} %></td>
+                    <td style="text-align:center"><%= medication.start_date.strftime("%d/%m/%Y") %></td>
+                    <td style="text-align:center"><%= medication.end_date.strftime("%d/%m/%Y") %></td>
+                    <td><%= link_to edit_medication_path(medication) do %>
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    <% end %>
+                  </td>
+                  <td><%= link_to medication_path(medication), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} do %>
+                      <i class="fa-solid fa-trash-can"></i>
+                    <% end %>
                     </tr>
                 <% end %>
             </tbody>

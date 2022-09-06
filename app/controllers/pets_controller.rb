@@ -25,12 +25,12 @@ class PetsController < ApplicationController
     end
   end
 
-  def show
+  def show    
     # @vaccines = Vaccines.where(pet: @pet)
     # @appointments = Appointment.where(pet: @pet)
     # @medications = Medications.where(pet: @pet)
     # @baths = Baths.where(pet: @pet)
-    # @foods = Foods.where(pet: @pet)
+    # @foods = Foods.where(pet: @pet)    
   end
 
   def edit;

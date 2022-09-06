@@ -6,4 +6,6 @@ class Vaccine < ApplicationRecord
   def self.end_date_vaccine(app_date)
     end_date = app_date + 365
   end
+
+  validates :app_date, presence: true
 end

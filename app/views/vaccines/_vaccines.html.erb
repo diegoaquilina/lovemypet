@@ -8,12 +8,6 @@
         <p>
         Próxima vacina de <%= vaccine.pet.name %> 
         será dia <%= calc_exp.strftime("%d/%m/%Y") %>
-        <%= link_to edit_vaccine_path(vaccine) do %>
-          <i class="fa-solid fa-pen-to-square"></i>
-        <% end %>
-        <%= link_to vaccine_path(vaccine), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} do %>
-          <i class="fa-solid fa-trash-can"></i>
-        <% end %>
         </p>        
       <% end %>
     <% end %>

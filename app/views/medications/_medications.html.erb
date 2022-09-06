@@ -7,12 +7,6 @@
         <p>
         Próximo remédio de <%= medication.pet.name %> 
         será dia <%#= %> as <%#= %> 
-        <%= link_to edit_medication_path(medication) do %>
-          <i class="fa-solid fa-pen-to-square"></i>
-        <% end %>
-        <%= link_to medication_path(medication), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} do %>
-          <i class="fa-solid fa-trash-can"></i>
-        <% end %>
         </p>        
       <% end %>
     <% end %>
