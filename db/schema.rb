@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_05_190217) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_06_193302) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_190217) do
     t.bigint "pet_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "notification", default: false
     t.index ["pet_id"], name: "index_appointments_on_pet_id"
   end
 
@@ -64,6 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_190217) do
     t.bigint "pet_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "notification", default: false
     t.index ["pet_id"], name: "index_baths_on_pet_id"
   end
 
@@ -76,6 +78,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_190217) do
     t.bigint "pet_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "notification", default: false
     t.index ["pet_id"], name: "index_foods_on_pet_id"
   end
 
@@ -90,7 +93,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_190217) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "end_date"
-    t.date "start_date"
+    t.datetime "start_date", precision: nil
+    t.boolean "notification", default: false
     t.index ["pet_id"], name: "index_medications_on_pet_id"
   end
 
@@ -151,6 +155,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_05_190217) do
     t.bigint "pet_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "notification", default: false
     t.index ["pet_id"], name: "index_vaccines_on_pet_id"
   end
 

@@ -1,11 +1,31 @@
-<div class="container">
-    <h1>Agendamento</h1>
-        <%= simple_form_for @bath, as: :bath, url: baths_path(@bath), method: :post do |f| %>
-        <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
-        <%= f.input :category, label: "Serviço", collection: Bath::SERVICE.map { |e| e.capitalize}, include_blank: false %>
-        <%= f.input :address, label: "Petshop" %>
-        <%= f.input :date, order:[:day, :month, :year],start_year: Date.today.year,
-        end_year: Date.today.year + 1, label: "Data" %>
-        <%= f.submit "Agendar", class:"btn btn-primary" %>
-    <% end %>
+<div class="d-flex justify-content-center align-items-center">
+  <h1>🛁Banho & Tosa</h1>
+</div>
+
+<div class="container bg-secondary rounded-5 p-2">
+  <div class="bg-secondary rounded-5 px-4 py-2">
+    <%= simple_form_for @bath, as: :bath, url: baths_path(@bath), method: :post do |f| %>
+     <div class="col-12">
+     <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
+     </div>
+    <div class="row">
+     <div class="col-md-4">
+      <%= f.input :category, label: "Serviço", collection: Bath::SERVICE.map { |e| e.capitalize}, include_blank: false %>
+     </div>
+      <div class="col-md-8">
+       <%= f.input :address, label: "Petshop", placeholder: "Informe o endereço ou o nome do Petshop" %>
+      </div>
+    </div>
+    <div class="col-12">
+     <%= f.input :date, order:[:day, :month, :year],start_year: Date.today.year,
+      end_year: Date.today.year + 1, label: "Data" %>
+    </div>
+    <div class="col-12">
+     <div class="d-flex justify-content-center align-items-center">
+      <%= f.submit "Agendar serviço", class:"btn btn-gradient" %>
+      <p><%= f.check_box :notification %> Me lembre deste compromisso </p>
+     </div>
+    </div>
+  </div>
+  <% end %>
 </div>

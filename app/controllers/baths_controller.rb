@@ -48,6 +48,6 @@ class BathsController < ApplicationController
   end
 
   def bath_params
-    params.require(:bath).permit(:category, :address, :date, :pet)
+    params.require(:bath).permit(:category, :address, :date, :notification, :pet)
   end
 end
