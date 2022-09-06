@@ -13,20 +13,23 @@
           <%= link_to "Meus Pets", pets_path, class:"dropdown-item" %>
         </div>
         <div class="dropdown-nav">
-          <button class="dropbtn">Minha Agenda
+          <button class="dropbtn">Cadastrar na agenda
               <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
               <%#= link_to "🐕 Cadastrar Pet", new_pet_path, class: "dropdown-item" %>
-              <%= link_to "🍗 Cadastrar Alimentação", new_food_path, class: "dropdown-item" %>
-              <%= link_to "🛁 Cadastrar Banho & Tosa", new_bath_path, class: "dropdown-item" %>
-              <%= link_to "🩺 Cadastrar Nova Consulta", new_appointment_path, class: "dropdown-item" %>
-              <%= link_to "💊 Cadastrar Medicamento", new_medication_path, class: "dropdown-item" %>
-              <%= link_to "💉 Cadastrar Vacina", new_vaccine_path, class: "dropdown-item" %>
+              <%= link_to "🍗 Alimentação", new_food_path, class: "dropdown-item" %>
+              <%= link_to "🛁 Banho & Tosa", new_bath_path, class: "dropdown-item" %>
+              <%= link_to "🩺 Nova Consulta", new_appointment_path, class: "dropdown-item" %>
+              <%= link_to "💊 Medicamento", new_medication_path, class: "dropdown-item" %>
+              <%= link_to "💉 Vacina", new_vaccine_path, class: "dropdown-item" %>
             </div>
         </div>
       </div>
     </div>
+
+    <h1>Love My Pet</h1>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -44,8 +47,6 @@
           <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Meu Perfil", profile_path, class: "dropdown-item" %>
-
-
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>

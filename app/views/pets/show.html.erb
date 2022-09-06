@@ -33,8 +33,8 @@
         <h3><strong>🍗 Alimentação</strong></h3>
           <div class="col-6 text-start mt-3">
             <p>Por dia, eu como </p>
-            <p>Eu gosto da ração:</p>
-            <p>Vou ficar sem ração no dia  </p>
+            <p>Eu gosto da ração <%#= @ %></p>
+            <p>Vou ficar sem ração no dia <%#= @ %></p>
           </div>
           <div class="col-6">
             <%= button_to "+", new_food_path, method: :get, class: "btn-learn-more"%>
@@ -46,8 +46,8 @@
       <div class="row card-pet">
         <h3><strong>Banho e Tosa 🛁</strong></h3>
           <div class="col-6 text-start mt-3">
-            <p>Meu último banho/tosa foi em:</p>
-            <p>Próximo agendamento para:</p>
+            <p>Meu último banho/tosa foi em <%#= @ %></p>
+            <p>Próximo agendamento para <%#= @ %></p>
           </div>
           <div class="col-6">
             <%= button_to "+", new_bath_path, method: :get, class: "btn-learn-more "%>
@@ -59,7 +59,7 @@
       <div class="row card-pet">
         <h3><strong>🩺 Consultas Veterinário</strong></h3>
           <div class="col-6 text-start mt-3">
-            <p>Você vai mentir pra mim falando que vamos passear, mas vamos no veterinário no dia: </p>
+            <p>Você vai mentir pra mim falando que vamos passear, mas vamos no veterinário no dia <%#= @ %></p>
           </div>
           <div class="col-6">
             <%= button_to "+", new_appointment_path, method: :get, class: "btn-learn-more mt-5"%>
@@ -72,7 +72,7 @@
         <h3><strong>Vacinas 💉</strong></h3>
           <div class="col-6 text-start mt-3">
             <p>Ai ai ai!</p>
-            <p>Tenho que tomar a vacina "#" no dia:</p>
+            <p>Tenho que tomar a vacina "#" no dia: <%#= @ %></p>
           </div>
           <div class="col-6">
             <%= button_to "+", new_vaccine_path, method: :get, class: "btn-learn-more mt-5"%>
@@ -84,7 +84,7 @@
       <div class="row card-pet">
         <h3><strong>💊 Medicamentos</strong></h3>
           <div class="col-6 text-start mt-3">
-            <p>Meu proximo medicamento vai ser às ___ hrs</p>
+            <p>Meu proximo medicamento vai ser <%#= @ %> às <%#= @ %> hrs</p>
           </div>
           <div class="col-6">
             <%= button_to "+", new_medication_path, method: :get, class: "btn-learn-more mt-5"%>
