@@ -2,8 +2,8 @@
   <h1>🛁Banho & Tosa</h1>
 </div>
 
-<div class="container bg-secondary rounded-5 p-2">
-  <div class="bg-secondary rounded-5 px-4 py-2">
+<div class="container bg-light rounded-5 p-2">
+  <div class="bg-light rounded-5 px-4 py-2">
     <%= simple_form_for @bath, as: :bath, url: baths_path(@bath), method: :post do |f| %>
      <div class="col-12">
      <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
@@ -21,9 +21,11 @@
       end_year: Date.today.year + 1, label: "Data" %>
     </div>
     <div class="col-12">
+      <%= f.check_box :notification %> Ativar lembrete desse serviço
+    </div>
+    <div class="col-12">
      <div class="d-flex justify-content-center align-items-center">
       <%= f.submit "Agendar serviço", class:"btn btn-gradient" %>
-      <p><%= f.check_box :notification %> Me lembre deste compromisso </p>
      </div>
     </div>
   </div>

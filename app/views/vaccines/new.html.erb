@@ -2,8 +2,8 @@
   <h1>💉Vacina</h1>
 </div>
 
-<div class="container bg-secondary rounded-5 p-2">
-  <div class="bg-secondary rounded-5 px-4 py-2">
+<div class="container bg-light rounded-5 p-2">
+  <div class="bg-light rounded-5 px-4 py-2">
     <%= simple_form_for @vaccine do |f| %>
      <div class="col-12">
      <%= f.input :pet, collection: @pet.map { |pet| [pet.name.capitalize, pet.id]}, include_blank: false %>
@@ -18,9 +18,11 @@
       </div>
     </div>
     <div class="col-12">
+     <%= f.check_box :notification %> Ativar lembrete da próxima data da vacina
+    </div>
+    <div class="col-12">
      <div class="d-flex justify-content-center align-items-center">
       <%= f.submit "Cadastrar", class:"btn btn-gradient" %>
-      <p><%= f.check_box :notification %> Me lembre agendar nova vacina</p>
      </div>
     </div>
   </div>

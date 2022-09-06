@@ -1,13 +1,38 @@
-<div class= "container">
-  <h1>Editar consulta</h1>
-    <%= simple_form_for @appointment do |f| %>
-      <%= f.input :date, order:[:day, :month, :year], start_year: Date.today.year,
-      end_year: Date.today.year + 1, label: "Data da consulta" %>
-      <p><%= f.check_box :notification %> Me lembre desta consulta </p>
-      <%= f.input :title, label: "Motivo da consulta" %>
-      <%= f.input :address, label: "Endereço" %>
-      <%= f.input :phone, label: "Telefone" %>
-      <%= f.input :pet, as: :hidden, input_html: {value: @appointment.pet.id} %>
-      <%= f.submit "Adicionar consulta", class:"btn btn-primary" %>
-  <% end %>
+<div class="d-flex justify-content-center align-items-center">
+  <h1>🩺Editar consulta</h1>
 </div>
+
+<div class="container bg-light rounded-5 p-2">
+  <div class="bg-light rounded-5 px-4 py-2">
+    <%= simple_form_for @appointment do |f| %>
+    <div class="row">
+     <div class="col-md-12">
+      <%= f.input :title, label: "Motivo da consulta" %>
+     </div>
+    </div>
+    <div class="row">
+     <div class="col-md-8">
+      <%= f.input :address, label: "Endereço" %>
+     </div>
+     <div class="col-md-4">
+      <%= f.input :phone, label: "Telefone" %>
+     </div>
+    </div>
+    <div class="col-12">
+     <%= f.input :date, order:[:day, :month, :year], start_year: Date.today.year,
+      end_year: Date.today.year + 1, label: "Data da consulta" %>
+    </div>
+    <div class="col-12">
+     <%= f.check_box :notification %> Ativar lembrete dessa consulta
+    </div>
+    <div class="col-12">
+     <%= f.input :pet, as: :hidden, input_html: {value: @appointment.pet.id} %>
+    </div>
+    <div class="col-12">
+     <div class="d-flex justify-content-center align-items-center">
+      <%= f.submit "Editar", class:"btn btn-gradient" %>
+     </div>
+    </div>
+  </div>
+  <% end %>
+ </div>
