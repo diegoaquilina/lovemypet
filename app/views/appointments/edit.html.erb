@@ -3,6 +3,7 @@
     <%= simple_form_for @appointment do |f| %>
       <%= f.input :date, order:[:day, :month, :year], start_year: Date.today.year,
       end_year: Date.today.year + 1, label: "Data da consulta" %>
+      <p><%= f.check_box :notification %> Me lembre desta consulta </p>
       <%= f.input :title, label: "Motivo da consulta" %>
       <%= f.input :address, label: "Endereço" %>
       <%= f.input :phone, label: "Telefone" %>

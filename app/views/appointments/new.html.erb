@@ -10,15 +10,15 @@
      </div>
     <div class="row">
      <div class="col-md-12">
-      <%= f.input :title, label: "Motivo da consulta" %>
+      <%= f.input :title, label: "Motivo da consulta", placeholder: "Descreva o motivo da consulta" %>
      </div>
     </div>
     <div class="row">
      <div class="col-md-8">
-      <%= f.input :address, label: "Endereço" %>
+      <%= f.input :address, label: "Endereço", placeholder: "Endereço" %>
      </div>
      <div class="col-md-4">
-      <%= f.input :phone, label: "Telefone" %>
+      <%= f.input :phone, label: "Telefone", placeholder: "(XX) XXXXX-XXXX" %>
      </div>
     </div>
     <div class="col-12">
@@ -28,8 +28,9 @@
     <div class="col-12">
      <div class="d-flex justify-content-center align-items-center">
       <%= f.submit "Agendar consulta", class:"btn btn-gradient" %>
+      <p><%= f.check_box :notification %> Me lembre desta consulta</p>
      </div>
     </div>
   </div>
   <% end %>
-</div>
+ </div>

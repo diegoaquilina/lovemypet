@@ -54,6 +54,6 @@ class VaccinesController < ApplicationController
   end
 
   def vaccine_params
-    params.require(:vaccine).permit(:vaccine_type, :app_date, :expiry_date, :pet)
+    params.require(:vaccine).permit(:vaccine_type, :app_date, :expiry_date, :notification, :pet)
   end
 end

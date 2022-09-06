@@ -13,7 +13,7 @@
       <%= f.input :category, label: "Serviço", collection: Bath::SERVICE.map { |e| e.capitalize}, include_blank: false %>
      </div>
       <div class="col-md-8">
-       <%= f.input :address, label: "Petshop" %>
+       <%= f.input :address, label: "Petshop", placeholder: "Informe o endereço ou o nome do Petshop" %>
       </div>
     </div>
     <div class="col-12">
@@ -23,6 +23,7 @@
     <div class="col-12">
      <div class="d-flex justify-content-center align-items-center">
       <%= f.submit "Agendar serviço", class:"btn btn-gradient" %>
+      <p><%= f.check_box :notification %> Me lembre deste compromisso </p>
      </div>
     </div>
   </div>

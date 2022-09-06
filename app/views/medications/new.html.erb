@@ -13,10 +13,10 @@
       <%= f.input :name, label: "Nome" %>
      </div>
      <div class="col-md-5">
-      <%= f.input :instructions, label: "Instruções de uso" %>
+      <%= f.input :instructions, label: "Instruções de uso", placeholder: "Exemplo: Via oral, aplicar na região da perna, etc" %>
      </div>
      <div class="col-md-3">
-      <%= f.input :frequency, input_html:{min:0}, label: "Frequência de uso" %>
+      <%= f.input :frequency, input_html:{min:0}, label: "Frequência de uso", placeholder: "Exemplo: Se o medicamento deve ser tomado a cada 8h, digite 8" %>
      </div>
     </div>
     <div class="row">
@@ -32,6 +32,7 @@
     <div class="col-12">
      <div class="d-flex justify-content-center align-items-center">
       <%= f.submit "Cadastrar", class:"btn btn-gradient" %>
+      <p><%= f.check_box :notification %> Me lembre de aplicar medicamento </p>
      </div>
     </div>
   </div>
