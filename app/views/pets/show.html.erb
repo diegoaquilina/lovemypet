@@ -30,14 +30,18 @@
       <div class="row card-pet">
         <h3><strong>🍗 Alimentação</strong></h3>
           <div class="col-6 text-start mt-3">
-            <% calc = Food.end_date_food(@food.start_date, @food.bag_qty_kg, @food.daily_qty_kg) %>
-            <p>Por dia, eu como: <strong><%= @food.daily_qty_kg %> g</strong> </p>
-            <p>Eu gosto da ração: <strong><%= @food.brand %> </strong> </p>
-            <p>Vou ficar sem ração no dia: <strong> <%= calc.strftime("%d/%m/%Y") %> </strong>  </p>
-          </div>
+            <% if @food.nil? %>
+              "Voce nao possui nenhuma ração registrada."
+            <% else %>
+              <% calc = Food.end_date_food(@food.start_date, @food.bag_qty_kg, @food.daily_qty_kg) %>
+              <p>Por dia, eu como: <strong><%= @food.daily_qty_kg %> g</strong> </p>
+              <p>Eu gosto da ração: <strong><%= @food.brand %> </strong> </p>
+              <p>Vou ficar sem ração no dia: <strong> <%= calc.strftime("%d/%m/%Y") %> </strong>  </p>
+            <% end %>
+           </div>
           <div class="col-6">
             <%= button_to "+", new_food_path, method: :get, class: "btn-gradient"%>
-          </div>
+          </div>         
       </div>
     </div>
     <%# ----------------- BANHO E TOSA -----------------%>
@@ -67,9 +71,9 @@
           <div class="col-6 text-start mt-3">
           <% if @appointment %>
             <p>Você vai mentir pra mim falando que vamos passear, mas vamos no veterinário no dia: <strong><%= @appointment.date.strftime("%d/%m/%Y") %> </strong> </p>
-          <% else  %>
+          <% else %>
             <p>Você vai mentir pra mim falando que vamos passear, mas vamos no veterinário no dia: <strong></strong> </p>
-          <%end  %>
+          <%end %>
           </div>
           <div class="col-6">
             <%= button_to "+", new_appointment_path, method: :get, class: "btn-gradient"%>
