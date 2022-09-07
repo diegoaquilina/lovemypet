@@ -41,11 +41,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: white;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  //border-radius: 5px;
+  border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
@@ -96,4 +97,26 @@
 
 .divzona-pets{
   background-color: #fff;
+}
+
+.accordion-button{
+
+  &:hover{
+    color: white;
+  }
+}
+
+.accordion-button:not(.collapsed) {
+  color: white;
+}
+
+.accordion-button::after {
+  margin: 0;
+  display: none;
+}
+
+
+.accordion{
+  
+  --bs-accordion-border-color: white;
 }

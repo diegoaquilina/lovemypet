@@ -1,5 +1,4 @@
 <div class="container">
-    <h3 class= "meus-pets-text">Meus Pets</h3>
   <div class="conteinerIndexPets">
     <% @pets.each do |pet| %>
       <div class="box">
@@ -22,8 +21,5 @@
         </div>
       </div>
     <% end %>
-  </div>
-  <div class="buttonADD mt-5">
-    <%= button_to "+ ADD PET", new_pet_path, method: :get, class: "btn-learn-more" %>
   </div>
 </div>

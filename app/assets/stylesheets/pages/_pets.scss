@@ -52,7 +52,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #A690A4;
+  background: #F9C4D2;
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -96,13 +96,15 @@
   right: 0;
   margin: 10px;
   text-decoration: none;
-  color: #b18597;
+  a{
+    color: #421B3F;
+  }
 }
 
 .EditDelete{
   text-decoration: none;
   & a:hover{
-    color: #542E71;
+    color: #B983FF;
     //color: #542E71;
   }
 }

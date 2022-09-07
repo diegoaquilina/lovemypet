@@ -1,20 +1,20 @@
 <!-- Accordion # Always open -->
 <div class="accordion" id="accordionPanelsStayOpenExample">
   <div class="accordion-item">
-      <%= link_to "ALIMENTAÇÃO", "#", class: "accordion-button card-category text-decoration-none", type: "button", data:{bs_toggle: "collapse", bs_target: "#panelsStayOpen-collapseOne"}, aria: {expanded: "true", controls: "panelsStayOpen-collapseOne"}, style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80)" %>
+      <%= link_to "🍗 ALIMENTAÇÃO", "#", class: "accordion-button card-category text-decoration-none", type: "button", data:{bs_toggle: "collapse", bs_target: "#panelsStayOpen-collapseOne"}, aria: {expanded: "true", controls: "panelsStayOpen-collapseOne"}, style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://img.freepik.com/free-photo/beautiful-pet-portrait-dog_23-2149218450.jpg?size=626&ext=jpg&ga=GA1.2.480276464.1662565106)" %>
     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
       <div class="accordion-body">
         <%= render "foods/foods" %>
           <div class="card-btn-service">
-            <%= button_to "🍗", foods_path, method: :get, class: "btn-gradient" %>
-            <%= button_to "+", new_food_path, method: :get, class: "btn-gradient2" %>
+            <%= button_to "+ detalhes", foods_path, method: :get, class: "btn-gradient" %>
+            <%= button_to "+ ", new_food_path, method: :get, class: "btn-gradient2" %>
           </div>
       </div>
     </div>
   </div>
 
   <div class="accordion-item">
-    <%= link_to "BANHO E TOSA", "#", class: "accordion-button card-category text-decoration-none", type: "button", data:{bs_toggle: "collapse", bs_target: "#panelsStayOpen-collapseTwo"}, aria: {expanded: "true", controls: "panelsStayOpen-collapseTwo"}, style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1647496849037-3390ed7805a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80)" %>
+    <%= link_to "BANHO E TOSA 🛁", "#", class: "accordion-button card-category text-decoration-none", type: "button", data:{bs_toggle: "collapse", bs_target: "#panelsStayOpen-collapseTwo"}, aria: {expanded: "true", controls: "panelsStayOpen-collapseTwo"}, style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://image.shutterstock.com/image-photo/pure-youth-crazy-english-cocker-260nw-1424153078.jpg)" %>
     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
       <div class="accordion-body">
         <%= render "baths/baths" %>
@@ -27,7 +27,7 @@
   </div>
 
   <div class="accordion-item">
-    <%= link_to "CONSULTAS VETERINÁRIO", "#", class: "accordion-button card-category text-decoration-none", type: "button", data:{bs_toggle: "collapse", bs_target: "#panelsStayOpen-collapseThree"}, aria: {expanded: "true", controls: "panelsStayOpen-collapseThree"}, style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1584982751601-97dcc096659c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80)" %>
+    <%= link_to "🩺 CONSULTAS VETERINÁRIO", "#", class: "accordion-button card-category text-decoration-none", type: "button", data:{bs_toggle: "collapse", bs_target: "#panelsStayOpen-collapseThree"}, aria: {expanded: "true", controls: "panelsStayOpen-collapseThree"}, style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://image.shutterstock.com/image-photo/funny-welsh-corgi-pembroke-dog-260nw-2134403643.jpg)" %>
     <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
       <div class="accordion-body">
         <%= render "appointments/appointments" %>
@@ -40,7 +40,7 @@
   </div>
 
   <div class="accordion-item">
-    <%= link_to "VACINAS", "#", class: "accordion-button card-category text-decoration-none", type: "button", data:{bs_toggle: "collapse", bs_target: "#panelsStayOpen-collapseFour"}, aria: {expanded: "true", controls: "panelsStayOpen-collapseFour"},style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2018/04/29/11/03/syringe-3359627_960_720.jpg)" %>
+    <%= link_to "VACINAS 💉", "#", class: "accordion-button card-category text-decoration-none", type: "button", data:{bs_toggle: "collapse", bs_target: "#panelsStayOpen-collapseFour"}, aria: {expanded: "true", controls: "panelsStayOpen-collapseFour"},style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://image.shutterstock.com/image-photo/funny-british-shorthair-cat-portrait-260nw-2097266809.jpg)" %>
     <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
       <div class="accordion-body">
         <%= render "vaccines/vaccines" %>
@@ -53,7 +53,7 @@
   </div>
 
   <div class="accordion-item">
-    <%= link_to "MEDICAMENTOS", "#", class: "accordion-button card-category text-decoration-none", type: "button", data:{bs_toggle: "collapse", bs_target: "#panelsStayOpen-collapseFive"}, aria: {expanded: "true", controls: "panelsStayOpen-collapseFive"}, style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2020/10/02/09/01/tablets-5620566__340.jpg)" %>
+    <%= link_to "💊 MEDICAMENTOS", "#", class: "accordion-button card-category text-decoration-none", type: "button", data:{bs_toggle: "collapse", bs_target: "#panelsStayOpen-collapseFive"}, aria: {expanded: "true", controls: "panelsStayOpen-collapseFive"}, style: "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://img.freepik.com/free-photo/group-portrait-adorable-puppies_53876-64778.jpg?size=626&ext=jpg&ga=GA1.2.480276464.1662565106)" %>
     <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive>
       <div class="accordion-body">
         <%= render "medications/medications" %>
