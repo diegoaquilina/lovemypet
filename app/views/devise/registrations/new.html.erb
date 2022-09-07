@@ -1,35 +1,66 @@
-<div class="container col-8">
-<h2>Crie seu cadastro, é rápido 😉</h2>
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-    <%= f.error_notification %>
+<div class="d-flex justify-content-center align-items-center">
+  <h2>Cadastre-se, é rápido e fácil 🐾</h2>
+</div>
 
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :first_name,
-                  required: true %>
-      <%= f.input :last_name,
-                  required: true %>
-      <%= f.input :address,
-                  required: true %>
-      <%= f.input :phone,
-                  required: true %>
-      <%= f.input :avatar, as: :file %>
-    </div>
+<div class="container bg-light rounded-5 p-2">
+  <div class="bg-light rounded-5 px-4 py-2">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+      <%= f.error_notification %>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up", class:"btn btn-primary" %>
-    </div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
+      <div class="col-12">
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" },
+                    label: "Email", placeholder: "Digite seu email" %>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" },
+                      label: "Senha", placeholder: "Digite sua senha"  %>
+        </div>
+        <div class="col-md-6">
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" },
+                      label: "Confirmação de Senha", placeholder: "Digite novamente sua senha" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.input :first_name,
+                      required: true,
+                      label: "Nome", placeholder: "Seu nome" %>
+        </div>
+        <div class="col-md-6">
+          <%= f.input :last_name,
+                      required: true,
+                      label: "Sobrenome", placeholder: "Seu sobrenome" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <%= f.input :address,
+                      required: true,
+                      label: "Endereço", placeholder: "Digite seu endereço" %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :phone,
+                      required: true,
+                      label: "Celular", placeholder: "(xx) xxxxx-xxxx" %>
+        </div>
+      </div>
+      <div class="col-12">
+        <%= f.input :avatar, label: "Foto de perfil", as: :file %>
+      </div>
+      <div class="col-12">
+        <div class="d-flex justify-content-center align-items-center">
+          <%= f.button :submit, "Cadastre-se", class:"btn btn-gradient" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

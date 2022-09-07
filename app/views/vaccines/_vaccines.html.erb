@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="container-food mt-5">
     <% if @vaccines.empty? %>
-      "Voce nao possui nenhuma ração cadastrada."
+      "Seus pets não possuem nenhuma vacina cadastrada."
     <% else %>
       <% @vaccines.each do |vaccine| %>
         <% calc_exp = Vaccine.end_date_vaccine(vaccine.app_date) %>
