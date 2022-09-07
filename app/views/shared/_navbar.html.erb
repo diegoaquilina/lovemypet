@@ -36,12 +36,12 @@
               <% if user_signed_in? %>
                 <% if current_user.avatar.attached?%>
                 <button class="dropbtn">
-                  <%= image_tag "john_doe.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <%= cl_image_tag current_user.avatar.key, width: 40, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <% else %>
                 <button class="dropbtn">
-                  <%= cl_image_tag current_user.avatar.key, width: 40, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <%= image_tag "john_doe.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <% end %>
@@ -50,9 +50,9 @@
                   <%= link_to "Sair", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
                 </div>
                 <% else %>
-                  <li class="nav-item">
+
                     <%= link_to "Entrar", new_user_session_path, class: "nav-link" %>
-                  </li>
+
                 <% end %>
           </div>
         </div>

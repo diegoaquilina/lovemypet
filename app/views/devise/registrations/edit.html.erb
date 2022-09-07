@@ -4,7 +4,7 @@
 
 <div class="container bg-light rounded-5 p-2">
   <div class="bg-light rounded-5 px-4 py-2">
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, data: {turbo: false}) do |f| %>
       <%= f.error_notification %>
 
       <div class="row">
