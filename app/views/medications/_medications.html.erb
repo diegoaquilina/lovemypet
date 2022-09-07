@@ -1,13 +1,13 @@
-<div class="container mt-5">
-  <div class="container-food mt-5">
+<div class="">
+  <div class="container-food mt-3">
     <% if @medications.empty? %>
       "Seus pets não possuem nenhum medicamento cadastrado."
     <% else %>
       <% @medications.each do |medication| %>
         <p>
-        Próximo remédio de <%= medication.pet.name %> 
-        será dia <%#= %> as <%#= %> 
-        </p>        
+        Próximo remédio de <%= medication.pet.name %>
+        será dia <%#= %> as <%#= %>
+        </p>
       <% end %>
     <% end %>
   </div>

@@ -1,13 +1,13 @@
-<div class="container mt-5">
-  <div class="container-food mt-5">
+<div class="">
+  <div class="container-food mt-3">
     <% if @appointments.empty? %>
       "Seus pets não possuem nenhuma consulta agendada."
     <% else %>
       <% @appointments.each do |appointment| %>
         <p>
-        Próxima consulta de <%= appointment.pet.name %> 
-        será dia <%= appointment.date.strftime("%d/%m/%Y") %>        
-        </p>        
+        Próxima consulta de <%= appointment.pet.name %>
+        será dia <%= appointment.date.strftime("%d/%m/%Y") %>
+        </p>
       <% end %>
     <% end %>
   </div>
