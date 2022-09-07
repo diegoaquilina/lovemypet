@@ -1,14 +1,14 @@
-<div class="container mt-5">
-  <div class="container-food mt-5">
+<div class="">
+  <div class="container-food mt-3">
     <% if @vaccines.empty? %>
       "Seus pets não possuem nenhuma vacina cadastrada."
     <% else %>
       <% @vaccines.each do |vaccine| %>
         <% calc_exp = Vaccine.end_date_vaccine(vaccine.app_date) %>
         <p>
-        Próxima vacina de <%= vaccine.pet.name %> 
+        Próxima vacina de <%= vaccine.pet.name %>
         será dia <%= calc_exp.strftime("%d/%m/%Y") %>
-        </p>        
+        </p>
       <% end %>
     <% end %>
   </div>

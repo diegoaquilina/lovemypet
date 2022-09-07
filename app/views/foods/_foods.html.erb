@@ -1,14 +1,14 @@
-<div class="container mt-5">
-  <div class="container-food mt-5">
+<div class="">
+  <div class="container-food mt-3">
     <% if @foods.empty? %>
       "Seus pets não possuem nenhuma ração cadastrada."
     <% else %>
       <% @foods.each do |food| %>
         <% calc = Food.end_date_food(food.start_date, food.bag_qty_kg, food.daily_qty_kg) %>
         <p>
-        Próxima compra de <%= food.pet.name %> 
+        Próxima compra de <%= food.pet.name %>
         será dia <%= calc.strftime("%d/%m/%Y") %>
-        </p>        
+        </p>
       <% end %>
     <% end %>
   </div>
