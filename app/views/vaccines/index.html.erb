@@ -1,14 +1,16 @@
-<div class="container">
-    <h1>Vacinas</h1>
-
+<div class="container mt-5">
+  <div class="d-flex justify-content-center align-items-center">
+    <h1>Detalhes das vacinas</h1>
+  </div>
+  <div class="container-food mt-5">
     <% if @vaccines.empty? %>
         "Seu pet nao possui nenhum medicamento."
     <% else %>
       <div class="table-responsive">
-        <table class="table">
+        <table class="table table-striped">
             <thead>
             <tr>
-                <th>Pet</th>
+                <th style="text-align:center">Pet</th>
                 <th style="text-align:center">Vacina</th>
                 <th style="text-align:center">Data de aplicação</th>
                 <th style="text-align:center">Data de vencimento</th>
@@ -20,7 +22,7 @@
                 <% @vaccines.each do |vaccine| %>
                     <% calc_exp = end_date_vaccine(vaccine.app_date) %>
                     <tr>
-                      <td><%= vaccine.pet.name %></td>
+                      <td style="text-align:center"><%= vaccine.pet.name %></td>
                       <td style="text-align:center"><%= vaccine.vaccine_type %></td>
                       <td style="text-align:center"><%= vaccine.app_date.strftime("%d/%m/%Y") %></td>
                       <td style="text-align:center"><%= calc_exp.strftime("%d/%m/%Y") %></td>
@@ -38,4 +40,5 @@
         </table>
       </div>
     <% end %>
+  </div>
 </div>

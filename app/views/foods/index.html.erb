@@ -1,20 +1,22 @@
 <div class="container mt-5">
+  <div class="d-flex justify-content-center align-items-center">
+    <h1>Detalhes das rações</h1>
+  </div>
   <div class="container-food mt-5">
-    <h1>Alimentação</h1>
     <% if @foods.empty? %>
       "Voce nao possui nenhuma ração registrada."
     <% else %>
       <div class="table-responsive">
-        <table class="table">
+        <table class="table table-striped">
           <thead>
             <tr>
-              <th>Pet</th>
-              <th>Tipo de ração</th>
-              <th>Marca</th>
-              <th>Qtd do pacote (kg)</th>
-              <th>Qtd diária (g)</th>
-              <th>Data de inicio</th>
-              <th>Data da próxima compra</th>
+              <th style="text-align:center">Pet</th>
+              <th style="text-align:center">Tipo de ração</th>
+              <th style="text-align:center">Marca</th>
+              <th style="text-align:center">Qtd do pacote (kg)</th>
+              <th style="text-align:center">Qtd diária (g)</th>
+              <th style="text-align:center">Data da compra</th>
+              <th style="text-align:center">Próxima compra</th>
               <th colspan="3"></th>
             </tr>
           </thead>
@@ -23,9 +25,9 @@
             <% @foods.each do |food| %>
               <% calc = Food.end_date_food(food.start_date, food.bag_qty_kg, food.daily_qty_kg) %>
               <tr>
-                <td><%= food.pet.name %></td>
-                <td><%= food.category %></td>
-                <td><%= food.brand %></td>
+                <td style="text-align:center"><%= food.pet.name %></td>
+                <td style="text-align:center"><%= food.category %></td>
+                <td style="text-align:center"><%= food.brand %></td>
                 <td style="text-align:center"><%= food.bag_qty_kg %></td>
                 <td style="text-align:center"><%= food.daily_qty_kg %></td>
                 <td style="text-align:center"><%= food.start_date.strftime("%d/%m/%Y") %></td>

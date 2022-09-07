@@ -1,16 +1,18 @@
-<div class="container">
-    <h1>Medicamentos</h1>
-
+<div class="container mt-5">
+  <div class="d-flex justify-content-center align-items-center">
+    <h1>Detalhes dos medicamentos</h1>
+  </div>
+  <div class="container-food mt-5">
     <% if @medications.empty? %>
         "Seu pet nao possui nenhum medicamento."
     <% else %>
       <div class="table-responsive">
-        <table class="table">
+        <table class="table table-striped">
             <thead>
             <tr>
-                <th>Pet</th>
-                <th>Medicamento</th>
-                <th>Instruções</th>
+                <th style="text-align:center">Pet</th>
+                <th style="text-align:center">Medicamento</th>
+                <th style="text-align:center">Instruções</th>
                 <th style="text-align:center">Frequencia</th>
                 <th style="text-align:center">Início da medicação</th>
                 <th style="text-align:center">Término da medicação</th>
@@ -21,9 +23,9 @@
             <tbody>
                 <% @medications.each do |medication| %>
                   <tr>
-                    <td><%= medication.pet.name %></td>
-                    <td><%= medication.name %></td>
-                    <td><%= medication.instructions %></td>
+                    <td style="text-align:center"><%= medication.pet.name %></td>
+                    <td style="text-align:center"><%= medication.name %></td>
+                    <td style="text-align:center"><%= medication.instructions %></td>
                     <td style="text-align:center"v><%= medication.frequency %>/hrs</td>
                     <td style="text-align:center"><%= medication.start_date.strftime("%d/%m/%Y") %></td>
                     <td style="text-align:center"><%= medication.end_date.strftime("%d/%m/%Y") %></td>
@@ -40,4 +42,5 @@
         </table>
       </div>
     <% end %>
+  </div>
 </div>

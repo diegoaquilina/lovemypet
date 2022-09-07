@@ -1,41 +1,43 @@
-
-<div class="container">
-    <h1>Cuidados agendados</h1>
-
+<div class="container mt-5">
+  <div class="d-flex justify-content-center align-items-center">
+    <h1>Detalhes dos agendamentos</h1>
+  </div>
+  <div class="container-food mt-5">
     <% if @baths.empty? %>
         "Voce nao possui nenhum agendamento."
     <% else %>
       <div class="table-responsive">
-        <table class="table">
-            <thead>
+        <table class="table table-striped">
+          <thead>
             <tr>
-                <th>Pet</th>
-                <th>Serviço</th>
-                <th>Petshop</th>
-                <th style="text-align:center">Data</th>
-                <th colspan="3"></th>
+              <th style="text-align:center">Pet</th>
+              <th style="text-align:center">Serviço</th>
+              <th style="text-align:center">Petshop</th>
+              <th style="text-align:center">Data</th>
+              <th colspan="3"></th>
             </tr>
-            </thead>
+          </thead>
 
             <tbody>
-                <% @baths.each do |bath| %>
-                  <tr>
-                    <td><%= bath.pet.name %></td>
-                    <td><%= bath.category %></td>
-                    <td><%= bath.address %></td>
-                    <td style="text-align:center"><%= bath.date.strftime("%d/%m/%Y") %></td>
-                    <td><%= link_to edit_bath_path(bath) do %>
-                        <i class="fa-solid fa-pen-to-square"></i>
-                      <% end %>
-                    </td>
-                    <td><%= link_to bath_path(bath), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} do %>
-                        <i class="fa-solid fa-trash-can"></i>
-                      <% end %>
-                    </td>
-                  </tr>
-                <% end %>
+              <% @baths.each do |bath| %>
+                <tr>
+                  <td style="text-align:center"><%= bath.pet.name %></td>
+                  <td style="text-align:center"><%= bath.category %></td>
+                  <td style="text-align:center"><%= bath.address %></td>
+                  <td style="text-align:center"><%= bath.date.strftime("%d/%m/%Y") %></td>
+                  <td><%= link_to edit_bath_path(bath) do %>
+                     <i class="fa-solid fa-pen-to-square"></i>
+                  <% end %>
+                  </td>
+                  <td><%= link_to bath_path(bath), data: {turbo_method: :delete, turbo_confirm: "Você tem certeza?"} do %>
+                       <i class="fa-solid fa-trash-can"></i>
+                  <% end %>
+                  </td>
+                </tr>
+              <% end %>
             </tbody>
         </table>
       </div>
     <% end %>
+  </div>
 </div>
