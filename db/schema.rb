@@ -112,7 +112,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_193302) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "url_photo"
     t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
@@ -145,7 +144,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_193302) do
     t.string "address"
     t.string "phone"
     t.date "bday"
-    t.string "url_photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -157,7 +155,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_193302) do
     t.bigint "pet_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "url_photo"
     t.boolean "notification", default: false
     t.index ["pet_id"], name: "index_vaccines_on_pet_id"
   end
