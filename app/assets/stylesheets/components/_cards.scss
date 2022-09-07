@@ -38,12 +38,12 @@
   background-size: cover;
   text-decoration: none;
   background-position: center;
-  height: 104px;
-  max-width: 780px;
   display: flex;
   justify-content: left;
   align-items: center;
   text-align: center;
+  height: 104px;
+  max-width: 780px;
   color: white;
   font-size: 24px;
   //font-weight: bold;
@@ -121,4 +121,11 @@
 
 .accordion{
   --bs-accordion-border-color: white;
+  //height: 104px;
+  max-width: 780px;
+}
+
+.accordion-item{
+  //height: 104px;
+  //max-width: 780px;
 }

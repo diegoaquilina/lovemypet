@@ -1,3 +1,4 @@
+<%# Banner%>
 <div class="card-product shadow-sm">
   <img src="<%= asset_path("https://img.freepik.com/free-photo/beautiful-pet-portrait-dog_23-2149218450.jpg?size=626&ext=jpg&ga=GA1.2.480276464.1662565106")%>" class="pic" />
   <div class="card-product-infos-up">
@@ -9,38 +10,7 @@
   </div>
 </div>
 
-<div class="cards mt-5 mb-4 shadow-sm">
-  <div class="py-4">
-    <div class="destaque-left mt-5">
-      <h2><strong>Alimentação</strong> </h2>
-      <p class="p-text">Tempo médio de consumo e quando você deve programar a próxima compra.</p>
-      <h2><strong>Saúde</strong> </h2>
-      <p class="p-text">A saúde do seu pet vai estar sempre em dia com consultas, exames e vacinas na agenda.</p>
-    </div>
-  </div>
-  <div class="card-img-category">
-     <img src="<%= asset_path("https://t4.ftcdn.net/jpg/01/08/02/11/360_F_108021113_jIrhkMKBQ6JWmPKt8T3r8QTqeoOik9fK.jpg")%>" class="pic" id="img-landing" />
-  </div>
-  <div class="py-4">
-    <div class="destaque-right mt-5">
-      <h2><strong>Bem Estar</strong> </h2>
-      <p class="p-text">No pet shop ou em casa, banho e tosa vão sempre estar na agenda.</p>
-      <h2><strong>Agenda</strong> </h2>
-      <p class="p-text">Além dos lembretes, você pode visualizar todos os próximos eventos do seu pet em um só lugar.</p>
-    </div>
-  </div>
-</div>
-<div class="card-product shadow-sm">
-  <div class="card-product-infos-down">
-    <h2>Ração ou alimentação natural,banho e tosa, consultas e a lista continua.</h2>
-    <p> Você só precisa cadastrar as informações do seu peludo e deixa que a gente te lembra do resto..</p>
-    <div>
-      <%= link_to "Comece agora", new_user_session_path, class: "btn btn-gradient" %>
-    </div>
-  </div>
-  <img src="<%= asset_path("https://img.freepik.com/free-photo/lovely-pet-portrait-isolated_23-2149192357.jpg?size=626&ext=jpg&ga=GA1.2.480276464.1662565106")%>" class="pic"/>
-</div>
-
+<%# carrossel %>
 <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -166,4 +136,38 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+</div>
+<%# pug feio r%>
+<div class="cards mt-5 mb-4 shadow-sm">
+  <div class="py-4">
+    <div class="destaque-left mt-5">
+      <h2><strong>Alimentação</strong> </h2>
+      <p class="p-text">Tempo médio de consumo e quando você deve programar a próxima compra.</p>
+      <h2><strong>Saúde</strong> </h2>
+      <p class="p-text">A saúde do seu pet vai estar sempre em dia com consultas, exames e vacinas na agenda.</p>
+    </div>
+  </div>
+  <div class="card-img-category">
+     <img src="<%= asset_path("https://t4.ftcdn.net/jpg/01/08/02/11/360_F_108021113_jIrhkMKBQ6JWmPKt8T3r8QTqeoOik9fK.jpg")%>" class="pic" id="img-landing" />
+  </div>
+  <div class="py-4">
+    <div class="destaque-right mt-5">
+      <h2><strong>Bem Estar</strong> </h2>
+      <p class="p-text">No pet shop ou em casa, banho e tosa vão sempre estar na agenda.</p>
+      <h2><strong>Agenda</strong> </h2>
+      <p class="p-text">Além dos lembretes, você pode visualizar todos os próximos eventos do seu pet em um só lugar.</p>
+    </div>
+  </div>
+</div>
+
+<%# husky %>
+<div class="card-product shadow-sm">
+  <div class="card-product-infos-down">
+    <h2>Ração ou alimentação natural,banho e tosa, consultas e a lista continua.</h2>
+    <p> Você só precisa cadastrar as informações do seu peludo e deixa que a gente te lembra do resto..</p>
+    <div>
+      <%= link_to "Comece agora", new_user_session_path, class: "btn btn-gradient" %>
+    </div>
+  </div>
+  <img src="<%= asset_path("https://img.freepik.com/free-photo/lovely-pet-portrait-isolated_23-2149192357.jpg?size=626&ext=jpg&ga=GA1.2.480276464.1662565106")%>" class="pic"/>
 </div>
