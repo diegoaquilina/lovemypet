@@ -41,7 +41,7 @@
            </div>
           <div class="col-6">
             <%= button_to "+", new_food_path, method: :get, class: "btn-gradient"%>
-          </div>         
+          </div>
       </div>
     </div>
     <%# ----------------- BANHO E TOSA -----------------%>
@@ -49,14 +49,21 @@
       <div class="row card-pet">
         <h3><strong>🛁 Banho e Tosa</strong></h3>
           <div class="col-6 text-start mt-3">
+            <%# Se tiver DATA POSTERIOR aparece Próximo Banho %>
+            <%# Se não tiver DATA  aparece ESTOU PRECISANDO DE BANHO%>
+              <% if @baths.empty?%>
+                  <p><strong>Não tenho banho cadastrado!  </strong></p>
+              <% end %>
+              <% @baths.each do |bath|  %>
 
-            <% if @bath.nil? %>
-              <p><strong>Estou precisando de banho!  </strong></p>
-            <% else %>
-              <% stink_dog = Bath.end_date_bath(@bath.date) %>
-              <p>Meu último banho/tosa foi em: <strong><%= @bath.date.strftime("%d/%m/%Y") %> </strong></p>
-              <p>Estou há <strong><%= stink_dog.to_i%></strong> dias sem banho!</p>
-            <% end %>
+                <% if bath.date > Date.today %>
+                  <p>Meu próximo banho/tosa será em: <strong><%= bath.date.strftime("%d/%m/%Y") %> </strong></p>
+                <% else %>
+                  <% stink_dog = Bath.end_date_bath(bath.date) %>
+                  <p>Meu último banho/tosa foi em: <strong><%= bath.date.strftime("%d/%m/%Y") %> </strong></p>
+                  <p>Estou há <strong><%= stink_dog.to_i%></strong> dias sem banho!</p>
+                <% end %>
+              <% end  %>
           </div>
           <div class="col-6">
             <%= button_to "+", new_bath_path, method: :get, class: "btn-gradient "%>
