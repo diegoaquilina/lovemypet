@@ -39,9 +39,10 @@
         <label class="form-label">Endereço</label>
          <input type="text" class="form-control" value="<%=@user.address%>">
       </div>
-       <div class="mt-2">
-          <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-primary ml-4", data: {turbo: false} %>
-       </div>
+      <div class="col-12">
+        <div class="d-flex justify-content-center align-items-center">
+          <%= link_to "Editar perfil", edit_user_registration_path, class: "btn btn-gradient", data: {turbo: false} %>
+        </div>
+      </div>
     </form>
 </div>
-
