@@ -27,7 +27,6 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
-
     @food = Food.where(pet: @pet).last
     @bath = Bath.where(pet: @pet).last
     @appointment = Appointment.where(pet: @pet).last
