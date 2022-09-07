@@ -1,40 +1,64 @@
-<h2>Altere seu perfil</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
-
-    <%= f.input :current_password,
-                hint: "Precisamos da sua senha atual para confirmar as alterações",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :first_name,
-                required: true %>
-    <%= f.input :last_name,
-                required: true %>
-    <%= f.input :address,
-                required: true %>
-    <%= f.input :phone,
-                required: true %>
-    <%= f.input :avatar, as: :file %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Atualizar" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<div class="d-flex align-items-center">
-  <div>Unhappy?</div>
-  <%= button_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Você tem certeza?" }, method: :delete, class: "btn btn-link" %>
+<div class="d-flex justify-content-center align-items-center">
+  <h2>Altere seu perfil 📝</h2>
 </div>
 
-<%= link_to "Voltar", :back %>
+<div class="container bg-light rounded-5 p-2">
+  <div class="bg-light rounded-5 px-4 py-2">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.input :email, required: true, autofocus: true %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
+        </div>
+        <div class="col-md-6">
+          <%= f.input :current_password,
+                      hint: "Precisamos da sua senha atual para confirmar as alterações ;)",
+                      required: true,
+                      input_html: { autocomplete: "current-password" },
+                      label: "Senha atual", placeholder: "Digite sua senha atual" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.input :first_name,
+                      required: true,
+                      label: "Nome" %>
+        </div>
+        <div class="col-md-6">
+          <%= f.input :last_name,
+                      required: true,
+                      label: "Sobrenome" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.input :address,
+                      required: true,
+                      label: "Endereço" %>
+        </div>
+        <div class="col-md-6">
+          <%= f.input :phone,
+                      required: true,
+                      label: "Celular" %>
+        </div>
+      </div>
+          <%= f.input :avatar, label: "Altere sua foto de perfil", as: :file %>
+      </div>
+      <div class="col-12">
+        <div class="d-flex justify-content-center align-items-center">
+        <%= f.button :submit, "Editar", class:"btn btn-gradient" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-5">
+  <div class="d-flex justify-content-center align-items-center">
+    <%= button_to "Cancelar minha conta", registration_path(resource_name), data: { confirm: "Você tem certeza?" }, method: :delete, class: "btn btn-link" %>
+  </div>
+</div>
