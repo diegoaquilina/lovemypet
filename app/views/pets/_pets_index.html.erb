@@ -3,7 +3,7 @@
     <% @pets.each do |pet| %>
       <div class="box">
           <%= link_to pet_path(pet), class:"text-decoration-none" do %>
-            <div class="imgBx">
+            <div class="imgBx shadow-lg">
               <% if pet.photo.attached? %>
                 <%= cl_image_tag pet.photo.key, class:""%>
               <% else %>
