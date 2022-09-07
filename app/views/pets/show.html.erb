@@ -26,12 +26,12 @@
       </div>
     </div>
     <%# ----------------- ALIMENTAÇÃO -----------------%>
-    <div class="container center mt-5 mb-5">
+   <div class="container center mt-5 mb-5">
       <div class="row card-pet">
         <h3><strong>🍗 Alimentação</strong></h3>
           <div class="col-6 text-start mt-3">
             <% if @food.nil? %>
-              "Voce nao possui nenhuma ração registrada."
+             <p><strong>Cadê minha ração?  </strong></p>
             <% else %>
               <% calc = Food.end_date_food(@food.start_date, @food.bag_qty_kg, @food.daily_qty_kg) %>
               <p>Por dia, eu como: <strong><%= @food.daily_qty_kg %> g</strong> </p>
@@ -49,14 +49,13 @@
       <div class="row card-pet">
         <h3><strong>🛁 Banho e Tosa</strong></h3>
           <div class="col-6 text-start mt-3">
-            <% stink_dog = Bath.end_date_bath(@bath.date) %>
-            <% if @bath %>
-              <p>Meu último banho/tosa foi em: <strong><%= @bath.date.strftime("%d/%m/%Y") %> </strong></p>
+
+            <% if @bath.nil? %>
+              <p><strong>Estou precisando de banho!  </strong></p>
             <% else %>
-              <p>Meu último banho/tosa foi em: <strong> </strong></p>
-            <% end %>
-            <% if @bath %>
-                <p>Estou há <strong><%= stink_dog.to_i%></strong> dias sem banho!</p>
+              <% stink_dog = Bath.end_date_bath(@bath.date) %>
+              <p>Meu último banho/tosa foi em: <strong><%= @bath.date.strftime("%d/%m/%Y") %> </strong></p>
+              <p>Estou há <strong><%= stink_dog.to_i%></strong> dias sem banho!</p>
             <% end %>
           </div>
           <div class="col-6">
@@ -69,11 +68,11 @@
       <div class="row card-pet">
         <h3><strong>🩺 Consultas Veterinário</strong></h3>
           <div class="col-6 text-start mt-3">
-          <% if @appointment %>
+          <% if @appointment.nil? %>
+            <p> <strong>Sem consultas para o seu bichinho!</strong> </p>
+          <% else  %>
             <p>Você vai mentir pra mim falando que vamos passear, mas vamos no veterinário no dia: <strong><%= @appointment.date.strftime("%d/%m/%Y") %> </strong> </p>
-          <% else %>
-            <p>Você vai mentir pra mim falando que vamos passear, mas vamos no veterinário no dia: <strong></strong> </p>
-          <%end %>
+          <%end  %>
           </div>
           <div class="col-6">
             <%= button_to "+", new_appointment_path, method: :get, class: "btn-gradient"%>
@@ -87,8 +86,8 @@
           <div class="col-6 text-start mt-3">
             <p>Ai ai ai!</p>
 
-            <% if  @vaccines.nil? || @vaccines.empty? %>
-                <strong><p>Nenhuma vacina cadastrada</p></strong>
+            <% if  @vaccines.nil? || @vaccines.empty?  %>
+                <strong><p>Ainda não tomei vacina!</p></strong>
             <%else %>
               <% @vaccines.each do |vaccine| %>
                 <% calc_exp = Vaccine.end_date_vaccine(vaccine.app_date) %>
@@ -106,10 +105,17 @@
       <div class="row card-pet">
         <h3><strong>💊 Medicamentos</strong></h3>
           <div class="col-6 text-start mt-3">
-            <p>Meu próximo medicamento vai ser:</p>
-            <% @medications.each do |medication| %>
-              <p><%= medication.name %> - Intervalo de <strong><%= medication.frequency %></strong> horas</p>
-            <%end %>
+            <% if @medications.empty? %>
+              <strong><p>Ufa! Não estou tomando remédio nenhum!</p></strong>
+            <% else %>
+              <p>Meu próximo medicamento vai ser:</p>
+              <% @medications.each do |medication| %>
+                <p><strong><%= medication.name %></strong>
+                Intervalo de <strong><%= medication.frequency %></strong> horas</p>
+                Início da medicação: <strong><%= medication.start_date.strftime("%d/%m/%Y") %></strong>
+                Fim da medicação:<strong> <%= medication.end_date.strftime("%d/%m/%Y") %></strong>
+              <%end %>
+            <% end %>
           </div>
           <div class="col-6">
             <%= button_to "+", new_medication_path, method: :get, class: "btn-gradient"%>
