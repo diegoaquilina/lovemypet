@@ -22,7 +22,9 @@
 .img-container img {
     transform: skew(0deg, -13deg);
     height: 250px;
+    width: 100%;
     margin: -35px 0px 0px -70px;
+    object-fit: cover;
 }
 
 .inner-skew {
@@ -35,7 +37,7 @@
     margin: 30px 0px 0px 0px;
     background: #c8c2c2;
     height: 250px;
-    width: 200px;
+    width: 273px;
 }
 
 .text-container {
