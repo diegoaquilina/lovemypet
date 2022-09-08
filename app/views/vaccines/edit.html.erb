@@ -13,7 +13,7 @@
       <%= f.input :vaccine_type, label: "Vacina", collection: Vaccine::VACCINE.map, include_blank: false %>
      </div>
       <div class="col-md-8">
-       <%= f.input :app_date, order:[:day, :month, :year], start_year: Date.today.year,
+       <%= f.input :app_date, order:[:day, :month, :year], start_year: Date.today.year - 1,
         end_year: Date.today.year + 1, label: "Data de aplicaçãoo" %>
       </div>
     </div>
