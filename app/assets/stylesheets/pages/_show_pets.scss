@@ -10,16 +10,7 @@
   margin: 0 auto;
 }
 
-.card-pet{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #DAF3FA;
-  border-radius: 5px;
-  padding: 3%;
-}
-
-.nome{
+.nome h1{
   text-align: right;
   color: #3A5974;
   font-family: 'Titan One', cursive;
@@ -27,6 +18,15 @@
 
 .texto-bicho{
   text-align: right;
+}
+
+.card-pet{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #DAF3FA;
+  border-radius: 5px;
+  padding: 3%;
 }
 
 .card-pet1{
@@ -42,7 +42,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #68d0ead4;
+  background-color: #A0D2E3;
   border-radius: 5px;
   padding: 3%;
 }
@@ -54,4 +54,20 @@
   background-color: #5194afd3;
   border-radius: 5px;
   padding: 3%;
+}
+
+.card-pet h3{
+  font-family: 'Titan One', cursive;
+}
+
+.card-pet1 h3{
+  font-family: 'Titan One', cursive;
+}
+
+.card-pet2 h3{
+  font-family: 'Titan One', cursive;
+}
+
+.card-pet3 h3{
+  font-family: 'Titan One', cursive;
 }
