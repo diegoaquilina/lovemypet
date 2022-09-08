@@ -3,11 +3,11 @@
       <div class="text-center">
         <h1>Meu Perfil</h1>
         <div>
-        <% if current_user.avatar.attached?%>
+          <% if current_user.avatar.attached?%>
             <%= cl_image_tag current_user.avatar.key, width: 150, class: "avatar-perfil", style:"margin-left: auto; margin-right: auto;"%>
           <% else %>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-perfil", style:"width: 150px; margin-left: auto; margin-right: auto;"%>
-            <% end %>
+            <%= image_tag "avatar.jpg", class: "avatar-perfil", style:"width: 150px; margin-left: auto; margin-right: auto;"%>
+          <% end %>
         </div>
         <h3 class="typed-js" data-controller="typed-js"></h3>
       </div>
