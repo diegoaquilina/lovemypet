@@ -296,6 +296,7 @@ DEPENDENCIES
   dotenv-rails
   font-awesome-sass (~> 6.1)
   geocoder
+  i18n
   jbuilder
   jsbundling-rails
   letter_opener
