@@ -6,7 +6,7 @@
       <% @medications.each do |medication| %>
         <p>
         Próximo remédio de <%= medication.pet.name %>
-        será dia <%#= %> as <%#= %>
+        será dia <%= medication.start_date.strftime("%d/%m/%Y %H:%M") %>
         </p>
       <% end %>
     <% end %>
