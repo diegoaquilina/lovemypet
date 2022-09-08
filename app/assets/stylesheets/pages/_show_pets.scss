@@ -1,5 +1,57 @@
+.background-pets{
+
+}
+
+.container-pets{
+  padding: 30px;
+  background-color: white;
+  //border-radius: 5%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.card-pet{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #DAF3FA;
+  border-radius: 5px;
+  padding: 3%;
+}
+
 .nome{
-  //text-align: right;
-  margin: 0 30px;
-  color: #b18597;
+  text-align: right;
+  color: #3A5974;
+  font-family: 'Titan One', cursive;
+}
+
+.texto-bicho{
+  text-align: right;
+}
+
+.card-pet1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #67c0dbd0;
+  border-radius: 5px;
+  padding: 3%;
+}
+
+.card-pet2{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #68d0ead4;
+  border-radius: 5px;
+  padding: 3%;
+}
+
+.card-pet3{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5194afd3;
+  border-radius: 5px;
+  padding: 3%;
 }
