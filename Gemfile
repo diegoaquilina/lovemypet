@@ -86,3 +86,6 @@ end
 gem "cloudinary"
 
 gem "geocoder"
+
+# Use i18n for internationalization and localization 
+gem "i18n"

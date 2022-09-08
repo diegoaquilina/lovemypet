@@ -16,6 +16,10 @@ module Lovemypet
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    config.time_zone = "Brasilia"
+    config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
+    config.i18n.default_locale = 'pt-BR'
+
     config.active_job.queue_adapter = :sidekiq
     # Configuration for the application, engines, and railties goes here.
     #
