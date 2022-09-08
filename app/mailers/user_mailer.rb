@@ -6,7 +6,8 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.notification.subject
   #
   def notification(email)
-    @notification = email.pet.user.first_name
+    @notification = email.pet.user.email
+    @name = email.pet.user.first_name
     @url = 'https://lovemypetapp.herokuapp.com/'
 
     mail(to: @notification,
