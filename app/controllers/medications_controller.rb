@@ -3,7 +3,7 @@ class MedicationsController < ApplicationController
   before_action :load_pet, only: [:new, :create, :edit, :update]
 
   def index
-    @medications = Medication.all.where(pet: current_user.pets)
+    @medications = Medication.all.where(pet: current_user.pets).order("created_at DESC")
   end
 
   def new
