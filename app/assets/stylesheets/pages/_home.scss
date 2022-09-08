@@ -1,1 +1,32 @@
 // Specific CSS for your home-page
+
+.home-banner-pic{
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 50px auto;
+}
+
+.home-banner-text{
+  margin: 100px;
+}
+
+.img-card{
+  max-width: 1000px;
+  max-height: 1000px;
+  width: auto;
+  height: auto;
+}
+
+.home{
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.index{
+  max-width: 1500px;
+  margin: 0 auto;
+  
+}

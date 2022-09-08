@@ -2,24 +2,24 @@
   <div class="container-pets">
       <%= button_to "◁", pets_path, method: :get, class: "btn-gradient2 mt-2 mb-2" %>
     <%# ----------------- PET -----------------%>
-    <div class="">
-      <div class="nome">
-        <h1><strong><%= @pet.name %></strong></h1>
-      </div>
-        <div class="card-pet mt-5">
+    <div class="container center mt-5 mb-5">
+      <div class="card-pet mt-5">
         <% if @pet.photo.attached? %>
           <div class="petphoto" style= "background-image: url(<%= cl_image_path @pet.photo.key, :gravity=>"face", :height=>500, :width=>500, :crop=>"fill" %>)">
           <%#= cl_image_tag @pet.photo.key%>
           </div>
         <% end %>
         <div class="row text-start ps-5">
+          <div class="nome mr-5">
+            <h1><strong><%= @pet.name %></strong></h1>
+          </div>
           <p> <strong>Raça:</strong>
           <%=@pet.breed %> </p>
-          <p> <strong>Idade:</strong>
-          <%=@pet.age %> </p>
-          <p> <strong>Peso:</strong>
+          <p> <strong>Data de Nascimento:</strong>
+          <%=@pet.age.strftime("%d/%m/%Y") %> </p>
+          <!--p> <strong>Peso:</strong>
           <%=@pet.weight %>
-          <%= "kg"%> </p>
+          <%= "kg"%> </p-->
           <p> <strong> Gênero:</strong>
           <%=@pet.sex %></p>
         </div>
