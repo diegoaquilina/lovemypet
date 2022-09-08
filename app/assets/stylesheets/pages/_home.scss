@@ -9,13 +9,23 @@
   margin: 50px auto;
 }
 
-.home-banner-text{
-  margin: 100px;
+.home-banner-text h2{
+  margin: 100px 0 50px 0;
+  font-family: 'Titan One', cursive;
+  color: white;
+  text-shadow: #3A5974;
+}
+
+.home-banner-text p{
+  margin-right: 50px;
+  margin-bottom: 50px;
+  text-align: right;
+
 }
 
 .img-card{
   max-width: 1000px;
-  max-height: 1000px;
+  max-height: 800px;
   width: auto;
   height: auto;
 }
@@ -28,5 +38,4 @@
 .index{
   max-width: 1500px;
   margin: 0 auto;
-  
 }

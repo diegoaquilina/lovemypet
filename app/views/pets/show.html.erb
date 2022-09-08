@@ -1,117 +1,117 @@
-<div class="background-pets">
-  <div class="container-pets">
-      <%= button_to "◁", pets_path, method: :get, class: "btn-gradient2 mt-2 mb-2" %>
+<div class="">
+  <div class="container-pets shadow-lg">
+      <%= button_to "◁", pets_path, method: :get, class: "btn-gradient mt-2 mb-2" %>
     <%# ----------------- PET -----------------%>
-    <div class="container center mt-5 mb-5">
-      <div class="card-pet mt-5">
+    <div class="container center mb-5">
+      <div class="card-pet shadow mt-5">
         <% if @pet.photo.attached? %>
           <div class="petphoto" style= "background-image: url(<%= cl_image_path @pet.photo.key, :gravity=>"face", :height=>500, :width=>500, :crop=>"fill" %>)">
           <%#= cl_image_tag @pet.photo.key%>
           </div>
         <% end %>
-        <div class="row text-start ps-5">
-          <div class="nome mr-5">
+        <div class="row ps-5">
+          <div class="nome">
             <h1><strong><%= @pet.name %></strong></h1>
           </div>
-          <p> <strong>Raça:</strong>
-          <%=@pet.breed %> </p>
-          <p> <strong>Data de Nascimento:</strong>
-          <%=@pet.age.strftime("%d/%m/%Y") %> </p>
-          <!--p> <strong>Peso:</strong>
-          <%=@pet.weight %>
-          <%= "kg"%> </p-->
-          <p> <strong> Gênero:</strong>
-          <%=@pet.sex %></p>
+          <div class="texto-bicho">
+            <p> <strong>Raça:</strong>
+            <%=@pet.breed %> </p>
+            <p> <strong>Data de Nascimento:</strong>
+            <%=@pet.age.strftime("%d/%m/%Y") %> </p>
+            <!--p> <strong>Peso:</strong>
+            <%=@pet.weight %>
+            <%= "kg"%> </p-->
+            <p> <strong> Gênero:</strong>
+            <%=@pet.sex %></p>
+          </div>
         </div>
       </div>
     </div>
     <%# ----------------- ALIMENTAÇÃO -----------------%>
    <div class="container center mt-5 mb-5">
-      <div class="row card-pet">
-        <h3><strong>🍗 Alimentação</strong></h3>
-          <div class="col-6 text-start mt-3">
-            <% if @food.nil? %>
-             <p><strong>Cadê minha ração?  </strong></p>
-            <% else %>
-              <% calc = Food.end_date_food(@food.start_date, @food.bag_qty_kg, @food.daily_qty_kg) %>
-              <p>Por dia, eu como: <strong><%= @food.daily_qty_kg %> g</strong> </p>
-              <p>Eu gosto da ração: <strong><%= @food.brand %> </strong> </p>
-              <p>Vou ficar sem ração no dia: <strong> <%= calc.strftime("%d/%m/%Y") %> </strong>  </p>
-            <% end %>
-           </div>
-          <div class="col-6">
-            <%= button_to "+", new_food_path, method: :get, class: "btn-gradient"%>
-          </div>
-      </div>
-    </div>
-    <%# ----------------- BANHO E TOSA -----------------%>
-    <div class="container center mt-5 mb-5">
-      <div class="row card-pet">
-        <h3><strong>🛁 Banho e Tosa</strong></h3>
-          <div class="col-6 text-start mt-3">
-            <%# Se tiver DATA POSTERIOR aparece Próximo Banho %>
-            <%# Se não tiver DATA  aparece ESTOU PRECISANDO DE BANHO%>
-              <% if @baths.empty?%>
-                  <p><strong>Não tenho banho cadastrado! </strong></p>
+      <div class="card-pet2 shadow">
+        <div class="w-100">
+          <h3><strong>🍗 Alimentação</strong></h3>
+            <div class="text-start mt-3">
+              <% if @food.nil? %>
+              <p><strong>Cadê minha ração?  </strong></p>
+              <% else %>
+                <% calc = Food.end_date_food(@food.start_date, @food.bag_qty_kg, @food.daily_qty_kg) %>
+                <p>Por dia, eu como: <strong><%= @food.daily_qty_kg %> g</strong> </p>
+                <p>Eu gosto da ração: <strong><%= @food.brand %> </strong> </p>
+                <p>Vou ficar sem ração no dia: <strong> <%= calc.strftime("%d/%m/%Y") %> </strong>  </p>
               <% end %>
-              <% @baths.each do |bath|  %>
-
-                <% if bath.date > Date.today %>
-                  <p>Meu próximo banho/tosa será em: <strong><%= bath.date.strftime("%d/%m/%Y") %> </strong></p>
-                <% else %>
-                  <% stink_dog = Bath.end_date_bath(bath.date) %>
-                  <p>Meu último banho/tosa foi em: <strong><%= bath.date.strftime("%d/%m/%Y") %> </strong></p>
-                  <p>Estou há <strong><%= stink_dog.to_i%></strong> dias sem banho!</p>
-                <% end %>
-              <% end  %>
-          </div>
-          <div class="col-6">
-            <%= button_to "+", new_bath_path, method: :get, class: "btn-gradient "%>
-          </div>
+            </div>
+            <div class="text-end">
+              <%= button_to "+", new_food_path, method: :get, class: "btn-gradient"%>
+            </div>
+        </div>
       </div>
     </div>
-    <%# ----------------- CONSULTAS VETERINÁRIO -----------------%>
+    <%# ----------------- BANHO E TOSA // CONSULTAS VETERINÁRIO-----------------%>
     <div class="container center mt-5 mb-5">
-      <div class="row card-pet">
-        <h3><strong>🩺 Consultas Veterinário</strong></h3>
-          <div class="col-6 text-start mt-3">
+      <div class="card-pet1 w-100 col-12 shadow">
+        <div class="col-6 text-start">
+          <h3><strong>🛁 Banho e Tosa</strong></h3>
+            <div class="text-start mt-3">
+              <%# Se tiver DATA POSTERIOR aparece Próximo Banho %>
+              <%# Se não tiver DATA  aparece ESTOU PRECISANDO DE BANHO%>
+                <% if @baths.empty?%>
+                    <p><strong>Não tenho banho cadastrado! </strong></p>
+                <% end %>
+                <% @baths.each do |bath|  %>
+                  <% if bath.date > Date.today %>
+                    <p>Meu próximo banho/tosa será em: <strong><%= bath.date.strftime("%d/%m/%Y") %> </strong></p>
+                  <% else %>
+                    <% stink_dog = Bath.end_date_bath(bath.date) %>
+                    <p>Meu último banho/tosa foi em: <strong><%= bath.date.strftime("%d/%m/%Y") %> </strong></p>
+                    <p>Estou há <strong><%= stink_dog.to_i%></strong> dias sem banho!</p>
+                  <% end %>
+                <% end  %>
+            </div>
+            <div class="">
+              <%= button_to "+", new_bath_path, method: :get, class: "btn-gradient "%>
+            </div>
+        </div>
+        <div class="col-6 text-end">
+          <h3><strong>Consultas Veterinário 🩺</strong></h3>
+          <div class="mt-3">
           <% if @appointment.nil? %>
             <p> <strong>Sem consultas para o seu bichinho!</strong> </p>
           <% else  %>
             <p>Você vai mentir pra mim falando que vamos passear, mas vamos no veterinário no dia: <strong><%= @appointment.date.strftime("%d/%m/%Y") %> </strong> </p>
           <%end  %>
           </div>
-          <div class="col-6">
+          <div class="">
             <%= button_to "+", new_appointment_path, method: :get, class: "btn-gradient"%>
           </div>
+        </div>
       </div>
     </div>
-    <%# ----------------- VACINAS -----------------%>
-    <div class="container center mt-5 mb-5">
-      <div class="row card-pet">
-        <h3><strong>💉 Vacinas</strong></h3>
-          <div class="col-6 text-start mt-3">
-            <p>Ai ai ai!</p>
 
-            <% if  @vaccines.nil? || @vaccines.empty?  %>
-                <strong><p>Ainda não tomei vacina!</p></strong>
-            <%else %>
-              <% @vaccines.each do |vaccine| %>
-                <% calc_exp = Vaccine.end_date_vaccine(vaccine.app_date) %>
-                <p>Tenho que tomar a vacina <strong><%= vaccine.vaccine_type %></strong> no dia:<strong><%= calc_exp.strftime("%d/%m/%Y") %> </strong></p>
-              <%end %>
-            <%end %>
-          </div>
-          <div class="col-6">
-            <%= button_to "+", new_vaccine_path, method: :get, class: "btn-gradient"%>
-          </div>
-      </div>
-    </div>
-    <%# ----------------- MEDICAMENTOS -----------------%>
+    <%# ----------------- VACINAS // MEDICAMENTOS-----------------%>
     <div class="container center mt-5 mb-5">
-      <div class="row card-pet">
-        <h3><strong>💊 Medicamentos</strong></h3>
-          <div class="col-6 text-start mt-3">
+      <div class="card-pet3 w-100 col-12 shadow">
+        <div class="col-6 text-start">
+          <h3><strong>💉 Vacinas</strong></h3>
+            <div class="col-6 text-start">
+              <p>Ai ai ai!</p>
+              <% if  @vaccines.nil? || @vaccines.empty?  %>
+                  <strong><p>Ainda não tomei vacina!</p></strong>
+              <%else %>
+                <% @vaccines.each do |vaccine| %>
+                  <% calc_exp = Vaccine.end_date_vaccine(vaccine.app_date) %>
+                  <p>Tenho que tomar a vacina <strong><%= vaccine.vaccine_type %></strong> no dia:<strong><%= calc_exp.strftime("%d/%m/%Y") %> </strong></p>
+                <%end %>
+              <%end %>
+            </div>
+            <div class="col-6">
+              <%= button_to "+", new_vaccine_path, method: :get, class: "btn-gradient"%>
+            </div>
+        </div>
+        <div class="col-6 text-end">
+          <h3><strong>Medicamentos 💊</strong></h3>
+          <div class="text-end mt-3">
             <% if @medications.empty? %>
               <strong><p>Ufa! Não estou tomando remédio nenhum!</p></strong>
             <% else %>
@@ -124,13 +124,15 @@
               <%end %>
             <% end %>
           </div>
-          <div class="col-6">
+          <div class="">
             <%= button_to "+", new_medication_path, method: :get, class: "btn-gradient"%>
           </div>
+        </div>
       </div>
+    </div>
     <%# ----------------- EDIT & DELETE -----------------%>
     <div class="container center mt-5 mb-5">
-      <div class="row card-pet">
+      <div class="row ">
         <%= button_to "Deletar", "#", method: :delete, form:{ data: {turbo_confirm: "Você tem certeza?"}}, class: "btn-gradient2 mt-2 mb-2" %>
       </div>
     </div>
