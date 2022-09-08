@@ -3,7 +3,7 @@ class AppointmentsController < ApplicationController
   before_action :load_pet, only: [:new, :create, :edit, :update]
 
   def index
-    @appointments = Appointment.all.where(pet: current_user.pets)
+    @appointments = Appointment.all.where(pet: current_user.pets).order("created_at DESC")
   end
 
   def new
