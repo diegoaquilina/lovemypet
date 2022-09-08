@@ -12,3 +12,14 @@
 @import "pages/index";
 
 
+body {
+    min-height: 100vh !important;
+    margin: 0;
+    position: relative !important;
+    }
+    
+    body::after {
+    content: '' !important;
+    display: block;
+    height: 100px !important; /* Set same as footer's height */
+    }
